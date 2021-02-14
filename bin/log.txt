@@ -1,0 +1,134 @@
+2021-01-21 00:29:13	hello system
+
+2021-01-21 00:35:17	hello system
+
+2021-01-20 16:56:31	INFO	hello system
+
+2021-01-20 17:20:59	[INFO]	hello system
+
+2021-01-20 17:26:06	[INFO]	hello system
+
+2021-01-20 17:30:13	[INFO]	hello system
+
+2021-01-20 17:30:33	[INFO]	hello system
+
+2021-01-20 17:30:59	[INFO]	hello system
+
+2021-01-20 17:33:22	[INFO]	hello system
+
+2021-01-20 17:44:34	[INFO]	hello system
+
+2021-01-20 19:02:31	[INFO]	hello system
+
+2021-01-20 19:04:56	[INFO]	hello system
+
+2021-01-20 19:33:39	[INFO]	hello system
+
+2021-01-20 19:33:39	[INFO]	hello system
+
+2021-01-20 19:39:27	[INFO]	hello system
+
+2021-01-20 19:39:27	[INFO]	hello system
+
+2021-01-20 19:41:23	[INFO]	hello system
+
+2021-01-20 19:41:23	[INFO]	hello system
+
+2021-01-20 19:42:52	[INFO]	hello system
+
+2021-01-20 19:42:52	[INFO]	hello system
+
+2021-01-20 19:43:42	[INFO]	hello system
+
+2021-01-20 19:43:42	[INFO]	hello system
+
+2021-01-20 19:46:05	[INFO]	hello system
+
+2021-01-20 19:46:05	[INFO]	hello system
+
+2021-01-20 19:49:09	[INFO]	hello system
+
+2021-01-20 19:49:09	[INFO]	hello system
+
+2021-01-20 20:10:26	[INFO]	hello system
+
+2021-01-20 20:10:26	[INFO]	hello system
+
+2021-01-21 15:47:54	[INFO]	hello system
+
+2021-01-21 15:47:54	[INFO]	hello system
+
+2021-01-24 01:47:26	[INFO]	hello system
+
+2021-01-24 01:47:26	[INFO]	hello system
+
+2021-01-24 01:56:37	[INFO]	hello system
+
+2021-01-24 01:56:37	[INFO]	hello system
+
+2021-01-24 23:32:33	[INFO]	hello system
+
+2021-01-24 23:32:33	[INFO]	hello system
+
+2021-01-24 23:45:50	[INFO]	hello system
+
+2021-01-24 23:45:50	[INFO]	hello system
+
+2021-01-24 23:45:50	[INFO]	 name= class.map description= system map person typename= St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE6PersonSt4lessIS5_ESaISt4pairIKS5_S6_EEE value= 
+2021-01-24 23:45:50	[INFO]	 name= class.person description= system person typename= 6Person value= name: ""
+age: 0
+sex: false
+2021-01-24 23:45:50	[INFO]	 name= class.vec_map description= system vec_map person typename= St3mapINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEESt6vectorI6PersonSaIS7_EESt4lessIS5_ESaISt4pairIKS5_S9_EEE value= 
+2021-01-24 23:45:50	[INFO]	 name= logs description= logs config typename= St3setIN5sylar9LogDefineESt4lessIS1_ESaIS1_EE value= - name: root
+  level: INFO
+  formatter: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  formatter: "%d%T[%p%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+      formatter: "%d%T[%p]%T%m%n"
+    - type: StdoutLogAppender
+2021-01-24 23:48:49	[INFO]	hello system
+
+2021-01-24 23:48:49	[INFO]	hello system
+
+2021-01-24 23:48:49	[INFO]	 name= logs description= logs config typename= St3setIN5sylar9LogDefineESt4lessIS1_ESaIS1_EE value= - name: root
+  level: INFO
+  formatter: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  formatter: "%d%T[%p%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+      formatter: "%d%T[%p]%T%m%n"
+    - type: StdoutLogAppender
+2021-01-24 23:51:54	hello system
+
+2021-01-24 23:51:54 - hello system
+
+2021-01-24 23:51:54 -  name= logs description= logs config typename= St3setIN5sylar9LogDefineESt4lessIS1_ESaIS1_EE value= - name: root
+  level: INFO
+  formatter: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  formatter: "%d%T[%p%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+      formatter: "%d%T[%p]%T%m%n"
+    - type: StdoutLogAppender
