@@ -34,3 +34,11 @@ CXX_INCLUDES = -I/home/marulong/sylar/. -I/home/marulong/sylar/../yaml-cpp/inclu
 
 # Custom defines: CMakeFiles/sylar.dir/sylar/bytearray.cc.o_DEFINES = __FILE__="sylar/bytearray.cc"
 
+# Custom defines: CMakeFiles/sylar.dir/sylar/http/http.cc.o_DEFINES = __FILE__="sylar/http/http.cc"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o_DEFINES = __FILE__="sylar/http/http11_parser.cc"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o_DEFINES = __FILE__="sylar/http/httpclient_parser.cc"
+
+# Custom defines: CMakeFiles/sylar.dir/sylar/http/http_parser.cc.o_DEFINES = __FILE__="sylar/http/http_parser.cc"
+

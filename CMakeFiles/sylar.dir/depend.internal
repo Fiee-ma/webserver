@@ -154,6 +154,61 @@ CMakeFiles/sylar.dir/sylar/hook.cc.o
  /home/marulong/sylar/sylar/thread.h
  /home/marulong/sylar/sylar/timer.h
  /home/marulong/sylar/sylar/util.h
+CMakeFiles/sylar.dir/sylar/http/http.cc.o
+ /home/marulong/sylar/sylar/http/http.cc
+ /home/marulong/sylar/sylar/http/http.h
+CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o
+ /home/marulong/sylar/sylar/http/http11_common.h
+ /home/marulong/sylar/sylar/http/http11_parser.cc
+ /home/marulong/sylar/sylar/http/http11_parser.h
+CMakeFiles/sylar.dir/sylar/http/http_parser.cc.o
+ ../yaml-cpp/include/yaml-cpp/binary.h
+ ../yaml-cpp/include/yaml-cpp/dll.h
+ ../yaml-cpp/include/yaml-cpp/emitter.h
+ ../yaml-cpp/include/yaml-cpp/emitterdef.h
+ ../yaml-cpp/include/yaml-cpp/emittermanip.h
+ ../yaml-cpp/include/yaml-cpp/emitterstyle.h
+ ../yaml-cpp/include/yaml-cpp/exceptions.h
+ ../yaml-cpp/include/yaml-cpp/mark.h
+ ../yaml-cpp/include/yaml-cpp/node/convert.h
+ ../yaml-cpp/include/yaml-cpp/node/detail/impl.h
+ ../yaml-cpp/include/yaml-cpp/node/detail/iterator.h
+ ../yaml-cpp/include/yaml-cpp/node/detail/iterator_fwd.h
+ ../yaml-cpp/include/yaml-cpp/node/detail/memory.h
+ ../yaml-cpp/include/yaml-cpp/node/detail/node.h
+ ../yaml-cpp/include/yaml-cpp/node/detail/node_data.h
+ ../yaml-cpp/include/yaml-cpp/node/detail/node_iterator.h
+ ../yaml-cpp/include/yaml-cpp/node/detail/node_ref.h
+ ../yaml-cpp/include/yaml-cpp/node/emit.h
+ ../yaml-cpp/include/yaml-cpp/node/impl.h
+ ../yaml-cpp/include/yaml-cpp/node/iterator.h
+ ../yaml-cpp/include/yaml-cpp/node/node.h
+ ../yaml-cpp/include/yaml-cpp/node/parse.h
+ ../yaml-cpp/include/yaml-cpp/node/ptr.h
+ ../yaml-cpp/include/yaml-cpp/node/type.h
+ ../yaml-cpp/include/yaml-cpp/noexcept.h
+ ../yaml-cpp/include/yaml-cpp/null.h
+ ../yaml-cpp/include/yaml-cpp/ostream_wrapper.h
+ ../yaml-cpp/include/yaml-cpp/parser.h
+ ../yaml-cpp/include/yaml-cpp/stlemitter.h
+ ../yaml-cpp/include/yaml-cpp/traits.h
+ ../yaml-cpp/include/yaml-cpp/yaml.h
+ /home/marulong/sylar/sylar/config.h
+ /home/marulong/sylar/sylar/http/http.h
+ /home/marulong/sylar/sylar/http/http11_common.h
+ /home/marulong/sylar/sylar/http/http11_parser.h
+ /home/marulong/sylar/sylar/http/http_parser.cc
+ /home/marulong/sylar/sylar/http/http_parser.h
+ /home/marulong/sylar/sylar/http/httpclient_parser.h
+ /home/marulong/sylar/sylar/log.h
+ /home/marulong/sylar/sylar/noncopyable.h
+ /home/marulong/sylar/sylar/singleton.h
+ /home/marulong/sylar/sylar/thread.h
+ /home/marulong/sylar/sylar/util.h
+CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o
+ /home/marulong/sylar/sylar/http/http11_common.h
+ /home/marulong/sylar/sylar/http/httpclient_parser.cc
+ /home/marulong/sylar/sylar/http/httpclient_parser.h
 CMakeFiles/sylar.dir/sylar/iomanager.cc.o
  /home/marulong/sylar/sylar/fiber.h
  /home/marulong/sylar/sylar/iomanager.cc

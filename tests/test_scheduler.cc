@@ -1,18 +1,18 @@
-#include "../sylar/sylar.h"
+#include "../webserver/sylar.h"
 
-sylar::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
 
 void test_scheduler() {
     static int s_count = 5;
     SYLAR_LOG_INFO(g_logger) << "test_scheduler " << s_count;
     if(--s_count >= 0) {
         sleep(1);
-        sylar::Scheduler::GetThis()->schedule(&test_scheduler, sylar::GetThreadId());
+        server_name::Scheduler::GetThis()->schedule(&test_scheduler, server_name::GetThreadId());
     }
 }
 
 int main() {
-    sylar::Scheduler sc(3, false, "test");
+    server_name::Scheduler sc(3, false, "test");
     sc.start();
     sc.schedule(&test_scheduler);
     sc.stop();

@@ -1,6 +1,6 @@
-#include "../sylar/hook.h"
-#include "../sylar/iomanager.h"
-#include "../sylar/log.h"
+#include "../webserver/hook.h"
+#include "../webserver/iomanager.h"
+#include "../webserver/log.h"
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
@@ -8,9 +8,9 @@
 #include <fcntl.h>
 #include <string.h>
 
-sylar::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
 void test_hook() {
-    sylar::IOManager iom(1);
+    server_name::IOManager iom(1);
     iom.schedule([](){
         sleep(2);
         SYLAR_LOG_INFO(g_logger) << "sleep 2";
@@ -66,7 +66,7 @@ void test_sock() {
 int main(int argc, char **argv) {
     //test_hook();
     //test_sock();
-    sylar::IOManager iom;
+    server_name::IOManager iom;
     iom.schedule(test_sock);
     return 0;
 }

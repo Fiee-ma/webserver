@@ -1,0 +1,238 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CaseInsensitiveLess	http.h	/^struct CaseInsensitiveLess {$/;"	s	namespace:sylar::http
+CharsToHttpMethod	http.cc	/^HttpMethod CharsToHttpMethod(const char* m) {$/;"	f	namespace:sylar::http
+HTTP_METHOD_MAP	http.h	15;"	d
+HTTP_STATUS_MAP	http.h	60;"	d
+HttpMethod	http.h	/^enum class HttpMethod {$/;"	c	namespace:sylar::http
+HttpMethodToString	http.cc	/^const char* HttpMethodToString(const HttpMethod& m) {$/;"	f	namespace:sylar::http
+HttpRequest	http.cc	/^HttpRequest::HttpRequest(uint8_t version, bool close)$/;"	f	class:sylar::http::HttpRequest
+HttpRequest	http.h	/^class HttpRequest {$/;"	c	namespace:sylar::http
+HttpRequestParser	http_parser.cc	/^HttpRequestParser::HttpRequestParser()$/;"	f	class:sylar::http::HttpRequestParser
+HttpRequestParser	http_parser.h	/^class HttpRequestParser {$/;"	c	namespace:sylar::http
+HttpResponse	http.cc	/^HttpResponse::HttpResponse(uint8_t version, bool close)$/;"	f	class:sylar::http::HttpResponse
+HttpResponse	http.h	/^class HttpResponse {$/;"	c	namespace:sylar::http
+HttpResponseParser	http_parser.cc	/^HttpResponseParser::HttpResponseParser() {$/;"	f	class:sylar::http::HttpResponseParser
+HttpResponseParser	http_parser.h	/^class HttpResponseParser {$/;"	c	namespace:sylar::http
+HttpResponseParserexecute	http_parser.cc	/^size_t HttpResponseParserexecute(const char *data, size_t len, size_t off) {$/;"	f	namespace:sylar::http
+HttpStatus	http.h	/^enum class HttpStatus {$/;"	c	namespace:sylar::http
+HttpStatusToString	http.cc	/^const char* HttpStatusToString(const HttpStatus& s) {$/;"	f	namespace:sylar::http
+LEN	http11_parser.cc	45;"	d	file:
+LEN	httpclient_parser.cc	46;"	d	file:
+MARK	http11_parser.cc	46;"	d	file:
+MARK	httpclient_parser.cc	47;"	d	file:
+MapType	http.h	/^    typedef std::map<std::string, std::string, CaseInsensitiveLess> MapType;$/;"	t	class:sylar::http::HttpRequest
+MapType	http.h	/^    typedef std::map<std::string, std::string, CaseInsensitiveLess> MapType;$/;"	t	class:sylar::http::HttpResponse
+PTR_TO	http11_parser.cc	47;"	d	file:
+PTR_TO	httpclient_parser.cc	48;"	d	file:
+StringToHttpMethod	http.cc	/^HttpMethod StringToHttpMethod(const std::string& m) {$/;"	f	namespace:sylar::http
+XX	http.cc	13;"	d	file:
+XX	http.cc	19;"	d	file:
+XX	http.cc	24;"	d	file:
+XX	http.cc	29;"	d	file:
+XX	http.cc	31;"	d	file:
+XX	http.cc	43;"	d	file:
+XX	http.cc	48;"	d	file:
+XX	http.cc	8;"	d	file:
+XX	http.h	125;"	d
+XX	http.h	127;"	d
+XX	http.h	135;"	d
+XX	http.h	137;"	d
+_RequestSizeIniter	http_parser.cc	/^    _RequestSizeIniter() {$/;"	f	struct:sylar::http::_RequestSizeIniter
+_RequestSizeIniter	http_parser.cc	/^struct _RequestSizeIniter {$/;"	s	namespace:sylar::http	file:
+__SYLAR_HTTP_HTTP_H__	http.h	2;"	d
+__SYLAR_HTTP_PARSER_H__	http_parser.h	2;"	d
+_http11_common_h	http11_common.h	2;"	d
+body_start	http11_parser.h	/^  size_t body_start;$/;"	m	struct:http_parser
+body_start	httpclient_parser.h	/^  size_t body_start;$/;"	m	struct:httpclient_parser
+check	httpclient_parser.cc	49;"	d	file:
+checkGetAs	http.h	/^bool checkGetAs(const MapType& m, const std::string& key, T& val, const T& def = T()) {$/;"	f	namespace:sylar::http
+checkGetCookieAs	http.h	/^    bool checkGetCookieAs(const std::string &key, T &val, const T &def = T()) {$/;"	f	class:sylar::http::HttpRequest
+checkGetHeaderAs	http.h	/^    bool checkGetHeaderAs(const std::string &key, T &val, const T &def = T()) {$/;"	f	class:sylar::http::HttpRequest
+checkGetHeaderAs	http.h	/^    bool checkGetHeaderAs(const std::string &key, T &val, const T &def = T()) {$/;"	f	class:sylar::http::HttpResponse
+checkGetParamAs	http.h	/^    bool checkGetParamAs(const std::string &key, T &val, const T &def = T()) {$/;"	f	class:sylar::http::HttpRequest
+chunk_size	httpclient_parser.h	/^  element_cb chunk_size;$/;"	m	struct:httpclient_parser
+chunked	httpclient_parser.h	/^  int chunked;$/;"	m	struct:httpclient_parser
+chunks_done	httpclient_parser.h	/^  int chunks_done;$/;"	m	struct:httpclient_parser
+close	httpclient_parser.h	/^  int close;$/;"	m	struct:httpclient_parser
+content_len	http11_parser.h	/^  int content_len;$/;"	m	struct:http_parser
+content_len	httpclient_parser.h	/^  int content_len;$/;"	m	struct:httpclient_parser
+cs	http11_parser.h	/^  int cs;$/;"	m	struct:http_parser
+cs	httpclient_parser.h	/^  int cs;$/;"	m	struct:httpclient_parser
+data	http11_parser.h	/^  void *data;$/;"	m	struct:http_parser
+data	httpclient_parser.h	/^  void *data;$/;"	m	struct:httpclient_parser
+delCookie	http.cc	/^void HttpRequest::delCookie(const std::string &key) {$/;"	f	class:sylar::http::HttpRequest
+delHeader	http.cc	/^void HttpRequest::delHeader(const std::string &key) {$/;"	f	class:sylar::http::HttpRequest
+delHeader	http.cc	/^void HttpResponse::delHeader(const std::string &key) {$/;"	f	class:sylar::http::HttpResponse
+delParam	http.cc	/^void HttpRequest::delParam(const std::string &key) {$/;"	f	class:sylar::http::HttpRequest
+dump	http.cc	/^std::ostream &HttpRequest::dump(std::ostream &os) {$/;"	f	class:sylar::http::HttpRequest
+dump	http.cc	/^std::ostream &HttpResponse::dump(std::ostream &os) {$/;"	f	class:sylar::http::HttpResponse
+element_cb	http11_common.h	/^typedef void (*element_cb)(void *data, const char *at, size_t length);$/;"	t
+execute	http_parser.cc	/^size_t HttpRequestParser::execute(const char *data, size_t len, size_t off) {$/;"	f	class:sylar::http::HttpRequestParser
+field_cb	http11_common.h	/^typedef void (*field_cb)(void *data, const char *field, size_t flen, const char *value, size_t vlen);$/;"	t
+field_len	http11_parser.h	/^  size_t field_len;$/;"	m	struct:http_parser
+field_len	httpclient_parser.h	/^  size_t field_len;$/;"	m	struct:httpclient_parser
+field_start	http11_parser.h	/^  size_t field_start;$/;"	m	struct:http_parser
+field_start	httpclient_parser.h	/^  size_t field_start;$/;"	m	struct:httpclient_parser
+fragment	http11_parser.h	/^  element_cb fragment;$/;"	m	struct:http_parser
+g_http_request_buffer_size	http_parser.cc	/^static sylar::ConfigVar<uint64_t>::ptr g_http_request_buffer_size =$/;"	m	namespace:sylar::http	file:
+g_http_request_max_body_size	http_parser.cc	/^static sylar::ConfigVar<uint64_t>::ptr g_http_request_max_body_size =$/;"	m	namespace:sylar::http	file:
+g_logger	http_parser.cc	/^static sylar::Logger::ptr g_logger = SYLAR_LOG_NAME("system");$/;"	m	namespace:sylar::http	file:
+getAs	http.h	/^T getAs(const MapType& m, const std::string& key, const T& def = T()) {$/;"	f	namespace:sylar::http
+getBody	http.h	/^    const std::string getBody() const { return m_body;}$/;"	f	class:sylar::http::HttpRequest
+getBody	http.h	/^    const std::string getBody() const { return m_body;}$/;"	f	class:sylar::http::HttpResponse
+getCookie	http.cc	/^std::string HttpRequest::getCookie(const std::string &key,$/;"	f	class:sylar::http::HttpRequest
+getCookieAs	http.h	/^    T getCookieAs(const std::string &key, T &val, const T &def = T()) {$/;"	f	class:sylar::http::HttpRequest
+getCookies	http.h	/^    MapType getCookies() const { return m_cookies;}$/;"	f	class:sylar::http::HttpRequest
+getData	http_parser.h	/^    HttpRequest::ptr getData() const { return m_data;}$/;"	f	class:sylar::http::HttpRequestParser
+getData	http_parser.h	/^    HttpResponse::ptr getData() const { return m_data;}$/;"	f	class:sylar::http::HttpResponseParser
+getHeader	http.cc	/^std::string HttpRequest::getHeader(const std::string &key,$/;"	f	class:sylar::http::HttpRequest
+getHeader	http.cc	/^std::string HttpResponse::getHeader(const std::string &key, const std::string &def) const {$/;"	f	class:sylar::http::HttpResponse
+getHeaderAs	http.h	/^    T getHeaderAs(const std::string &key, T &val, const T &def = T()) {$/;"	f	class:sylar::http::HttpRequest
+getHeaderAs	http.h	/^    T getHeaderAs(const std::string &key, T &val, const T &def = T()) {$/;"	f	class:sylar::http::HttpResponse
+getHeaders	http.h	/^    MapType getHeaders() const { return m_headers;}$/;"	f	class:sylar::http::HttpRequest
+getHeaders	http.h	/^    const MapType getHeaders() const { return m_headers;}$/;"	f	class:sylar::http::HttpResponse
+getMethod	http.h	/^    HttpMethod getMethod() const { return m_method;}$/;"	f	class:sylar::http::HttpRequest
+getParam	http.cc	/^std::string HttpRequest::getParam(const std::string &key,$/;"	f	class:sylar::http::HttpRequest
+getParamAs	http.h	/^    T getParamAs(const std::string &key, T &val, const T &def = T()) {$/;"	f	class:sylar::http::HttpRequest
+getParams	http.h	/^    MapType getParams() const { return m_params;}$/;"	f	class:sylar::http::HttpRequest
+getPath	http.h	/^    const std::string getPath() const { return m_path;}$/;"	f	class:sylar::http::HttpRequest
+getQuery	http.h	/^    const std::string getQuery() const { return m_query;}$/;"	f	class:sylar::http::HttpRequest
+getReason	http.h	/^    const std::string getReason() const { return m_reason;}$/;"	f	class:sylar::http::HttpResponse
+getStatus	http.h	/^    HttpStatus getStatus() const {return m_status;}$/;"	f	class:sylar::http::HttpResponse
+getVersion	http.h	/^    uint8_t getVersion() const { return m_version; }$/;"	f	class:sylar::http::HttpResponse
+getVersion	http.h	/^    uint8_t getVersion() const { return m_version;}$/;"	f	class:sylar::http::HttpRequest
+hasCookie	http.cc	/^bool HttpRequest::hasCookie(const std::string &key, std::string *val) {$/;"	f	class:sylar::http::HttpRequest
+hasError	http_parser.cc	/^int HttpRequestParser::hasError() const {$/;"	f	class:sylar::http::HttpRequestParser
+hasError	http_parser.cc	/^int HttpResponseParser::hasError() const {$/;"	f	class:sylar::http::HttpResponseParser
+hasHeader	http.cc	/^bool HttpRequest::hasHeader(const std::string &key, std::string *val) {$/;"	f	class:sylar::http::HttpRequest
+hasParam	http.cc	/^bool HttpRequest::hasParam(const std::string &key, std::string *val) {$/;"	f	class:sylar::http::HttpRequest
+header_done	http11_parser.h	/^  element_cb header_done;$/;"	m	struct:http_parser
+header_done	httpclient_parser.h	/^  element_cb header_done;$/;"	m	struct:httpclient_parser
+http	http.cc	/^namespace http {$/;"	n	namespace:sylar	file:
+http	http.h	/^namespace http {$/;"	n	namespace:sylar
+http	http_parser.cc	/^namespace http {$/;"	n	namespace:sylar	file:
+http	http_parser.h	/^namespace http {$/;"	n	namespace:sylar
+http11_parser_h	http11_parser.h	10;"	d
+http_field	http11_parser.h	/^  field_cb http_field;$/;"	m	struct:http_parser
+http_field	httpclient_parser.h	/^  field_cb http_field;$/;"	m	struct:httpclient_parser
+http_parser	http11_parser.h	/^typedef struct http_parser { $/;"	s
+http_parser	http11_parser.h	/^} http_parser;$/;"	t	typeref:struct:http_parser
+http_parser_en_main	http11_parser.cc	/^static const int http_parser_en_main = 1;$/;"	v	file:
+http_parser_error	http11_parser.cc	/^static const int http_parser_error = 0;$/;"	v	file:
+http_parser_execute	http11_parser.cc	/^size_t http_parser_execute(http_parser *parser, const char *buffer, size_t len, size_t off)  $/;"	f
+http_parser_finish	http11_parser.cc	/^int http_parser_finish(http_parser *parser)$/;"	f
+http_parser_first_final	http11_parser.cc	/^static const int http_parser_first_final = 348;$/;"	v	file:
+http_parser_has_error	http11_parser.cc	/^int http_parser_has_error(http_parser *parser) {$/;"	f
+http_parser_init	http11_parser.cc	/^int http_parser_init(http_parser *parser) {$/;"	f
+http_parser_is_finished	http11_parser.cc	/^int http_parser_is_finished(http_parser *parser) {$/;"	f
+http_parser_nread	http11_parser.h	46;"	d
+http_parser_start	http11_parser.cc	/^static const int http_parser_start = 1;$/;"	v	file:
+http_version	http11_parser.h	/^  element_cb http_version;$/;"	m	struct:http_parser
+http_version	httpclient_parser.h	/^  element_cb http_version;$/;"	m	struct:httpclient_parser
+httpclient_parser	httpclient_parser.h	/^typedef struct httpclient_parser {$/;"	s
+httpclient_parser	httpclient_parser.h	/^} httpclient_parser;$/;"	t	typeref:struct:httpclient_parser
+httpclient_parser_en_main	httpclient_parser.cc	/^static const int httpclient_parser_en_main = 1;$/;"	v	file:
+httpclient_parser_error	httpclient_parser.cc	/^static const int httpclient_parser_error = 0;$/;"	v	file:
+httpclient_parser_execute	httpclient_parser.cc	/^int httpclient_parser_execute(httpclient_parser *parser, const char *buffer, size_t len, size_t off)  $/;"	f
+httpclient_parser_finish	httpclient_parser.cc	/^int httpclient_parser_finish(httpclient_parser *parser)$/;"	f
+httpclient_parser_first_final	httpclient_parser.cc	/^static const int httpclient_parser_first_final = 120;$/;"	v	file:
+httpclient_parser_h	httpclient_parser.h	35;"	d
+httpclient_parser_has_error	httpclient_parser.cc	/^int httpclient_parser_has_error(httpclient_parser *parser) {$/;"	f
+httpclient_parser_init	httpclient_parser.cc	/^int httpclient_parser_init(httpclient_parser *parser)  {$/;"	f
+httpclient_parser_is_finished	httpclient_parser.cc	/^int httpclient_parser_is_finished(httpclient_parser *parser) {$/;"	f
+httpclient_parser_nread	httpclient_parser.h	71;"	d
+httpclient_parser_start	httpclient_parser.cc	/^static const int httpclient_parser_start = 1;$/;"	v	file:
+isClose	http.h	/^    const bool isClose() const { return m_close;}$/;"	f	class:sylar::http::HttpResponse
+isFinished	http_parser.cc	/^int HttpRequestParser::isFinished() const {$/;"	f	class:sylar::http::HttpRequestParser
+isFinished	http_parser.cc	/^int HttpResponseParser::isFinished() const {$/;"	f	class:sylar::http::HttpResponseParser
+json_sent	http11_parser.h	/^  int json_sent;$/;"	m	struct:http_parser
+last_chunk	httpclient_parser.h	/^  element_cb last_chunk;$/;"	m	struct:httpclient_parser
+m_body	http.h	/^    std::string m_body;$/;"	m	class:sylar::http::HttpRequest
+m_body	http.h	/^    std::string m_body;$/;"	m	class:sylar::http::HttpResponse
+m_close	http.h	/^    bool m_close;$/;"	m	class:sylar::http::HttpRequest
+m_close	http.h	/^    bool m_close;$/;"	m	class:sylar::http::HttpResponse
+m_cookies	http.h	/^    MapType m_cookies;$/;"	m	class:sylar::http::HttpRequest
+m_data	http_parser.h	/^    HttpRequest::ptr m_data;$/;"	m	class:sylar::http::HttpRequestParser
+m_data	http_parser.h	/^    HttpResponse::ptr m_data;$/;"	m	class:sylar::http::HttpResponseParser
+m_error	http_parser.h	/^    int m_error;$/;"	m	class:sylar::http::HttpRequestParser
+m_error	http_parser.h	/^    int m_error;$/;"	m	class:sylar::http::HttpResponseParser
+m_fragment	http.h	/^    std::string m_fragment;$/;"	m	class:sylar::http::HttpRequest
+m_headers	http.h	/^    MapType m_headers;$/;"	m	class:sylar::http::HttpRequest
+m_headers	http.h	/^    MapType m_headers;$/;"	m	class:sylar::http::HttpResponse
+m_method	http.h	/^    HttpMethod m_method;$/;"	m	class:sylar::http::HttpRequest
+m_params	http.h	/^    MapType m_params;$/;"	m	class:sylar::http::HttpRequest
+m_parser	http_parser.h	/^    http_parser m_parser;$/;"	m	class:sylar::http::HttpRequestParser
+m_parser	http_parser.h	/^    httpclient_parser m_parser;$/;"	m	class:sylar::http::HttpResponseParser
+m_path	http.h	/^    std::string m_path;$/;"	m	class:sylar::http::HttpRequest
+m_query	http.h	/^    std::string m_query;$/;"	m	class:sylar::http::HttpRequest
+m_reason	http.h	/^    std::string m_reason;$/;"	m	class:sylar::http::HttpResponse
+m_status	http.h	/^    HttpStatus m_status;$/;"	m	class:sylar::http::HttpResponse
+m_version	http.h	/^    uint8_t m_version;$/;"	m	class:sylar::http::HttpRequest
+m_version	http.h	/^    uint8_t m_version;$/;"	m	class:sylar::http::HttpResponse
+mark	http11_parser.h	/^  size_t mark;$/;"	m	struct:http_parser
+mark	httpclient_parser.h	/^  size_t mark;$/;"	m	struct:httpclient_parser
+nread	http11_parser.h	/^  size_t nread;$/;"	m	struct:http_parser
+nread	httpclient_parser.h	/^  size_t nread;$/;"	m	struct:httpclient_parser
+on_request_fragment	http_parser.cc	/^void on_request_fragment(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_request_header_done	http_parser.cc	/^void on_request_header_done(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_request_http_field	http_parser.cc	/^void on_request_http_field(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_request_method	http_parser.cc	/^void on_request_method(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_request_path	http_parser.cc	/^void on_request_path(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_request_query	http_parser.cc	/^void on_request_query(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_request_uri	http_parser.cc	/^void on_request_uri(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_request_version	http_parser.cc	/^void on_request_version(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_response_chunk	http_parser.cc	/^void on_response_chunk(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_response_header_done	http_parser.cc	/^void on_response_header_done(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_response_http_field	http_parser.cc	/^void on_response_http_field(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_response_last_chunk	http_parser.cc	/^void on_response_last_chunk(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_response_reason	http_parser.cc	/^void on_response_reason(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_response_status	http_parser.cc	/^void on_response_status(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+on_response_version	http_parser.cc	/^void on_response_version(void *data, const char *at, size_t length) {$/;"	f	namespace:sylar::http
+operator ()	http.cc	/^bool CaseInsensitiveLess::operator()(const std::string& lhs,$/;"	f	class:sylar::http::CaseInsensitiveLess
+ptr	http.h	/^    typedef std::shared_ptr<HttpRequest> ptr;$/;"	t	class:sylar::http::HttpRequest
+ptr	http.h	/^    typedef std::shared_ptr<HttpResponse> ptr;$/;"	t	class:sylar::http::HttpResponse
+ptr	http_parser.h	/^    typedef std::shared_ptr<HttpRequestParser> ptr;$/;"	t	class:sylar::http::HttpRequestParser
+ptr	http_parser.h	/^    typedef std::shared_ptr<HttpResponseParser> ptr;$/;"	t	class:sylar::http::HttpResponseParser
+query_start	http11_parser.h	/^  size_t query_start;$/;"	m	struct:http_parser
+query_string	http11_parser.h	/^  element_cb query_string;$/;"	m	struct:http_parser
+reason_phrase	httpclient_parser.h	/^  element_cb reason_phrase;$/;"	m	struct:httpclient_parser
+request_method	http11_parser.h	/^  element_cb request_method;$/;"	m	struct:http_parser
+request_path	http11_parser.h	/^  element_cb request_path;$/;"	m	struct:http_parser
+request_uri	http11_parser.h	/^  element_cb request_uri;$/;"	m	struct:http_parser
+s_http_request_buffer_size	http_parser.cc	/^uint64_t s_http_request_buffer_size = 0;$/;"	m	namespace:sylar::http	file:
+s_http_request_max_body_size	http_parser.cc	/^uint64_t s_http_request_max_body_size = 0;$/;"	m	namespace:sylar::http	file:
+s_method_string	http.cc	/^static const char *s_method_string[] = {$/;"	m	namespace:sylar::http	file:
+setBody	http.h	/^    void setBody(const std::string &str) { m_body = str;}$/;"	f	class:sylar::http::HttpRequest
+setBody	http.h	/^    void setBody(const std::string &v) { m_body = v;}$/;"	f	class:sylar::http::HttpResponse
+setClose	http.h	/^    void setClose(bool v) { m_close = v;}$/;"	f	class:sylar::http::HttpResponse
+setCookie	http.cc	/^void HttpRequest::setCookie(const std::string &key,$/;"	f	class:sylar::http::HttpRequest
+setCookies	http.h	/^    void setCookies(const MapType &v) { m_cookies = v;}$/;"	f	class:sylar::http::HttpRequest
+setError	http_parser.h	/^    void setError(int v) { m_error = v;}$/;"	f	class:sylar::http::HttpRequestParser
+setError	http_parser.h	/^    void setError(int v) { m_error = v;}$/;"	f	class:sylar::http::HttpResponseParser
+setFragment	http.h	/^    void setFragment(std::string &str) { m_fragment = str;}$/;"	f	class:sylar::http::HttpRequest
+setHeader	http.cc	/^void HttpRequest::setHeader(const std::string &key,$/;"	f	class:sylar::http::HttpRequest
+setHeader	http.cc	/^void HttpResponse::setHeader(const std::string &key, const std::string &v) {$/;"	f	class:sylar::http::HttpResponse
+setHeaders	http.h	/^    void setHeaders(MapType &v) { m_headers = v;}$/;"	f	class:sylar::http::HttpResponse
+setHeaders	http.h	/^    void setHeaders(const MapType &v) { m_headers = v;}$/;"	f	class:sylar::http::HttpRequest
+setMethod	http.h	/^    void setMethod(HttpMethod v) { m_method = v;}$/;"	f	class:sylar::http::HttpRequest
+setParam	http.cc	/^void HttpRequest::setParam(const std::string &key,$/;"	f	class:sylar::http::HttpRequest
+setParams	http.h	/^    void setParams(const MapType &v) { m_params = v;}$/;"	f	class:sylar::http::HttpRequest
+setPath	http.h	/^    void setPath(std::string &str) { m_path = str;};$/;"	f	class:sylar::http::HttpRequest
+setQuery	http.h	/^    void setQuery(std::string &str) { m_query = str;}$/;"	f	class:sylar::http::HttpRequest
+setReason	http.h	/^    void setReason(const std::string &v) { m_reason = v;}$/;"	f	class:sylar::http::HttpResponse
+setStatus	http.h	/^    void setStatus(HttpStatus v) { m_status = v;}$/;"	f	class:sylar::http::HttpResponse
+setVersion	http.h	/^    void setVersion( const uint8_t &v) { m_version = v;}$/;"	f	class:sylar::http::HttpRequest
+setVersion	http.h	/^    void setVersion(uint8_t v) { m_version = v;}$/;"	f	class:sylar::http::HttpResponse
+status	httpclient_parser.h	/^  int status;$/;"	m	struct:httpclient_parser
+status_code	httpclient_parser.h	/^  element_cb status_code;$/;"	m	struct:httpclient_parser
+sylar	http.cc	/^namespace sylar {$/;"	n	file:
+sylar	http.h	/^namespace sylar {$/;"	n
+sylar	http_parser.cc	/^namespace sylar {$/;"	n	file:
+sylar	http_parser.h	/^namespace sylar {$/;"	n
+uri_relaxed	http11_parser.h	/^  int uri_relaxed;$/;"	m	struct:http_parser
+xml_sent	http11_parser.h	/^  int xml_sent;$/;"	m	struct:http_parser

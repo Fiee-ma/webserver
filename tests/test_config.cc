@@ -1,34 +1,34 @@
-#include "../sylar/config.h"
-#include "../sylar/log.h"
+#include "../webserver/config.h"
+#include "../webserver/log.h"
 #include <yaml-cpp/yaml.h>
 
 
-//sylar::ConfigVar<int>::ptr g_int_value_config =
-//    sylar::Config::Lookup("system.port", (int)8080, "system port");
+//server_name::ConfigVar<int>::ptr g_int_value_config =
+//    server_name::Config::Lookup("system.port", (int)8080, "system port");
 
-//sylar::ConfigVar<float>::ptr g_float_test_value_config =
-//    sylar::Config::Lookup("system.port", (float)8080, "system port");
+//server_name::ConfigVar<float>::ptr g_float_test_value_config =
+//    server_name::Config::Lookup("system.port", (float)8080, "system port");
 
-//sylar::ConfigVar<float>::ptr g_float_value_config =
-//    sylar::Config::Lookup("system.value", (float)18.88f, "system port");
+//server_name::ConfigVar<float>::ptr g_float_value_config =
+//    server_name::Config::Lookup("system.value", (float)18.88f, "system port");
 //
-//sylar::ConfigVar<std::vector<int> >::ptr g_int_vector_config =
-//    sylar::Config::Lookup("system.int_vec", std::vector<int>{1, 2}, "system int_vec");
+//server_name::ConfigVar<std::vector<int> >::ptr g_int_vector_config =
+//    server_name::Config::Lookup("system.int_vec", std::vector<int>{1, 2}, "system int_vec");
 //
-//sylar::ConfigVar<std::list<int> >::ptr g_int_list_config =
-//    sylar::Config::Lookup("system.int_list", std::list<int>{1, 2}, "system int_list");
+//server_name::ConfigVar<std::list<int> >::ptr g_int_list_config =
+//    server_name::Config::Lookup("system.int_list", std::list<int>{1, 2}, "system int_list");
 //
-//sylar::ConfigVar<std::set<int> >::ptr g_int_set_config =
-//    sylar::Config::Lookup("system.int_set", std::set<int>{1, 2}, "system int_set");
+//server_name::ConfigVar<std::set<int> >::ptr g_int_set_config =
+//    server_name::Config::Lookup("system.int_set", std::set<int>{1, 2}, "system int_set");
 //
-//sylar::ConfigVar<std::unordered_set<int> >::ptr g_int_unordered_set_config =
-//    sylar::Config::Lookup("system.int_unordered_set", std::unordered_set<int>{1, 2}, "system int_unordered_set");
+//server_name::ConfigVar<std::unordered_set<int> >::ptr g_int_unordered_set_config =
+//    server_name::Config::Lookup("system.int_unordered_set", std::unordered_set<int>{1, 2}, "system int_unordered_set");
 //
-//sylar::ConfigVar<std::map<std::string, int> >::ptr g_str_int_map_config =
-//    sylar::Config::Lookup("system.str_int_mp", std::map<std::string, int>{{"k", 2}}, "system str int map");
+//server_name::ConfigVar<std::map<std::string, int> >::ptr g_str_int_map_config =
+//    server_name::Config::Lookup("system.str_int_mp", std::map<std::string, int>{{"k", 2}}, "system str int map");
 //
-//sylar::ConfigVar<std::unordered_map<std::string, int> >::ptr g_str_int_unordered_map_config =
-//    sylar::Config::Lookup("system.str_int_unordered_mp", std::unordered_map<std::string, int>{{"k", 2}}, "system str int unordered_map");
+//server_name::ConfigVar<std::unordered_map<std::string, int> >::ptr g_str_int_unordered_map_config =
+//    server_name::Config::Lookup("system.str_int_unordered_mp", std::unordered_map<std::string, int>{{"k", 2}}, "system str int unordered_map");
 #if 0
 void print_yaml(const YAML::Node node, int level) {
     if(node.IsScalar()) {
@@ -91,7 +91,7 @@ void test_config() {
     XX_Map(g_str_int_unordered_map_config, before, g_str_int_unordered_map)
 
     YAML::Node root = YAML::LoadFile("/home/marulong/sylar/bin/conf/log.yml");
-    sylar::Config::LoadFromYaml(root);
+    server_name::Config::LoadFromYaml(root);
 
     XX(g_int_vector_config, after, int_vec);
     XX(g_int_list_config, after, int_list);
@@ -161,14 +161,14 @@ public:
 
 }
 
-sylar::ConfigVar<Person>::ptr g_person =
-    sylar::Config::Lookup("class.person", Person(), "system person");
+server_name::ConfigVar<Person>::ptr g_person =
+    server_name::Config::Lookup("class.person", Person(), "system person");
 
-sylar::ConfigVar<std::map<std::string, Person> >::ptr g_person_map =
-    sylar::Config::Lookup("class.map", std::map<std::string, Person>(), "system map person");
+server_name::ConfigVar<std::map<std::string, Person> >::ptr g_person_map =
+    server_name::Config::Lookup("class.map", std::map<std::string, Person>(), "system map person");
 
-sylar::ConfigVar<std::map<std::string, std::vector<Person> > >::ptr g_person_vec_map =
-    sylar::Config::Lookup("class.vec_map", std::map<std::string, std::vector<Person> >(), "system vec_map person");
+server_name::ConfigVar<std::map<std::string, std::vector<Person> > >::ptr g_person_vec_map =
+    server_name::Config::Lookup("class.vec_map", std::map<std::string, std::vector<Person> >(), "system vec_map person");
 
 void test_class() {
 
@@ -204,7 +204,7 @@ void test_class() {
         g_person_vec_map->toString();
 
     YAML::Node root = YAML::LoadFile("/home/marulong/sylar/bin/conf/test.yml");
-    sylar::Config::LoadFromYaml(root);
+    server_name::Config::LoadFromYaml(root);
     SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "after" <<
         g_person->getValue().toString() << " - " << g_person->toString();
     XX_PM(g_person_map, "class.mp after");
@@ -220,13 +220,13 @@ void test_class() {
 
 #endif
 void test_log() {
-    static sylar::Logger::ptr system_log = SYLAR_LOG_NAME("root");
+    static server_name::Logger::ptr system_log = SYLAR_LOG_NAME("root");
     SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
-    std::cout << sylar::LoggerMgr::GetInstance()->toYamlString() << std::endl;
+    std::cout << server_name::LoggerMgr::GetInstance()->toYamlString() << std::endl;
     YAML::Node root = YAML::LoadFile("/home/marulong/sylar/bin/conf/log.yml");
-    sylar::Config::LoadFromYaml(root);
+    server_name::Config::LoadFromYaml(root);
     std::cout << "=======================" << std::endl;
-    std::cout << sylar::LoggerMgr::GetInstance()->toYamlString() << std::endl;
+    std::cout << server_name::LoggerMgr::GetInstance()->toYamlString() << std::endl;
     std::cout << "=======================" << std::endl;
     std::cout << root << std::endl;
     SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
@@ -234,7 +234,7 @@ void test_log() {
     system_log->setFormatter("%d - %m%n");
     SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
 
-    sylar::Config::Visit([](const sylar::ConfigVarBase::ptr var) {
+    server_name::Config::Visit([](const server_name::ConfigVarBase::ptr var) {
             SYLAR_LOG_INFO(system_log) << " name= " << var->getName()
                                      << " description= " << var->getDescription()
                                      << " typename= " << var->getTypeName()

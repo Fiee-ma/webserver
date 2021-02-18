@@ -51,10 +51,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marulong/sylar
+CMAKE_SOURCE_DIR = /home/marulong/webserver
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marulong/sylar
+CMAKE_BINARY_DIR = /home/marulong/webserver
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -83,9 +83,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marulong/sylar/CMakeFiles /home/marulong/sylar/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marulong/webserver/CMakeFiles /home/marulong/webserver/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marulong/sylar/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marulong/webserver/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -112,6 +112,45 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named test_http_parser
+
+# Build rule for target.
+test_http_parser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_http_parser
+.PHONY : test_http_parser
+
+# fast build rule for target.
+test_http_parser/fast:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/build
+.PHONY : test_http_parser/fast
+
+#=============================================================================
+# Target rules for targets named test_http
+
+# Build rule for target.
+test_http: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_http
+.PHONY : test_http
+
+# fast build rule for target.
+test_http/fast:
+	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/build
+.PHONY : test_http/fast
+
+#=============================================================================
+# Target rules for targets named test_tcp_server
+
+# Build rule for target.
+test_tcp_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_tcp_server
+.PHONY : test_tcp_server
+
+# fast build rule for target.
+test_tcp_server/fast:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/build
+.PHONY : test_tcp_server/fast
 
 #=============================================================================
 # Target rules for targets named test_address
@@ -166,17 +205,30 @@ test_config/fast:
 .PHONY : test_config/fast
 
 #=============================================================================
-# Target rules for targets named sylar
+# Target rules for targets named webserver
 
 # Build rule for target.
-sylar: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 sylar
-.PHONY : sylar
+webserver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 webserver
+.PHONY : webserver
 
 # fast build rule for target.
-sylar/fast:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/build
-.PHONY : sylar/fast
+webserver/fast:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/build
+.PHONY : webserver/fast
+
+#=============================================================================
+# Target rules for targets named test_scheduler
+
+# Build rule for target.
+test_scheduler: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_scheduler
+.PHONY : test_scheduler
+
+# fast build rule for target.
+test_scheduler/fast:
+	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
+.PHONY : test_scheduler/fast
 
 #=============================================================================
 # Target rules for targets named test_bytearray
@@ -242,370 +294,6 @@ test_fiber: cmake_check_build_system
 test_fiber/fast:
 	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
 .PHONY : test_fiber/fast
-
-#=============================================================================
-# Target rules for targets named test_scheduler
-
-# Build rule for target.
-test_scheduler: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_scheduler
-.PHONY : test_scheduler
-
-# fast build rule for target.
-test_scheduler/fast:
-	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
-.PHONY : test_scheduler/fast
-
-sylar/address.o: sylar/address.cc.o
-
-.PHONY : sylar/address.o
-
-# target to build an object file
-sylar/address.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/address.cc.o
-.PHONY : sylar/address.cc.o
-
-sylar/address.i: sylar/address.cc.i
-
-.PHONY : sylar/address.i
-
-# target to preprocess a source file
-sylar/address.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/address.cc.i
-.PHONY : sylar/address.cc.i
-
-sylar/address.s: sylar/address.cc.s
-
-.PHONY : sylar/address.s
-
-# target to generate assembly for a file
-sylar/address.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/address.cc.s
-.PHONY : sylar/address.cc.s
-
-sylar/bytearray.o: sylar/bytearray.cc.o
-
-.PHONY : sylar/bytearray.o
-
-# target to build an object file
-sylar/bytearray.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/bytearray.cc.o
-.PHONY : sylar/bytearray.cc.o
-
-sylar/bytearray.i: sylar/bytearray.cc.i
-
-.PHONY : sylar/bytearray.i
-
-# target to preprocess a source file
-sylar/bytearray.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/bytearray.cc.i
-.PHONY : sylar/bytearray.cc.i
-
-sylar/bytearray.s: sylar/bytearray.cc.s
-
-.PHONY : sylar/bytearray.s
-
-# target to generate assembly for a file
-sylar/bytearray.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/bytearray.cc.s
-.PHONY : sylar/bytearray.cc.s
-
-sylar/config.o: sylar/config.cc.o
-
-.PHONY : sylar/config.o
-
-# target to build an object file
-sylar/config.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cc.o
-.PHONY : sylar/config.cc.o
-
-sylar/config.i: sylar/config.cc.i
-
-.PHONY : sylar/config.i
-
-# target to preprocess a source file
-sylar/config.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cc.i
-.PHONY : sylar/config.cc.i
-
-sylar/config.s: sylar/config.cc.s
-
-.PHONY : sylar/config.s
-
-# target to generate assembly for a file
-sylar/config.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/config.cc.s
-.PHONY : sylar/config.cc.s
-
-sylar/fd_manager.o: sylar/fd_manager.cc.o
-
-.PHONY : sylar/fd_manager.o
-
-# target to build an object file
-sylar/fd_manager.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fd_manager.cc.o
-.PHONY : sylar/fd_manager.cc.o
-
-sylar/fd_manager.i: sylar/fd_manager.cc.i
-
-.PHONY : sylar/fd_manager.i
-
-# target to preprocess a source file
-sylar/fd_manager.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fd_manager.cc.i
-.PHONY : sylar/fd_manager.cc.i
-
-sylar/fd_manager.s: sylar/fd_manager.cc.s
-
-.PHONY : sylar/fd_manager.s
-
-# target to generate assembly for a file
-sylar/fd_manager.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fd_manager.cc.s
-.PHONY : sylar/fd_manager.cc.s
-
-sylar/fiber.o: sylar/fiber.cc.o
-
-.PHONY : sylar/fiber.o
-
-# target to build an object file
-sylar/fiber.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber.cc.o
-.PHONY : sylar/fiber.cc.o
-
-sylar/fiber.i: sylar/fiber.cc.i
-
-.PHONY : sylar/fiber.i
-
-# target to preprocess a source file
-sylar/fiber.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber.cc.i
-.PHONY : sylar/fiber.cc.i
-
-sylar/fiber.s: sylar/fiber.cc.s
-
-.PHONY : sylar/fiber.s
-
-# target to generate assembly for a file
-sylar/fiber.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/fiber.cc.s
-.PHONY : sylar/fiber.cc.s
-
-sylar/hook.o: sylar/hook.cc.o
-
-.PHONY : sylar/hook.o
-
-# target to build an object file
-sylar/hook.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/hook.cc.o
-.PHONY : sylar/hook.cc.o
-
-sylar/hook.i: sylar/hook.cc.i
-
-.PHONY : sylar/hook.i
-
-# target to preprocess a source file
-sylar/hook.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/hook.cc.i
-.PHONY : sylar/hook.cc.i
-
-sylar/hook.s: sylar/hook.cc.s
-
-.PHONY : sylar/hook.s
-
-# target to generate assembly for a file
-sylar/hook.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/hook.cc.s
-.PHONY : sylar/hook.cc.s
-
-sylar/iomanager.o: sylar/iomanager.cc.o
-
-.PHONY : sylar/iomanager.o
-
-# target to build an object file
-sylar/iomanager.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/iomanager.cc.o
-.PHONY : sylar/iomanager.cc.o
-
-sylar/iomanager.i: sylar/iomanager.cc.i
-
-.PHONY : sylar/iomanager.i
-
-# target to preprocess a source file
-sylar/iomanager.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/iomanager.cc.i
-.PHONY : sylar/iomanager.cc.i
-
-sylar/iomanager.s: sylar/iomanager.cc.s
-
-.PHONY : sylar/iomanager.s
-
-# target to generate assembly for a file
-sylar/iomanager.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/iomanager.cc.s
-.PHONY : sylar/iomanager.cc.s
-
-sylar/log.o: sylar/log.cc.o
-
-.PHONY : sylar/log.o
-
-# target to build an object file
-sylar/log.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/log.cc.o
-.PHONY : sylar/log.cc.o
-
-sylar/log.i: sylar/log.cc.i
-
-.PHONY : sylar/log.i
-
-# target to preprocess a source file
-sylar/log.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/log.cc.i
-.PHONY : sylar/log.cc.i
-
-sylar/log.s: sylar/log.cc.s
-
-.PHONY : sylar/log.s
-
-# target to generate assembly for a file
-sylar/log.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/log.cc.s
-.PHONY : sylar/log.cc.s
-
-sylar/scheduler.o: sylar/scheduler.cc.o
-
-.PHONY : sylar/scheduler.o
-
-# target to build an object file
-sylar/scheduler.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/scheduler.cc.o
-.PHONY : sylar/scheduler.cc.o
-
-sylar/scheduler.i: sylar/scheduler.cc.i
-
-.PHONY : sylar/scheduler.i
-
-# target to preprocess a source file
-sylar/scheduler.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/scheduler.cc.i
-.PHONY : sylar/scheduler.cc.i
-
-sylar/scheduler.s: sylar/scheduler.cc.s
-
-.PHONY : sylar/scheduler.s
-
-# target to generate assembly for a file
-sylar/scheduler.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/scheduler.cc.s
-.PHONY : sylar/scheduler.cc.s
-
-sylar/socket.o: sylar/socket.cc.o
-
-.PHONY : sylar/socket.o
-
-# target to build an object file
-sylar/socket.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/socket.cc.o
-.PHONY : sylar/socket.cc.o
-
-sylar/socket.i: sylar/socket.cc.i
-
-.PHONY : sylar/socket.i
-
-# target to preprocess a source file
-sylar/socket.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/socket.cc.i
-.PHONY : sylar/socket.cc.i
-
-sylar/socket.s: sylar/socket.cc.s
-
-.PHONY : sylar/socket.s
-
-# target to generate assembly for a file
-sylar/socket.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/socket.cc.s
-.PHONY : sylar/socket.cc.s
-
-sylar/thread.o: sylar/thread.cc.o
-
-.PHONY : sylar/thread.o
-
-# target to build an object file
-sylar/thread.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/thread.cc.o
-.PHONY : sylar/thread.cc.o
-
-sylar/thread.i: sylar/thread.cc.i
-
-.PHONY : sylar/thread.i
-
-# target to preprocess a source file
-sylar/thread.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/thread.cc.i
-.PHONY : sylar/thread.cc.i
-
-sylar/thread.s: sylar/thread.cc.s
-
-.PHONY : sylar/thread.s
-
-# target to generate assembly for a file
-sylar/thread.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/thread.cc.s
-.PHONY : sylar/thread.cc.s
-
-sylar/timer.o: sylar/timer.cc.o
-
-.PHONY : sylar/timer.o
-
-# target to build an object file
-sylar/timer.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/timer.cc.o
-.PHONY : sylar/timer.cc.o
-
-sylar/timer.i: sylar/timer.cc.i
-
-.PHONY : sylar/timer.i
-
-# target to preprocess a source file
-sylar/timer.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/timer.cc.i
-.PHONY : sylar/timer.cc.i
-
-sylar/timer.s: sylar/timer.cc.s
-
-.PHONY : sylar/timer.s
-
-# target to generate assembly for a file
-sylar/timer.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/timer.cc.s
-.PHONY : sylar/timer.cc.s
-
-sylar/util.o: sylar/util.cc.o
-
-.PHONY : sylar/util.o
-
-# target to build an object file
-sylar/util.cc.o:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cc.o
-.PHONY : sylar/util.cc.o
-
-sylar/util.i: sylar/util.cc.i
-
-.PHONY : sylar/util.i
-
-# target to preprocess a source file
-sylar/util.cc.i:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cc.i
-.PHONY : sylar/util.cc.i
-
-sylar/util.s: sylar/util.cc.s
-
-.PHONY : sylar/util.s
-
-# target to generate assembly for a file
-sylar/util.cc.s:
-	$(MAKE) -f CMakeFiles/sylar.dir/build.make CMakeFiles/sylar.dir/sylar/util.cc.s
-.PHONY : sylar/util.cc.s
 
 tests/test_address.o: tests/test_address.cc.o
 
@@ -742,6 +430,60 @@ tests/test_hook.cc.s:
 	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/tests/test_hook.cc.s
 .PHONY : tests/test_hook.cc.s
 
+tests/test_http.o: tests/test_http.cc.o
+
+.PHONY : tests/test_http.o
+
+# target to build an object file
+tests/test_http.cc.o:
+	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cc.o
+.PHONY : tests/test_http.cc.o
+
+tests/test_http.i: tests/test_http.cc.i
+
+.PHONY : tests/test_http.i
+
+# target to preprocess a source file
+tests/test_http.cc.i:
+	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cc.i
+.PHONY : tests/test_http.cc.i
+
+tests/test_http.s: tests/test_http.cc.s
+
+.PHONY : tests/test_http.s
+
+# target to generate assembly for a file
+tests/test_http.cc.s:
+	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/tests/test_http.cc.s
+.PHONY : tests/test_http.cc.s
+
+tests/test_http_parser.o: tests/test_http_parser.cc.o
+
+.PHONY : tests/test_http_parser.o
+
+# target to build an object file
+tests/test_http_parser.cc.o:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cc.o
+.PHONY : tests/test_http_parser.cc.o
+
+tests/test_http_parser.i: tests/test_http_parser.cc.i
+
+.PHONY : tests/test_http_parser.i
+
+# target to preprocess a source file
+tests/test_http_parser.cc.i:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cc.i
+.PHONY : tests/test_http_parser.cc.i
+
+tests/test_http_parser.s: tests/test_http_parser.cc.s
+
+.PHONY : tests/test_http_parser.s
+
+# target to generate assembly for a file
+tests/test_http_parser.cc.s:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cc.s
+.PHONY : tests/test_http_parser.cc.s
+
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 
 .PHONY : tests/test_iomanager.o
@@ -823,6 +565,33 @@ tests/test_socket.cc.s:
 	$(MAKE) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/tests/test_socket.cc.s
 .PHONY : tests/test_socket.cc.s
 
+tests/test_tcp_server.o: tests/test_tcp_server.cc.o
+
+.PHONY : tests/test_tcp_server.o
+
+# target to build an object file
+tests/test_tcp_server.cc.o:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cc.o
+.PHONY : tests/test_tcp_server.cc.o
+
+tests/test_tcp_server.i: tests/test_tcp_server.cc.i
+
+.PHONY : tests/test_tcp_server.i
+
+# target to preprocess a source file
+tests/test_tcp_server.cc.i:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cc.i
+.PHONY : tests/test_tcp_server.cc.i
+
+tests/test_tcp_server.s: tests/test_tcp_server.cc.s
+
+.PHONY : tests/test_tcp_server.s
+
+# target to generate assembly for a file
+tests/test_tcp_server.cc.s:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/tests/test_tcp_server.cc.s
+.PHONY : tests/test_tcp_server.cc.s
+
 tests/test_thread.o: tests/test_thread.cc.o
 
 .PHONY : tests/test_thread.o
@@ -877,6 +646,465 @@ tests/test_util.cc.s:
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/tests/test_util.cc.s
 .PHONY : tests/test_util.cc.s
 
+webserver/address.o: webserver/address.cc.o
+
+.PHONY : webserver/address.o
+
+# target to build an object file
+webserver/address.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/address.cc.o
+.PHONY : webserver/address.cc.o
+
+webserver/address.i: webserver/address.cc.i
+
+.PHONY : webserver/address.i
+
+# target to preprocess a source file
+webserver/address.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/address.cc.i
+.PHONY : webserver/address.cc.i
+
+webserver/address.s: webserver/address.cc.s
+
+.PHONY : webserver/address.s
+
+# target to generate assembly for a file
+webserver/address.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/address.cc.s
+.PHONY : webserver/address.cc.s
+
+webserver/bytearray.o: webserver/bytearray.cc.o
+
+.PHONY : webserver/bytearray.o
+
+# target to build an object file
+webserver/bytearray.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/bytearray.cc.o
+.PHONY : webserver/bytearray.cc.o
+
+webserver/bytearray.i: webserver/bytearray.cc.i
+
+.PHONY : webserver/bytearray.i
+
+# target to preprocess a source file
+webserver/bytearray.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/bytearray.cc.i
+.PHONY : webserver/bytearray.cc.i
+
+webserver/bytearray.s: webserver/bytearray.cc.s
+
+.PHONY : webserver/bytearray.s
+
+# target to generate assembly for a file
+webserver/bytearray.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/bytearray.cc.s
+.PHONY : webserver/bytearray.cc.s
+
+webserver/config.o: webserver/config.cc.o
+
+.PHONY : webserver/config.o
+
+# target to build an object file
+webserver/config.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/config.cc.o
+.PHONY : webserver/config.cc.o
+
+webserver/config.i: webserver/config.cc.i
+
+.PHONY : webserver/config.i
+
+# target to preprocess a source file
+webserver/config.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/config.cc.i
+.PHONY : webserver/config.cc.i
+
+webserver/config.s: webserver/config.cc.s
+
+.PHONY : webserver/config.s
+
+# target to generate assembly for a file
+webserver/config.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/config.cc.s
+.PHONY : webserver/config.cc.s
+
+webserver/fd_manager.o: webserver/fd_manager.cc.o
+
+.PHONY : webserver/fd_manager.o
+
+# target to build an object file
+webserver/fd_manager.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fd_manager.cc.o
+.PHONY : webserver/fd_manager.cc.o
+
+webserver/fd_manager.i: webserver/fd_manager.cc.i
+
+.PHONY : webserver/fd_manager.i
+
+# target to preprocess a source file
+webserver/fd_manager.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fd_manager.cc.i
+.PHONY : webserver/fd_manager.cc.i
+
+webserver/fd_manager.s: webserver/fd_manager.cc.s
+
+.PHONY : webserver/fd_manager.s
+
+# target to generate assembly for a file
+webserver/fd_manager.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fd_manager.cc.s
+.PHONY : webserver/fd_manager.cc.s
+
+webserver/fiber.o: webserver/fiber.cc.o
+
+.PHONY : webserver/fiber.o
+
+# target to build an object file
+webserver/fiber.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fiber.cc.o
+.PHONY : webserver/fiber.cc.o
+
+webserver/fiber.i: webserver/fiber.cc.i
+
+.PHONY : webserver/fiber.i
+
+# target to preprocess a source file
+webserver/fiber.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fiber.cc.i
+.PHONY : webserver/fiber.cc.i
+
+webserver/fiber.s: webserver/fiber.cc.s
+
+.PHONY : webserver/fiber.s
+
+# target to generate assembly for a file
+webserver/fiber.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fiber.cc.s
+.PHONY : webserver/fiber.cc.s
+
+webserver/hook.o: webserver/hook.cc.o
+
+.PHONY : webserver/hook.o
+
+# target to build an object file
+webserver/hook.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/hook.cc.o
+.PHONY : webserver/hook.cc.o
+
+webserver/hook.i: webserver/hook.cc.i
+
+.PHONY : webserver/hook.i
+
+# target to preprocess a source file
+webserver/hook.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/hook.cc.i
+.PHONY : webserver/hook.cc.i
+
+webserver/hook.s: webserver/hook.cc.s
+
+.PHONY : webserver/hook.s
+
+# target to generate assembly for a file
+webserver/hook.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/hook.cc.s
+.PHONY : webserver/hook.cc.s
+
+webserver/http/http.o: webserver/http/http.cc.o
+
+.PHONY : webserver/http/http.o
+
+# target to build an object file
+webserver/http/http.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http.cc.o
+.PHONY : webserver/http/http.cc.o
+
+webserver/http/http.i: webserver/http/http.cc.i
+
+.PHONY : webserver/http/http.i
+
+# target to preprocess a source file
+webserver/http/http.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http.cc.i
+.PHONY : webserver/http/http.cc.i
+
+webserver/http/http.s: webserver/http/http.cc.s
+
+.PHONY : webserver/http/http.s
+
+# target to generate assembly for a file
+webserver/http/http.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http.cc.s
+.PHONY : webserver/http/http.cc.s
+
+webserver/http/http11_parser.o: webserver/http/http11_parser.cc.o
+
+.PHONY : webserver/http/http11_parser.o
+
+# target to build an object file
+webserver/http/http11_parser.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http11_parser.cc.o
+.PHONY : webserver/http/http11_parser.cc.o
+
+webserver/http/http11_parser.i: webserver/http/http11_parser.cc.i
+
+.PHONY : webserver/http/http11_parser.i
+
+# target to preprocess a source file
+webserver/http/http11_parser.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http11_parser.cc.i
+.PHONY : webserver/http/http11_parser.cc.i
+
+webserver/http/http11_parser.s: webserver/http/http11_parser.cc.s
+
+.PHONY : webserver/http/http11_parser.s
+
+# target to generate assembly for a file
+webserver/http/http11_parser.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http11_parser.cc.s
+.PHONY : webserver/http/http11_parser.cc.s
+
+webserver/http/http_parser.o: webserver/http/http_parser.cc.o
+
+.PHONY : webserver/http/http_parser.o
+
+# target to build an object file
+webserver/http/http_parser.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_parser.cc.o
+.PHONY : webserver/http/http_parser.cc.o
+
+webserver/http/http_parser.i: webserver/http/http_parser.cc.i
+
+.PHONY : webserver/http/http_parser.i
+
+# target to preprocess a source file
+webserver/http/http_parser.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_parser.cc.i
+.PHONY : webserver/http/http_parser.cc.i
+
+webserver/http/http_parser.s: webserver/http/http_parser.cc.s
+
+.PHONY : webserver/http/http_parser.s
+
+# target to generate assembly for a file
+webserver/http/http_parser.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_parser.cc.s
+.PHONY : webserver/http/http_parser.cc.s
+
+webserver/http/httpclient_parser.o: webserver/http/httpclient_parser.cc.o
+
+.PHONY : webserver/http/httpclient_parser.o
+
+# target to build an object file
+webserver/http/httpclient_parser.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/httpclient_parser.cc.o
+.PHONY : webserver/http/httpclient_parser.cc.o
+
+webserver/http/httpclient_parser.i: webserver/http/httpclient_parser.cc.i
+
+.PHONY : webserver/http/httpclient_parser.i
+
+# target to preprocess a source file
+webserver/http/httpclient_parser.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/httpclient_parser.cc.i
+.PHONY : webserver/http/httpclient_parser.cc.i
+
+webserver/http/httpclient_parser.s: webserver/http/httpclient_parser.cc.s
+
+.PHONY : webserver/http/httpclient_parser.s
+
+# target to generate assembly for a file
+webserver/http/httpclient_parser.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/httpclient_parser.cc.s
+.PHONY : webserver/http/httpclient_parser.cc.s
+
+webserver/iomanager.o: webserver/iomanager.cc.o
+
+.PHONY : webserver/iomanager.o
+
+# target to build an object file
+webserver/iomanager.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/iomanager.cc.o
+.PHONY : webserver/iomanager.cc.o
+
+webserver/iomanager.i: webserver/iomanager.cc.i
+
+.PHONY : webserver/iomanager.i
+
+# target to preprocess a source file
+webserver/iomanager.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/iomanager.cc.i
+.PHONY : webserver/iomanager.cc.i
+
+webserver/iomanager.s: webserver/iomanager.cc.s
+
+.PHONY : webserver/iomanager.s
+
+# target to generate assembly for a file
+webserver/iomanager.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/iomanager.cc.s
+.PHONY : webserver/iomanager.cc.s
+
+webserver/log.o: webserver/log.cc.o
+
+.PHONY : webserver/log.o
+
+# target to build an object file
+webserver/log.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/log.cc.o
+.PHONY : webserver/log.cc.o
+
+webserver/log.i: webserver/log.cc.i
+
+.PHONY : webserver/log.i
+
+# target to preprocess a source file
+webserver/log.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/log.cc.i
+.PHONY : webserver/log.cc.i
+
+webserver/log.s: webserver/log.cc.s
+
+.PHONY : webserver/log.s
+
+# target to generate assembly for a file
+webserver/log.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/log.cc.s
+.PHONY : webserver/log.cc.s
+
+webserver/scheduler.o: webserver/scheduler.cc.o
+
+.PHONY : webserver/scheduler.o
+
+# target to build an object file
+webserver/scheduler.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/scheduler.cc.o
+.PHONY : webserver/scheduler.cc.o
+
+webserver/scheduler.i: webserver/scheduler.cc.i
+
+.PHONY : webserver/scheduler.i
+
+# target to preprocess a source file
+webserver/scheduler.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/scheduler.cc.i
+.PHONY : webserver/scheduler.cc.i
+
+webserver/scheduler.s: webserver/scheduler.cc.s
+
+.PHONY : webserver/scheduler.s
+
+# target to generate assembly for a file
+webserver/scheduler.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/scheduler.cc.s
+.PHONY : webserver/scheduler.cc.s
+
+webserver/socket.o: webserver/socket.cc.o
+
+.PHONY : webserver/socket.o
+
+# target to build an object file
+webserver/socket.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/socket.cc.o
+.PHONY : webserver/socket.cc.o
+
+webserver/socket.i: webserver/socket.cc.i
+
+.PHONY : webserver/socket.i
+
+# target to preprocess a source file
+webserver/socket.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/socket.cc.i
+.PHONY : webserver/socket.cc.i
+
+webserver/socket.s: webserver/socket.cc.s
+
+.PHONY : webserver/socket.s
+
+# target to generate assembly for a file
+webserver/socket.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/socket.cc.s
+.PHONY : webserver/socket.cc.s
+
+webserver/thread.o: webserver/thread.cc.o
+
+.PHONY : webserver/thread.o
+
+# target to build an object file
+webserver/thread.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/thread.cc.o
+.PHONY : webserver/thread.cc.o
+
+webserver/thread.i: webserver/thread.cc.i
+
+.PHONY : webserver/thread.i
+
+# target to preprocess a source file
+webserver/thread.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/thread.cc.i
+.PHONY : webserver/thread.cc.i
+
+webserver/thread.s: webserver/thread.cc.s
+
+.PHONY : webserver/thread.s
+
+# target to generate assembly for a file
+webserver/thread.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/thread.cc.s
+.PHONY : webserver/thread.cc.s
+
+webserver/timer.o: webserver/timer.cc.o
+
+.PHONY : webserver/timer.o
+
+# target to build an object file
+webserver/timer.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/timer.cc.o
+.PHONY : webserver/timer.cc.o
+
+webserver/timer.i: webserver/timer.cc.i
+
+.PHONY : webserver/timer.i
+
+# target to preprocess a source file
+webserver/timer.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/timer.cc.i
+.PHONY : webserver/timer.cc.i
+
+webserver/timer.s: webserver/timer.cc.s
+
+.PHONY : webserver/timer.s
+
+# target to generate assembly for a file
+webserver/timer.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/timer.cc.s
+.PHONY : webserver/timer.cc.s
+
+webserver/util.o: webserver/util.cc.o
+
+.PHONY : webserver/util.o
+
+# target to build an object file
+webserver/util.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/util.cc.o
+.PHONY : webserver/util.cc.o
+
+webserver/util.i: webserver/util.cc.i
+
+.PHONY : webserver/util.i
+
+# target to preprocess a source file
+webserver/util.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/util.cc.i
+.PHONY : webserver/util.cc.i
+
+webserver/util.s: webserver/util.cc.s
+
+.PHONY : webserver/util.s
+
+# target to generate assembly for a file
+webserver/util.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/util.cc.s
+.PHONY : webserver/util.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -884,57 +1112,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
+	@echo "... test_http_parser"
+	@echo "... test_http"
 	@echo "... edit_cache"
+	@echo "... test_tcp_server"
 	@echo "... test_address"
 	@echo "... test_hook"
 	@echo "... test_iomanager"
 	@echo "... test_config"
-	@echo "... sylar"
+	@echo "... webserver"
+	@echo "... test_scheduler"
 	@echo "... test_bytearray"
 	@echo "... test_thread"
 	@echo "... test_util"
 	@echo "... test_socket"
 	@echo "... test_fiber"
-	@echo "... test_scheduler"
-	@echo "... sylar/address.o"
-	@echo "... sylar/address.i"
-	@echo "... sylar/address.s"
-	@echo "... sylar/bytearray.o"
-	@echo "... sylar/bytearray.i"
-	@echo "... sylar/bytearray.s"
-	@echo "... sylar/config.o"
-	@echo "... sylar/config.i"
-	@echo "... sylar/config.s"
-	@echo "... sylar/fd_manager.o"
-	@echo "... sylar/fd_manager.i"
-	@echo "... sylar/fd_manager.s"
-	@echo "... sylar/fiber.o"
-	@echo "... sylar/fiber.i"
-	@echo "... sylar/fiber.s"
-	@echo "... sylar/hook.o"
-	@echo "... sylar/hook.i"
-	@echo "... sylar/hook.s"
-	@echo "... sylar/iomanager.o"
-	@echo "... sylar/iomanager.i"
-	@echo "... sylar/iomanager.s"
-	@echo "... sylar/log.o"
-	@echo "... sylar/log.i"
-	@echo "... sylar/log.s"
-	@echo "... sylar/scheduler.o"
-	@echo "... sylar/scheduler.i"
-	@echo "... sylar/scheduler.s"
-	@echo "... sylar/socket.o"
-	@echo "... sylar/socket.i"
-	@echo "... sylar/socket.s"
-	@echo "... sylar/thread.o"
-	@echo "... sylar/thread.i"
-	@echo "... sylar/thread.s"
-	@echo "... sylar/timer.o"
-	@echo "... sylar/timer.i"
-	@echo "... sylar/timer.s"
-	@echo "... sylar/util.o"
-	@echo "... sylar/util.i"
-	@echo "... sylar/util.s"
 	@echo "... tests/test_address.o"
 	@echo "... tests/test_address.i"
 	@echo "... tests/test_address.s"
@@ -950,6 +1142,12 @@ help:
 	@echo "... tests/test_hook.o"
 	@echo "... tests/test_hook.i"
 	@echo "... tests/test_hook.s"
+	@echo "... tests/test_http.o"
+	@echo "... tests/test_http.i"
+	@echo "... tests/test_http.s"
+	@echo "... tests/test_http_parser.o"
+	@echo "... tests/test_http_parser.i"
+	@echo "... tests/test_http_parser.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"
@@ -959,12 +1157,66 @@ help:
 	@echo "... tests/test_socket.o"
 	@echo "... tests/test_socket.i"
 	@echo "... tests/test_socket.s"
+	@echo "... tests/test_tcp_server.o"
+	@echo "... tests/test_tcp_server.i"
+	@echo "... tests/test_tcp_server.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"
 	@echo "... tests/test_util.o"
 	@echo "... tests/test_util.i"
 	@echo "... tests/test_util.s"
+	@echo "... webserver/address.o"
+	@echo "... webserver/address.i"
+	@echo "... webserver/address.s"
+	@echo "... webserver/bytearray.o"
+	@echo "... webserver/bytearray.i"
+	@echo "... webserver/bytearray.s"
+	@echo "... webserver/config.o"
+	@echo "... webserver/config.i"
+	@echo "... webserver/config.s"
+	@echo "... webserver/fd_manager.o"
+	@echo "... webserver/fd_manager.i"
+	@echo "... webserver/fd_manager.s"
+	@echo "... webserver/fiber.o"
+	@echo "... webserver/fiber.i"
+	@echo "... webserver/fiber.s"
+	@echo "... webserver/hook.o"
+	@echo "... webserver/hook.i"
+	@echo "... webserver/hook.s"
+	@echo "... webserver/http/http.o"
+	@echo "... webserver/http/http.i"
+	@echo "... webserver/http/http.s"
+	@echo "... webserver/http/http11_parser.o"
+	@echo "... webserver/http/http11_parser.i"
+	@echo "... webserver/http/http11_parser.s"
+	@echo "... webserver/http/http_parser.o"
+	@echo "... webserver/http/http_parser.i"
+	@echo "... webserver/http/http_parser.s"
+	@echo "... webserver/http/httpclient_parser.o"
+	@echo "... webserver/http/httpclient_parser.i"
+	@echo "... webserver/http/httpclient_parser.s"
+	@echo "... webserver/iomanager.o"
+	@echo "... webserver/iomanager.i"
+	@echo "... webserver/iomanager.s"
+	@echo "... webserver/log.o"
+	@echo "... webserver/log.i"
+	@echo "... webserver/log.s"
+	@echo "... webserver/scheduler.o"
+	@echo "... webserver/scheduler.i"
+	@echo "... webserver/scheduler.s"
+	@echo "... webserver/socket.o"
+	@echo "... webserver/socket.i"
+	@echo "... webserver/socket.s"
+	@echo "... webserver/thread.o"
+	@echo "... webserver/thread.i"
+	@echo "... webserver/thread.s"
+	@echo "... webserver/timer.o"
+	@echo "... webserver/timer.i"
+	@echo "... webserver/timer.s"
+	@echo "... webserver/util.o"
+	@echo "... webserver/util.i"
+	@echo "... webserver/util.s"
 .PHONY : help
 
 

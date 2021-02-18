@@ -6,7 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/marulong/sylar/sylar/fiber.h
+/home/marulong/webserver/tests/test_hook.cc
+../webserver/hook.h
+/home/marulong/webserver/webserver/hook.h
+../webserver/iomanager.h
+/home/marulong/webserver/webserver/iomanager.h
+../webserver/log.h
+/home/marulong/webserver/webserver/log.h
+sys/types.h
+-
+sys/socket.h
+-
+arpa/inet.h
+-
+unistd.h
+-
+fcntl.h
+-
+string.h
+-
+
+/home/marulong/webserver/webserver/fiber.h
 memory
 -
 ucontext.h
@@ -14,9 +34,9 @@ ucontext.h
 functional
 -
 thread.h
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 
-/home/marulong/sylar/sylar/hook.h
+/home/marulong/webserver/webserver/hook.h
 sys/types.h
 -
 sys/socket.h
@@ -26,13 +46,13 @@ stdint.h
 unistd.h
 -
 
-/home/marulong/sylar/sylar/iomanager.h
+/home/marulong/webserver/webserver/iomanager.h
 scheduler.h
-/home/marulong/sylar/sylar/scheduler.h
+/home/marulong/webserver/webserver/scheduler.h
 timer.h
-/home/marulong/sylar/sylar/timer.h
+/home/marulong/webserver/webserver/timer.h
 
-/home/marulong/sylar/sylar/log.h
+/home/marulong/webserver/webserver/log.h
 iostream
 -
 string
@@ -56,35 +76,35 @@ functional
 stdarg.h
 -
 util.h
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 singleton.h
-/home/marulong/sylar/sylar/singleton.h
+/home/marulong/webserver/webserver/singleton.h
 algorithm
 -
 thread.h
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 
-/home/marulong/sylar/sylar/noncopyable.h
+/home/marulong/webserver/webserver/noncopyable.h
 
-/home/marulong/sylar/sylar/scheduler.h
+/home/marulong/webserver/webserver/scheduler.h
 memory
 -
 thread.h
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 fiber.h
-/home/marulong/sylar/sylar/fiber.h
+/home/marulong/webserver/webserver/fiber.h
 thread.h
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 vector
 -
 list
 -
 
-/home/marulong/sylar/sylar/singleton.h
+/home/marulong/webserver/webserver/singleton.h
 memory
 -
 
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 thread
 -
 functional
@@ -99,20 +119,20 @@ stdint.h
 -
 atomic
 -
-../sylar/noncopyable.h
-/home/marulong/sylar/sylar/noncopyable.h
+../webserver/noncopyable.h
+/home/marulong/webserver/webserver/noncopyable.h
 
-/home/marulong/sylar/sylar/timer.h
+/home/marulong/webserver/webserver/timer.h
 memory
 -
 thread.h
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 set
 -
 vector
 -
 
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 pthread.h
 -
 unistd.h
@@ -128,25 +148,5 @@ stdint.h
 vector
 -
 string
--
-
-/home/marulong/sylar/tests/test_hook.cc
-../sylar/hook.h
-/home/marulong/sylar/sylar/hook.h
-../sylar/iomanager.h
-/home/marulong/sylar/sylar/iomanager.h
-../sylar/log.h
-/home/marulong/sylar/sylar/log.h
-sys/types.h
--
-sys/socket.h
--
-arpa/inet.h
--
-unistd.h
--
-fcntl.h
--
-string.h
 -
 

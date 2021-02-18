@@ -1,20 +1,20 @@
-#include "../sylar/socket.h"
-#include "../sylar/sylar.h"
-#include "../sylar/iomanager.h"
+#include "../webserver/socket.h"
+#include "../webserver/sylar.h"
+#include "../webserver/iomanager.h"
 
-static sylar::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+static server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
 
 void test_socket() {
-    //std::vector<sylar::Address::ptr> addrs;
-    //sylar::Address::Lookup(addrs, "www.baidu.com", AF_INET);
-    //sylar::IPAddress::ptr addr;
+    //std::vector<server_name::Address::ptr> addrs;
+    //server_name::Address::Lookup(addrs, "www.baidu.com", AF_INET);
+    //server_name::IPAddress::ptr addr;
     //for(auto &i : addrs) {
-    //    addr = std::dynamic_pointer_cast<sylar::IPAddress>(i);
+    //    addr = std::dynamic_pointer_cast<server_name::IPAddress>(i);
     //    if(addr) {
     //        break;
     //    }
     //}
-    sylar::IPAddress::ptr addr = sylar::Address::LookupAnyIPAdress("www.baidu.com");
+    server_name::IPAddress::ptr addr = server_name::Address::LookupAnyIPAdress("www.baidu.com");
     if(addr) {
         SYLAR_LOG_INFO(g_logger) << "get address:" << addr->toString();
     } else {
@@ -22,7 +22,7 @@ void test_socket() {
         return;
     }
 
-    sylar::Socket::ptr sock = sylar::Socket::CreateTCP(addr);
+    server_name::Socket::ptr sock = server_name::Socket::CreateTCP(addr);
     addr->setPort(80);
     if(!sock->connect(addr)) {
         SYLAR_LOG_ERROR(g_logger) << "connect " << addr->toString() << " fail";
@@ -52,7 +52,7 @@ void test_socket() {
 }
 
 int main() {
-    sylar::IOManager iom;
+    server_name::IOManager iom;
     iom.schedule(test_socket);
     return 0;
 }

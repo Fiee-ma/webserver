@@ -354,11 +354,19 @@ yaml-cpp/node/parse.h
 yaml-cpp/node/emit.h
 ../yaml-cpp/include/yaml-cpp/yaml-cpp/node/emit.h
 
-/home/marulong/sylar/sylar/config.h
+/home/marulong/webserver/tests/test_config.cc
+../webserver/config.h
+/home/marulong/webserver/webserver/config.h
+../webserver/log.h
+/home/marulong/webserver/webserver/log.h
+yaml-cpp/yaml.h
+-
+
+/home/marulong/webserver/webserver/config.h
 boost/lexical_cast.hpp
 -
 log.h
-/home/marulong/sylar/sylar/log.h
+/home/marulong/webserver/webserver/log.h
 string
 -
 yaml-cpp/yaml.h
@@ -378,7 +386,7 @@ unordered_set
 functional
 -
 
-/home/marulong/sylar/sylar/log.h
+/home/marulong/webserver/webserver/log.h
 iostream
 -
 string
@@ -402,21 +410,21 @@ functional
 stdarg.h
 -
 util.h
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 singleton.h
-/home/marulong/sylar/sylar/singleton.h
+/home/marulong/webserver/webserver/singleton.h
 algorithm
 -
 thread.h
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 
-/home/marulong/sylar/sylar/noncopyable.h
+/home/marulong/webserver/webserver/noncopyable.h
 
-/home/marulong/sylar/sylar/singleton.h
+/home/marulong/webserver/webserver/singleton.h
 memory
 -
 
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 thread
 -
 functional
@@ -431,10 +439,10 @@ stdint.h
 -
 atomic
 -
-../sylar/noncopyable.h
-/home/marulong/sylar/sylar/noncopyable.h
+../webserver/noncopyable.h
+/home/marulong/webserver/webserver/noncopyable.h
 
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 pthread.h
 -
 unistd.h
@@ -450,13 +458,5 @@ stdint.h
 vector
 -
 string
--
-
-/home/marulong/sylar/tests/test_config.cc
-../sylar/config.h
-/home/marulong/sylar/sylar/config.h
-../sylar/log.h
-/home/marulong/sylar/sylar/log.h
-yaml-cpp/yaml.h
 -
 

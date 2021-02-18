@@ -33,10 +33,10 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o
  ../yaml-cpp/include/yaml-cpp/stlemitter.h
  ../yaml-cpp/include/yaml-cpp/traits.h
  ../yaml-cpp/include/yaml-cpp/yaml.h
- /home/marulong/sylar/sylar/config.h
- /home/marulong/sylar/sylar/log.h
- /home/marulong/sylar/sylar/noncopyable.h
- /home/marulong/sylar/sylar/singleton.h
- /home/marulong/sylar/sylar/thread.h
- /home/marulong/sylar/sylar/util.h
- /home/marulong/sylar/tests/test_config.cc
+ /home/marulong/webserver/tests/test_config.cc
+ /home/marulong/webserver/webserver/config.h
+ /home/marulong/webserver/webserver/log.h
+ /home/marulong/webserver/webserver/noncopyable.h
+ /home/marulong/webserver/webserver/singleton.h
+ /home/marulong/webserver/webserver/thread.h
+ /home/marulong/webserver/webserver/util.h

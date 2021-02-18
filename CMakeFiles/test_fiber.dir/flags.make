@@ -6,7 +6,7 @@ CXX_FLAGS =  -rdynamic -O3 -fPIC -ggdb -std=c++11 -Wall -Wno-deprecated -Werror 
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/marulong/sylar/. -I/home/marulong/sylar/../yaml-cpp/include 
+CXX_INCLUDES = -I/home/marulong/webserver/. -I/home/marulong/webserver/../yaml-cpp/include 
 
 # Custom defines: CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o_DEFINES = __FILE__="tests/test_fiber.cc"
 

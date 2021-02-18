@@ -6,7 +6,17 @@
 
 #IncludeRegexTransform: 
 
-/home/marulong/sylar/sylar/bytearray.h
+/home/marulong/webserver/tests/test_bytearray.cc
+../webserver/bytearray.h
+/home/marulong/webserver/webserver/bytearray.h
+../webserver/log.h
+/home/marulong/webserver/webserver/log.h
+../webserver/macro.h
+/home/marulong/webserver/webserver/macro.h
+stdint.h
+-
+
+/home/marulong/webserver/webserver/bytearray.h
 memory
 -
 string
@@ -20,7 +30,7 @@ sys/socket.h
 vector
 -
 
-/home/marulong/sylar/sylar/log.h
+/home/marulong/webserver/webserver/log.h
 iostream
 -
 string
@@ -44,31 +54,31 @@ functional
 stdarg.h
 -
 util.h
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 singleton.h
-/home/marulong/sylar/sylar/singleton.h
+/home/marulong/webserver/webserver/singleton.h
 algorithm
 -
 thread.h
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 
-/home/marulong/sylar/sylar/macro.h
+/home/marulong/webserver/webserver/macro.h
 string.h
 -
 assert.h
 -
 util.h
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 log.h
-/home/marulong/sylar/sylar/log.h
+/home/marulong/webserver/webserver/log.h
 
-/home/marulong/sylar/sylar/noncopyable.h
+/home/marulong/webserver/webserver/noncopyable.h
 
-/home/marulong/sylar/sylar/singleton.h
+/home/marulong/webserver/webserver/singleton.h
 memory
 -
 
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 thread
 -
 functional
@@ -83,10 +93,10 @@ stdint.h
 -
 atomic
 -
-../sylar/noncopyable.h
-/home/marulong/sylar/sylar/noncopyable.h
+../webserver/noncopyable.h
+/home/marulong/webserver/webserver/noncopyable.h
 
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 pthread.h
 -
 unistd.h
@@ -102,15 +112,5 @@ stdint.h
 vector
 -
 string
--
-
-/home/marulong/sylar/tests/test_bytearray.cc
-../sylar/bytearray.h
-/home/marulong/sylar/sylar/bytearray.h
-../sylar/log.h
-/home/marulong/sylar/sylar/log.h
-../sylar/macro.h
-/home/marulong/sylar/sylar/macro.h
-stdint.h
 -
 

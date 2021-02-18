@@ -32,15 +32,15 @@ CMakeFiles/test_util.dir/tests/test_util.cc.o: ../yaml-cpp/include/yaml-cpp/pars
 CMakeFiles/test_util.dir/tests/test_util.cc.o: ../yaml-cpp/include/yaml-cpp/stlemitter.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: ../yaml-cpp/include/yaml-cpp/traits.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: ../yaml-cpp/include/yaml-cpp/yaml.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/config.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/fiber.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/log.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/macro.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/noncopyable.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/scheduler.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/singleton.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/sylar.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/thread.h
-CMakeFiles/test_util.dir/tests/test_util.cc.o: sylar/util.h
 CMakeFiles/test_util.dir/tests/test_util.cc.o: tests/test_util.cc
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/config.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/fiber.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/log.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/macro.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/noncopyable.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/scheduler.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/singleton.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/sylar.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/thread.h
+CMakeFiles/test_util.dir/tests/test_util.cc.o: webserver/util.h
 

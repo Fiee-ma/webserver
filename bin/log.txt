@@ -132,3 +132,45 @@ sex: false
       file: log.txt
       formatter: "%d%T[%p]%T%m%n"
     - type: StdoutLogAppender
+2021-02-14 21:07:32	hello system
+
+2021-02-14 21:07:32 - hello system
+
+2021-02-14 21:07:32 -  name= fiber.stack_size description= fiber stack size typename= j value= 1048576
+2021-02-14 21:07:32 -  name= logs description= logs config typename= St3setIN5sylar9LogDefineESt4lessIS1_ESaIS1_EE value= - name: root
+  level: INFO
+  formatter: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  formatter: "%d%T[%p%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+      formatter: "%d%T[%p]%T%m%n"
+    - type: StdoutLogAppender
+2021-02-14 21:07:32 -  name= tcp.connect.timeout description= tcp connect timeout typename= i value= 5000
+2021-02-15 19:58:12	hello system
+
+2021-02-15 19:58:12 - hello system
+
+2021-02-15 19:58:12 -  name= fiber.stack_size description= fiber stack size typename= j value= 1048576
+2021-02-15 19:58:12 -  name= logs description= logs config typename= St3setIN5sylar9LogDefineESt4lessIS1_ESaIS1_EE value= - name: root
+  level: INFO
+  formatter: "%d%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+    - type: StdoutLogAppender
+- name: system
+  level: DEBUG
+  formatter: "%d%T[%p%T%m%n"
+  appenders:
+    - type: FileLogAppender
+      file: log.txt
+      formatter: "%d%T[%p]%T%m%n"
+    - type: StdoutLogAppender
+2021-02-15 19:58:12 -  name= tcp.connect.timeout description= tcp connect timeout typename= i value= 5000

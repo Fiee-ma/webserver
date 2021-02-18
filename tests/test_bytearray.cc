@@ -1,16 +1,16 @@
-#include "../sylar/bytearray.h"
-#include "../sylar/log.h"
-#include "../sylar/macro.h"
+#include "../webserver/bytearray.h"
+#include "../webserver/log.h"
+#include "../webserver/macro.h"
 #include <stdint.h>
 
-static sylar::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+static server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
 void test() {
 #define XX(type, len, write_fun, read_fun, base_len) {\
     std::vector<type> vec; \
     for(int i = 0; i < len; ++i) { \
         vec.push_back(rand()); \
     } \
-    sylar::ByteArray::ptr ba(new sylar::ByteArray(base_len)); \
+    server_name::ByteArray::ptr ba(new server_name::ByteArray(base_len)); \
     for(auto& i : vec) { \
         ba->write_fun(i); \
     } \
@@ -46,7 +46,7 @@ void test() {
     for(int i = 0; i < len; ++i) { \
         vec.push_back(rand()); \
     } \
-    sylar::ByteArray::ptr ba(new sylar::ByteArray(base_len)); \
+    server_name::ByteArray::ptr ba(new server_name::ByteArray(base_len)); \
     for(auto& i : vec) { \
         ba->write_fun(i); \
     } \
@@ -62,7 +62,7 @@ void test() {
                     << " size=" << ba->getSize(); \
     ba->setPosition(0); \
     SYLAR_ASSERT(ba->writeToFile("/tmp/" #type "_" #len "-" #read_fun ".dat")); \
-    sylar::ByteArray::ptr ba2(new sylar::ByteArray(base_len * 2)); \
+    server_name::ByteArray::ptr ba2(new server_name::ByteArray(base_len * 2)); \
     SYLAR_ASSERT(ba2->readFromFile("/tmp/" #type "_" #len "-" #read_fun ".dat")); \
     ba2->setPosition(0); \
     SYLAR_ASSERT(ba->toString() == ba2->toString()); \

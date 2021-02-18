@@ -6,7 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/marulong/sylar/sylar/address.h
+/home/marulong/webserver/tests/test_address.cc
+../webserver/address.h
+/home/marulong/webserver/webserver/address.h
+../webserver/log.h
+/home/marulong/webserver/webserver/log.h
+
+/home/marulong/webserver/webserver/address.h
 memory
 -
 string
@@ -30,9 +36,9 @@ vector
 map
 -
 log.h
-/home/marulong/sylar/sylar/log.h
+/home/marulong/webserver/webserver/log.h
 
-/home/marulong/sylar/sylar/log.h
+/home/marulong/webserver/webserver/log.h
 iostream
 -
 string
@@ -56,21 +62,21 @@ functional
 stdarg.h
 -
 util.h
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 singleton.h
-/home/marulong/sylar/sylar/singleton.h
+/home/marulong/webserver/webserver/singleton.h
 algorithm
 -
 thread.h
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 
-/home/marulong/sylar/sylar/noncopyable.h
+/home/marulong/webserver/webserver/noncopyable.h
 
-/home/marulong/sylar/sylar/singleton.h
+/home/marulong/webserver/webserver/singleton.h
 memory
 -
 
-/home/marulong/sylar/sylar/thread.h
+/home/marulong/webserver/webserver/thread.h
 thread
 -
 functional
@@ -85,10 +91,10 @@ stdint.h
 -
 atomic
 -
-../sylar/noncopyable.h
-/home/marulong/sylar/sylar/noncopyable.h
+../webserver/noncopyable.h
+/home/marulong/webserver/webserver/noncopyable.h
 
-/home/marulong/sylar/sylar/util.h
+/home/marulong/webserver/webserver/util.h
 pthread.h
 -
 unistd.h
@@ -105,10 +111,4 @@ vector
 -
 string
 -
-
-/home/marulong/sylar/tests/test_address.cc
-../sylar/address.h
-/home/marulong/sylar/sylar/address.h
-../sylar/log.h
-/home/marulong/sylar/sylar/log.h
 

@@ -12,6 +12,10 @@ file(REMOVE_RECURSE
   "CMakeFiles/sylar.dir/sylar/fd_manager.cc.o"
   "CMakeFiles/sylar.dir/sylar/socket.cc.o"
   "CMakeFiles/sylar.dir/sylar/bytearray.cc.o"
+  "CMakeFiles/sylar.dir/sylar/http/http.cc.o"
+  "CMakeFiles/sylar.dir/sylar/http/http11_parser.cc.o"
+  "CMakeFiles/sylar.dir/sylar/http/httpclient_parser.cc.o"
+  "CMakeFiles/sylar.dir/sylar/http/http_parser.cc.o"
   "lib/libsylar.pdb"
   "lib/libsylar.so"
 )

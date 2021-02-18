@@ -1,4 +1,4 @@
-# Install script for directory: /home/marulong/sylar
+# Install script for directory: /home/marulong/webserver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/marulong/sylar/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/marulong/webserver/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

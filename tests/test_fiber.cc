@@ -1,42 +1,39 @@
-#include "../sylar/sylar.h"
 
-sylar::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+#include "../webserver/sylar.h"
+
+server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
 
 void run_in_fiber() {
     SYLAR_LOG_INFO(g_logger) << "run_in_fiber begin";
-    sylar::Fiber::YieldToHold();
-    SYLAR_LOG_INFO(g_logger) << "run_in_fiber_hold";
-    sylar::Fiber::YieldToHold();
-    SYLAR_LOG_INFO(g_logger) << "run_in_fiber_hold_end";
-    sylar::Fiber::YieldToHold();
+    server_name::Fiber::YieldToHold();
+    SYLAR_LOG_INFO(g_logger) << "run_in_fiber end";
+    server_name::Fiber::YieldToHold();
 }
 
 void test_fiber() {
+    SYLAR_LOG_INFO(g_logger) << "main begin -1";
     {
-        sylar::Fiber::GetThis();
+        server_name::Fiber::GetThis();
         SYLAR_LOG_INFO(g_logger) << "main begin";
-        sylar::Fiber::ptr fiber(new sylar::Fiber(run_in_fiber));
+        server_name::Fiber::ptr fiber(new server_name::Fiber(run_in_fiber));
         fiber->swapIn();
-        SYLAR_LOG_INFO(g_logger) << "main_run_in_fiber_hold1_return";
+        SYLAR_LOG_INFO(g_logger) << "main after swapIn";
         fiber->swapIn();
-        SYLAR_LOG_INFO(g_logger) << "main_run_in_fiber_hold2_return";
-        fiber->swapIn();
-        SYLAR_LOG_INFO(g_logger) << "main return";
-        fiber->swapIn();
-        SYLAR_LOG_INFO(g_logger) << "hahahahahahaha";
+        SYLAR_LOG_INFO(g_logger) << "main after end";
         fiber->swapIn();
     }
-    SYLAR_LOG_INFO(g_logger) << "main return2";
+    SYLAR_LOG_INFO(g_logger) << "main after end2";
 }
 
-int main() {
-    std::vector<sylar::Thread::ptr> vec;
-    for(int i = 0; i < 3; ++i) {
-        vec.push_back(sylar::Thread::ptr(
-                    new sylar::Thread(&test_fiber, "name_" + std::to_string(i))));
-    }
+int main(int argc, char** argv) {
+    server_name::Thread::SetName("main");
 
-    for(auto &i : vec) {
+    std::vector<server_name::Thread::ptr> thrs;
+    for(int i = 0; i < 3; ++i) {
+        thrs.push_back(server_name::Thread::ptr(
+                    new server_name::Thread(&test_fiber, "name_" + std::to_string(i))));
+    }
+    for(auto i : thrs) {
         i->join();
     }
     return 0;
