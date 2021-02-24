@@ -33,14 +33,14 @@ CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: ../yaml-cpp/include/yaml-cpp/st
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: ../yaml-cpp/include/yaml-cpp/traits.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: ../yaml-cpp/include/yaml-cpp/yaml.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: tests/test_fiber.cc
-CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/config.h
-CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/fiber.h
+CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/assert.h
+CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/coroutine.h
+CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/coroutinescheduler.h
+CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/fileconfig.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/log.h
-CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/macro.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/noncopyable.h
-CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/scheduler.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/singleton.h
-CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/sylar.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/thread.h
 CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/util.h
+CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o: webserver/webserver.h
 

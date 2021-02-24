@@ -7,7 +7,7 @@ namespace server_name {
 static thread_local Thread *t_thread = nullptr;
 static thread_local std::string t_thread_name = "UNKNOW";
 
-static server_name::Logger::ptr g_logger = SYLAR_LOG_NAME("system");
+static server_name::Logger::ptr g_logger = WEBSERVER_LOG_NAME("system");
 
 Semaphore::Semaphore(uint32_t count){
     if(sem_init(&m_semaphore, 0, count)) {
@@ -54,7 +54,7 @@ Thread::Thread(std::function<void()> cb, const std::string &name)
 
     int rt = pthread_create(&m_thread, NULL, &Thread::run, this);
     if(rt != 0) {
-        SYLAR_LOG_ERROR(g_logger) << "pthread_create thread fail, rt = " << rt
+        WEBSERVER_LOG_ERROR(g_logger) << "pthread_create thread fail, rt = " << rt
             << " name = " << name;
         throw std::logic_error("pthread_create error");
     }
@@ -72,7 +72,7 @@ void Thread::join() {
     if(m_thread != 0) {
         int rt = pthread_join(m_thread, NULL);
         if(rt != 0) {
-            SYLAR_LOG_ERROR(g_logger) << "pthread_join thread fail, rt = " << rt;
+            WEBSERVER_LOG_ERROR(g_logger) << "pthread_join thread fail, rt = " << rt;
             throw std::logic_error("pthread_join error");
         }
         m_thread = 0;

@@ -4,10 +4,10 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <sys/ioctl.h>
-#include "config.h"
+#include "fileconfig.h"
 #include "log.h"
 #include "hook.h"
-#include "fiber.h"
+#include "coroutine.h"
 #include "iomanager.h"
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -17,7 +17,7 @@
 #include <string.h>
 
 
-server_name::Logger::ptr g_logger = SYLAR_LOG_NAME("system");
+server_name::Logger::ptr g_logger = WEBSERVER_LOG_NAME("system");
 namespace server_name {
 
 static server_name::ConfigVar<int>::ptr g_tcp_connect_timeout =
@@ -65,7 +65,7 @@ struct _HookIniter {
         s_connect_timeout = g_tcp_connect_timeout->getValue();
 
         g_tcp_connect_timeout->addListener([](const int &old_value, const int &new_value){
-            SYLAR_LOG_INFO(g_logger) << "tcp connect timeout changed from " <<
+            WEBSERVER_LOG_INFO(g_logger) << "tcp connect timeout changed from " <<
                            old_value <<" " << new_value;
             s_connect_timeout = new_value;
         });
@@ -94,8 +94,6 @@ static ssize_t do_io(int fd, OriginFun fun, const char *hook_fun_name,
     if(!server_name::t_hook_enable) {
         return fun(fd, std::forward<Args>(args)...);
     }
-
-    SYLAR_LOG_DEBUG(g_logger) << "do_io<" << hook_fun_name << ">";
 
     server_name::FdCtx::ptr ctx = server_name::FdMgr::GetInstance()->get(fd);
     if(!ctx) {
@@ -138,14 +136,14 @@ retry:
 
         int rt = iom->addEvent(fd, (server_name::IOManager::Event)(event));
         if(rt) {
-            SYLAR_LOG_ERROR(g_logger) << hook_fun_name << " addEvent("
+            WEBSERVER_LOG_ERROR(g_logger) << hook_fun_name << " addEvent("
                 << fd << ", " << event << ")";
             if(timer) {
                 timer->cancel();
             }
             return -1;
         } else {
-            server_name::Fiber::YieldToHold();   // 如果事件触发，或者定时器超时，都会从这返回
+            server_name::Coroutine::YieldToHold();   // 如果事件触发，或者定时器超时，都会从这返回
             if(timer) {
                 timer->cancel();
             }
@@ -170,13 +168,13 @@ unsigned int sleep(unsigned int seconds) {
         return sleep_f(seconds);
     }
 
-    server_name::Fiber::ptr fiber = server_name::Fiber::GetThis();
+    server_name::Coroutine::ptr coroutine = server_name::Coroutine::GetThis();
     server_name::IOManager *iom = server_name::IOManager::GetThis();
     iom->addTimer(seconds * 1000, std::bind((void(server_name::Scheduler::*)
-                (server_name::Fiber::ptr, int thread))&server_name::IOManager::schedule
-                ,iom, fiber, -1));
+                (server_name::Coroutine::ptr, int thread))&server_name::IOManager::schedule
+                ,iom, coroutine, -1));
 
-    server_name::Fiber::YieldToHold();
+    server_name::Coroutine::YieldToHold();
     return 0;
 }
 
@@ -185,13 +183,13 @@ int usleep(useconds_t usec) {
         return usleep_f(usec);
     }
 
-    server_name::Fiber::ptr fiber = server_name::Fiber::GetThis();
+    server_name::Coroutine::ptr coroutine = server_name::Coroutine::GetThis();
     server_name::IOManager *iom = server_name::IOManager::GetThis();
     iom->addTimer(usec / 1000, std::bind((void(server_name::Scheduler::*)
-                (server_name::Fiber::ptr, int thread))&server_name::IOManager::schedule
-                ,iom, fiber, -1));
+                (server_name::Coroutine::ptr, int thread))&server_name::IOManager::schedule
+                ,iom, coroutine, -1));
 
-    server_name::Fiber::YieldToHold();
+    server_name::Coroutine::YieldToHold();
     return 0;
 }
 
@@ -201,13 +199,13 @@ int nanosleep(const struct timespec *req, struct timespec *rem) {
     }
 
     int timeout_ms = req->tv_sec + req->tv_nsec / 1000 / 1000;
-    server_name::Fiber::ptr fiber = server_name::Fiber::GetThis();
+    server_name::Coroutine::ptr coroutine = server_name::Coroutine::GetThis();
     server_name::IOManager *iom = server_name::IOManager::GetThis();
     iom->addTimer(timeout_ms, std::bind((void(server_name::Scheduler::*)
-                (server_name::Fiber::ptr, int thread))&server_name::IOManager::schedule
-                ,iom, fiber, -1));
+                (server_name::Coroutine::ptr, int thread))&server_name::IOManager::schedule
+                ,iom, coroutine, -1));
 
-    server_name::Fiber::YieldToHold();
+    server_name::Coroutine::YieldToHold();
     return 0;
 }
 
@@ -227,7 +225,6 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
     if(!server_name::t_hook_enable) {
         return connect_f(sockfd, addr, addrlen);
     }
-    SYLAR_LOG_DEBUG(g_logger) << "FdMgr::GetInstance()->get(sockfd)";
     server_name::FdCtx::ptr ctx = server_name::FdMgr::GetInstance()->get(sockfd);
     if(!ctx || ctx->isClose()) {
         errno = EBADF;
@@ -257,7 +254,7 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
         return n;
     }
 
-    SYLAR_LOG_DEBUG(g_logger) << "IOManager::GetThis() before";
+    WEBSERVER_LOG_DEBUG(g_logger) << "IOManager::GetThis() before";
     server_name::IOManager *iom = server_name::IOManager::GetThis();
     server_name::Timer::ptr timer;
     std::shared_ptr<timer_info> tinfo(new timer_info);
@@ -276,7 +273,7 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
 
     int rt = iom->addEvent(sockfd, server_name::IOManager::WRITE);
     if(rt == 0) {
-        server_name::Fiber::YieldToHold();
+        server_name::Coroutine::YieldToHold();
         if(timer) {
             timer->cancel();
         }
@@ -288,7 +285,7 @@ int connect_with_timeout(int sockfd, const struct sockaddr *addr, socklen_t addr
         if(timer) {
             timer->cancel();
         }
-        SYLAR_LOG_ERROR(g_logger) << "connect addEvent(" << sockfd  << ", WRITE) error";
+        WEBSERVER_LOG_ERROR(g_logger) << "connect addEvent(" << sockfd  << ", WRITE) error";
     }
 
     int error = 0;

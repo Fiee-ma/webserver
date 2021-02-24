@@ -7,16 +7,26 @@
 #IncludeRegexTransform: 
 
 /home/marulong/webserver/tests/test_bytearray.cc
-../webserver/bytearray.h
-/home/marulong/webserver/webserver/bytearray.h
+../webserver/iobytearray.h
+/home/marulong/webserver/webserver/iobytearray.h
 ../webserver/log.h
 /home/marulong/webserver/webserver/log.h
-../webserver/macro.h
-/home/marulong/webserver/webserver/macro.h
+../webserver/assert.h
+/home/marulong/webserver/webserver/assert.h
 stdint.h
 -
 
-/home/marulong/webserver/webserver/bytearray.h
+/home/marulong/webserver/webserver/assert.h
+string.h
+-
+assert.h
+-
+util.h
+/home/marulong/webserver/webserver/util.h
+log.h
+/home/marulong/webserver/webserver/log.h
+
+/home/marulong/webserver/webserver/iobytearray.h
 memory
 -
 string
@@ -61,16 +71,6 @@ algorithm
 -
 thread.h
 /home/marulong/webserver/webserver/thread.h
-
-/home/marulong/webserver/webserver/macro.h
-string.h
--
-assert.h
--
-util.h
-/home/marulong/webserver/webserver/util.h
-log.h
-/home/marulong/webserver/webserver/log.h
 
 /home/marulong/webserver/webserver/noncopyable.h
 

@@ -4,7 +4,7 @@
 
 namespace server_name {
 
-server_name::Logger::ptr g_logger1 = SYLAR_LOG_NAME("system");
+server_name::Logger::ptr g_logger1 = WEBSERVER_LOG_NAME("system");
 bool Timer::Comparator::operator()(const Timer::ptr &lhs
         , const Timer::ptr &rhs) const {
     if(!lhs && !rhs) {

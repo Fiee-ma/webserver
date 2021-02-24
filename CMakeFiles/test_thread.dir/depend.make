@@ -33,14 +33,14 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../yaml-cpp/include/yaml-cpp/
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../yaml-cpp/include/yaml-cpp/traits.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../yaml-cpp/include/yaml-cpp/yaml.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: tests/test_thread.cc
-CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/config.h
-CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/fiber.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/assert.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/coroutine.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/coroutinescheduler.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/fileconfig.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/log.h
-CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/macro.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/noncopyable.h
-CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/scheduler.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/singleton.h
-CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/sylar.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/thread.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/util.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: webserver/webserver.h
 

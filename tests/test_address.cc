@@ -1,18 +1,18 @@
-#include "../webserver/address.h"
+#include "../webserver/sockaddr.h"
 #include "../webserver/log.h"
 
-server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+server_name::Logger::ptr g_logger = WEBSERVER_LOG_ROOT();
 
 void test_adress() {
     std::vector<server_name::Address::ptr> result;
     bool v = server_name::Address::Lookup(result, "www.baidu.com:http", AF_UNSPEC);
 
     if(!v) {
-        SYLAR_LOG_INFO(g_logger) << "lookup fail";
+        WEBSERVER_LOG_INFO(g_logger) << "lookup fail";
         return;
     }
     for(size_t i = 0; i < result.size(); ++i) {
-        SYLAR_LOG_INFO(g_logger) << i << " - " << result[i]->toString();
+        WEBSERVER_LOG_INFO(g_logger) << i << " - " << result[i]->toString();
     }
 }
 
@@ -21,12 +21,12 @@ void test_iface() {
 
     bool v = server_name::Address::GetInterfaceAddresses(results);
     if(!v) {
-        SYLAR_LOG_ERROR(g_logger) << "GetInterfaceAddresses fail";
+        WEBSERVER_LOG_ERROR(g_logger) << "GetInterfaceAddresses fail";
         return;
     }
 
     for(auto &i : results) {
-        SYLAR_LOG_INFO(g_logger) << i.first << " - " << i.second.first->toString() << "-"
+        WEBSERVER_LOG_INFO(g_logger) << i.first << " - " << i.second.first->toString() << "-"
             << i.second.second;
     }
 }
@@ -35,7 +35,7 @@ void test_ipv4() {
     auto addr = server_name::IPv4Address::Create("127.0.0.8");
 //    auto addr1 = server_name::IPv4Address("127.0.0.8");
     if(addr) {
-        SYLAR_LOG_INFO(g_logger) << addr->toString();
+        WEBSERVER_LOG_INFO(g_logger) << addr->toString();
     }
 }
 int main() {

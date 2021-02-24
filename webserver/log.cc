@@ -1,17 +1,17 @@
 #include "log.h"
-#include "config.h"
+#include "fileconfig.h"
 #include <yaml-cpp/yaml.h>
 
 namespace server_name {
 
 LogEvent::LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char *file, int32_t line,
-        uint32_t elapse, uint32_t thread_id, uint32_t fiber_id,
+        uint32_t elapse, uint32_t thread_id, uint32_t coroutine_id,
         uint64_t time, const std::string &thread_name)
      :m_file(file)
      ,m_line(line)
      ,m_elapse(elapse)
      ,m_threadId(thread_id)
-     ,m_fiberId(fiber_id)
+     ,m_coroutineId(coroutine_id)
      ,m_time(time)
      ,m_threadName(thread_name)
      ,m_logger(logger)
@@ -241,11 +241,11 @@ public:
     }
 };
 
-class FiberIdFormatItem : public LogFormatter::FormatItem{
+class CoroutineIdFormatItem : public LogFormatter::FormatItem{
 public:
-    FiberIdFormatItem(const std::string = ""){}
+    CoroutineIdFormatItem(const std::string = ""){}
     void format(std::ostream &os, Logger::ptr logger, LogLevel::Level level, LogEvent::ptr event) override {
-        os << event->getFiberId();
+        os << event->getCoroutineId();
     }
 };
 
@@ -472,7 +472,7 @@ void LogFormatter::init(){
     XX(f, FilenameFormatItem), //f:文件名
     XX(l, LineFormatItem),     //l:行号
     XX(T, TabFormatItem),      //T:Tab
-    XX(F, FiberIdFormatItem),  //协程id
+    XX(F, CoroutineIdFormatItem),  //协程id
     XX(N, ThreadNameFormatItem), // N:线程名称
 #undef XX
     };
@@ -671,17 +671,17 @@ struct LogIniter {
     LogIniter() {
         g_log_defines->addListener([](const std::set<LogDefine> &old_value,
                     const std::set<LogDefine> &new_value){
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "on_logger_conf_changed";
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << "on_logger_conf_changed";
             for(auto &i : new_value) {
                 auto it = old_value.find(i);
                 server_name::Logger::ptr logger;
                if(it == old_value.end()) {
                     //新增logger
-                    logger = SYLAR_LOG_NAME(i.name);
+                    logger = WEBSERVER_LOG_NAME(i.name);
                 } else {
                     if(!(i == *it)) {
                         //修改的logger
-                        logger = SYLAR_LOG_NAME(i.name);
+                        logger = WEBSERVER_LOG_NAME(i.name);
                     } else {
                         continue;
                     }
@@ -719,7 +719,7 @@ struct LogIniter {
                 auto it = new_value.find(i);
                 if(it == new_value.end()) {
                     //删除logger  由于已经在LoggerManager::getLogger中已经加了锁，所以这里不用再加锁了
-                    auto logger = SYLAR_LOG_NAME(i.name);
+                    auto logger = WEBSERVER_LOG_NAME(i.name);
                     logger->setLevel((LogLevel::Level)0);
                     logger->clearAppender();
                 }

@@ -3,12 +3,12 @@
 
 CMakeFiles/test_hook.dir/tests/test_hook.cc.o
  /home/marulong/webserver/tests/test_hook.cc
- /home/marulong/webserver/webserver/fiber.h
+ /home/marulong/webserver/webserver/coroutine.h
+ /home/marulong/webserver/webserver/coroutinescheduler.h
  /home/marulong/webserver/webserver/hook.h
  /home/marulong/webserver/webserver/iomanager.h
  /home/marulong/webserver/webserver/log.h
  /home/marulong/webserver/webserver/noncopyable.h
- /home/marulong/webserver/webserver/scheduler.h
  /home/marulong/webserver/webserver/singleton.h
  /home/marulong/webserver/webserver/thread.h
  /home/marulong/webserver/webserver/timer.h

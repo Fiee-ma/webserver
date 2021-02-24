@@ -3,9 +3,9 @@
 
 CMakeFiles/test_bytearray.dir/tests/test_bytearray.cc.o
  /home/marulong/webserver/tests/test_bytearray.cc
- /home/marulong/webserver/webserver/bytearray.h
+ /home/marulong/webserver/webserver/assert.h
+ /home/marulong/webserver/webserver/iobytearray.h
  /home/marulong/webserver/webserver/log.h
- /home/marulong/webserver/webserver/macro.h
  /home/marulong/webserver/webserver/noncopyable.h
  /home/marulong/webserver/webserver/singleton.h
  /home/marulong/webserver/webserver/thread.h

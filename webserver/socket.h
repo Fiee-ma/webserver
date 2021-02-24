@@ -3,9 +3,8 @@
 
 #include <memory>
 #include <sys/uio.h>
-#include "address.h"
+#include "sockaddr.h"
 #include "noncopyable.h"
-#include "address.h"
 
 namespace server_name {
 

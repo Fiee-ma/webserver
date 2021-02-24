@@ -1,9 +1,9 @@
-#include "../webserver/bytearray.h"
+#include "../webserver/iobytearray.h"
 #include "../webserver/log.h"
-#include "../webserver/macro.h"
+#include "../webserver/assert.h"
 #include <stdint.h>
 
-static server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+static server_name::Logger::ptr g_logger = WEBSERVER_LOG_ROOT();
 void test() {
 #define XX(type, len, write_fun, read_fun, base_len) {\
     std::vector<type> vec; \
@@ -17,10 +17,10 @@ void test() {
     ba->setPosition(0); \
     for(size_t i = 0; i < vec.size(); ++i) { \
         type v = ba->read_fun(); \
-        SYLAR_ASSERT(v == vec[i]); \
+        WEBSERVER_ASSERT(v == vec[i]); \
     } \
-    SYLAR_ASSERT(ba->getReadSize() == 0); \
-    SYLAR_LOG_INFO(g_logger) << #write_fun "/" #read_fun \
+    WEBSERVER_ASSERT(ba->getReadSize() == 0); \
+    WEBSERVER_LOG_INFO(g_logger) << #write_fun "/" #read_fun \
                     " (" #type " ) len=" << len \
                     << " base_len=" << base_len \
                     << " size=" << ba->getSize(); \
@@ -53,21 +53,21 @@ void test() {
     ba->setPosition(0); \
     for(size_t i = 0; i < vec.size(); ++i) { \
         type v = ba->read_fun(); \
-        SYLAR_ASSERT(v == vec[i]); \
+        WEBSERVER_ASSERT(v == vec[i]); \
     } \
-    SYLAR_ASSERT(ba->getReadSize() == 0); \
-    SYLAR_LOG_INFO(g_logger) << #write_fun "/" #read_fun \
+    WEBSERVER_ASSERT(ba->getReadSize() == 0); \
+    WEBSERVER_LOG_INFO(g_logger) << #write_fun "/" #read_fun \
                     " (" #type " ) len=" << len \
                     << " base_len=" << base_len \
                     << " size=" << ba->getSize(); \
     ba->setPosition(0); \
-    SYLAR_ASSERT(ba->writeToFile("/tmp/" #type "_" #len "-" #read_fun ".dat")); \
+    WEBSERVER_ASSERT(ba->writeToFile("/tmp/" #type "_" #len "-" #read_fun ".dat")); \
     server_name::ByteArray::ptr ba2(new server_name::ByteArray(base_len * 2)); \
-    SYLAR_ASSERT(ba2->readFromFile("/tmp/" #type "_" #len "-" #read_fun ".dat")); \
+    WEBSERVER_ASSERT(ba2->readFromFile("/tmp/" #type "_" #len "-" #read_fun ".dat")); \
     ba2->setPosition(0); \
-    SYLAR_ASSERT(ba->toString() == ba2->toString()); \
-    SYLAR_ASSERT(ba->getPosition() == 0); \
-    SYLAR_ASSERT(ba2->getPosition() == 0); \
+    WEBSERVER_ASSERT(ba->toString() == ba2->toString()); \
+    WEBSERVER_ASSERT(ba->getPosition() == 0); \
+    WEBSERVER_ASSERT(ba2->getPosition() == 0); \
 }
     XX(int8_t,  100, writeFint8, readFint8, 1);
     XX(uint8_t, 100, writeFuint8, readFuint8, 1);

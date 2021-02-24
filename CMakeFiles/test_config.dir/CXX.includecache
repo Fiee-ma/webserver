@@ -355,14 +355,14 @@ yaml-cpp/node/emit.h
 ../yaml-cpp/include/yaml-cpp/yaml-cpp/node/emit.h
 
 /home/marulong/webserver/tests/test_config.cc
-../webserver/config.h
-/home/marulong/webserver/webserver/config.h
+../webserver/fileconfig.h
+/home/marulong/webserver/webserver/fileconfig.h
 ../webserver/log.h
 /home/marulong/webserver/webserver/log.h
 yaml-cpp/yaml.h
 -
 
-/home/marulong/webserver/webserver/config.h
+/home/marulong/webserver/webserver/fileconfig.h
 boost/lexical_cast.hpp
 -
 log.h

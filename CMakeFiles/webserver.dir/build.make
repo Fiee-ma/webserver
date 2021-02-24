@@ -60,28 +60,28 @@ include CMakeFiles/webserver.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/webserver.dir/flags.make
 
-CMakeFiles/webserver.dir/webserver/address.cc.o: CMakeFiles/webserver.dir/flags.make
-CMakeFiles/webserver.dir/webserver/address.cc.o: webserver/address.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/webserver.dir/webserver/address.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/address.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/address.cc.o -c /home/marulong/webserver/webserver/address.cc
+CMakeFiles/webserver.dir/webserver/sockaddr.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/sockaddr.cc.o: webserver/sockaddr.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/webserver.dir/webserver/sockaddr.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/sockaddr.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/sockaddr.cc.o -c /home/marulong/webserver/webserver/sockaddr.cc
 
-CMakeFiles/webserver.dir/webserver/address.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/address.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/address.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/address.cc > CMakeFiles/webserver.dir/webserver/address.cc.i
+CMakeFiles/webserver.dir/webserver/sockaddr.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/sockaddr.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/sockaddr.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/sockaddr.cc > CMakeFiles/webserver.dir/webserver/sockaddr.cc.i
 
-CMakeFiles/webserver.dir/webserver/address.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/address.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/address.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/address.cc -o CMakeFiles/webserver.dir/webserver/address.cc.s
+CMakeFiles/webserver.dir/webserver/sockaddr.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/sockaddr.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/sockaddr.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/sockaddr.cc -o CMakeFiles/webserver.dir/webserver/sockaddr.cc.s
 
-CMakeFiles/webserver.dir/webserver/address.cc.o.requires:
+CMakeFiles/webserver.dir/webserver/sockaddr.cc.o.requires:
 
-.PHONY : CMakeFiles/webserver.dir/webserver/address.cc.o.requires
+.PHONY : CMakeFiles/webserver.dir/webserver/sockaddr.cc.o.requires
 
-CMakeFiles/webserver.dir/webserver/address.cc.o.provides: CMakeFiles/webserver.dir/webserver/address.cc.o.requires
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/address.cc.o.provides.build
-.PHONY : CMakeFiles/webserver.dir/webserver/address.cc.o.provides
+CMakeFiles/webserver.dir/webserver/sockaddr.cc.o.provides: CMakeFiles/webserver.dir/webserver/sockaddr.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/sockaddr.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/sockaddr.cc.o.provides
 
-CMakeFiles/webserver.dir/webserver/address.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/address.cc.o
+CMakeFiles/webserver.dir/webserver/sockaddr.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/sockaddr.cc.o
 
 
 CMakeFiles/webserver.dir/webserver/log.cc.o: CMakeFiles/webserver.dir/flags.make
@@ -132,28 +132,28 @@ CMakeFiles/webserver.dir/webserver/util.cc.o.provides: CMakeFiles/webserver.dir/
 CMakeFiles/webserver.dir/webserver/util.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/util.cc.o
 
 
-CMakeFiles/webserver.dir/webserver/config.cc.o: CMakeFiles/webserver.dir/flags.make
-CMakeFiles/webserver.dir/webserver/config.cc.o: webserver/config.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/webserver.dir/webserver/config.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/config.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/config.cc.o -c /home/marulong/webserver/webserver/config.cc
+CMakeFiles/webserver.dir/webserver/fileconfig.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/fileconfig.cc.o: webserver/fileconfig.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/webserver.dir/webserver/fileconfig.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/fileconfig.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/fileconfig.cc.o -c /home/marulong/webserver/webserver/fileconfig.cc
 
-CMakeFiles/webserver.dir/webserver/config.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/config.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/config.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/config.cc > CMakeFiles/webserver.dir/webserver/config.cc.i
+CMakeFiles/webserver.dir/webserver/fileconfig.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/fileconfig.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/fileconfig.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/fileconfig.cc > CMakeFiles/webserver.dir/webserver/fileconfig.cc.i
 
-CMakeFiles/webserver.dir/webserver/config.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/config.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/config.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/config.cc -o CMakeFiles/webserver.dir/webserver/config.cc.s
+CMakeFiles/webserver.dir/webserver/fileconfig.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/fileconfig.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/fileconfig.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/fileconfig.cc -o CMakeFiles/webserver.dir/webserver/fileconfig.cc.s
 
-CMakeFiles/webserver.dir/webserver/config.cc.o.requires:
+CMakeFiles/webserver.dir/webserver/fileconfig.cc.o.requires:
 
-.PHONY : CMakeFiles/webserver.dir/webserver/config.cc.o.requires
+.PHONY : CMakeFiles/webserver.dir/webserver/fileconfig.cc.o.requires
 
-CMakeFiles/webserver.dir/webserver/config.cc.o.provides: CMakeFiles/webserver.dir/webserver/config.cc.o.requires
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/config.cc.o.provides.build
-.PHONY : CMakeFiles/webserver.dir/webserver/config.cc.o.provides
+CMakeFiles/webserver.dir/webserver/fileconfig.cc.o.provides: CMakeFiles/webserver.dir/webserver/fileconfig.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fileconfig.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/fileconfig.cc.o.provides
 
-CMakeFiles/webserver.dir/webserver/config.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/config.cc.o
+CMakeFiles/webserver.dir/webserver/fileconfig.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/fileconfig.cc.o
 
 
 CMakeFiles/webserver.dir/webserver/thread.cc.o: CMakeFiles/webserver.dir/flags.make
@@ -180,52 +180,52 @@ CMakeFiles/webserver.dir/webserver/thread.cc.o.provides: CMakeFiles/webserver.di
 CMakeFiles/webserver.dir/webserver/thread.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/thread.cc.o
 
 
-CMakeFiles/webserver.dir/webserver/fiber.cc.o: CMakeFiles/webserver.dir/flags.make
-CMakeFiles/webserver.dir/webserver/fiber.cc.o: webserver/fiber.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/webserver.dir/webserver/fiber.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/fiber.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/fiber.cc.o -c /home/marulong/webserver/webserver/fiber.cc
+CMakeFiles/webserver.dir/webserver/coroutine.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/coroutine.cc.o: webserver/coroutine.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/webserver.dir/webserver/coroutine.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/coroutine.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/coroutine.cc.o -c /home/marulong/webserver/webserver/coroutine.cc
 
-CMakeFiles/webserver.dir/webserver/fiber.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/fiber.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/fiber.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/fiber.cc > CMakeFiles/webserver.dir/webserver/fiber.cc.i
+CMakeFiles/webserver.dir/webserver/coroutine.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/coroutine.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/coroutine.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/coroutine.cc > CMakeFiles/webserver.dir/webserver/coroutine.cc.i
 
-CMakeFiles/webserver.dir/webserver/fiber.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/fiber.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/fiber.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/fiber.cc -o CMakeFiles/webserver.dir/webserver/fiber.cc.s
+CMakeFiles/webserver.dir/webserver/coroutine.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/coroutine.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/coroutine.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/coroutine.cc -o CMakeFiles/webserver.dir/webserver/coroutine.cc.s
 
-CMakeFiles/webserver.dir/webserver/fiber.cc.o.requires:
+CMakeFiles/webserver.dir/webserver/coroutine.cc.o.requires:
 
-.PHONY : CMakeFiles/webserver.dir/webserver/fiber.cc.o.requires
+.PHONY : CMakeFiles/webserver.dir/webserver/coroutine.cc.o.requires
 
-CMakeFiles/webserver.dir/webserver/fiber.cc.o.provides: CMakeFiles/webserver.dir/webserver/fiber.cc.o.requires
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fiber.cc.o.provides.build
-.PHONY : CMakeFiles/webserver.dir/webserver/fiber.cc.o.provides
+CMakeFiles/webserver.dir/webserver/coroutine.cc.o.provides: CMakeFiles/webserver.dir/webserver/coroutine.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/coroutine.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/coroutine.cc.o.provides
 
-CMakeFiles/webserver.dir/webserver/fiber.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/fiber.cc.o
+CMakeFiles/webserver.dir/webserver/coroutine.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/coroutine.cc.o
 
 
-CMakeFiles/webserver.dir/webserver/scheduler.cc.o: CMakeFiles/webserver.dir/flags.make
-CMakeFiles/webserver.dir/webserver/scheduler.cc.o: webserver/scheduler.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/webserver.dir/webserver/scheduler.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/scheduler.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/scheduler.cc.o -c /home/marulong/webserver/webserver/scheduler.cc
+CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o: webserver/coroutinescheduler.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/coroutinescheduler.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o -c /home/marulong/webserver/webserver/coroutinescheduler.cc
 
-CMakeFiles/webserver.dir/webserver/scheduler.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/scheduler.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/scheduler.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/scheduler.cc > CMakeFiles/webserver.dir/webserver/scheduler.cc.i
+CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/coroutinescheduler.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/coroutinescheduler.cc > CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.i
 
-CMakeFiles/webserver.dir/webserver/scheduler.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/scheduler.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/scheduler.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/scheduler.cc -o CMakeFiles/webserver.dir/webserver/scheduler.cc.s
+CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/coroutinescheduler.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/coroutinescheduler.cc -o CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.s
 
-CMakeFiles/webserver.dir/webserver/scheduler.cc.o.requires:
+CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o.requires:
 
-.PHONY : CMakeFiles/webserver.dir/webserver/scheduler.cc.o.requires
+.PHONY : CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o.requires
 
-CMakeFiles/webserver.dir/webserver/scheduler.cc.o.provides: CMakeFiles/webserver.dir/webserver/scheduler.cc.o.requires
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/scheduler.cc.o.provides.build
-.PHONY : CMakeFiles/webserver.dir/webserver/scheduler.cc.o.provides
+CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o.provides: CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o.provides
 
-CMakeFiles/webserver.dir/webserver/scheduler.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/scheduler.cc.o
+CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o
 
 
 CMakeFiles/webserver.dir/webserver/iomanager.cc.o: CMakeFiles/webserver.dir/flags.make
@@ -348,28 +348,28 @@ CMakeFiles/webserver.dir/webserver/socket.cc.o.provides: CMakeFiles/webserver.di
 CMakeFiles/webserver.dir/webserver/socket.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/socket.cc.o
 
 
-CMakeFiles/webserver.dir/webserver/bytearray.cc.o: CMakeFiles/webserver.dir/flags.make
-CMakeFiles/webserver.dir/webserver/bytearray.cc.o: webserver/bytearray.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/webserver.dir/webserver/bytearray.cc.o"
-	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/bytearray.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/bytearray.cc.o -c /home/marulong/webserver/webserver/bytearray.cc
+CMakeFiles/webserver.dir/webserver/iobytearray.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/iobytearray.cc.o: webserver/iobytearray.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/webserver.dir/webserver/iobytearray.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/iobytearray.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/iobytearray.cc.o -c /home/marulong/webserver/webserver/iobytearray.cc
 
-CMakeFiles/webserver.dir/webserver/bytearray.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/bytearray.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/bytearray.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/bytearray.cc > CMakeFiles/webserver.dir/webserver/bytearray.cc.i
+CMakeFiles/webserver.dir/webserver/iobytearray.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/iobytearray.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/iobytearray.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/iobytearray.cc > CMakeFiles/webserver.dir/webserver/iobytearray.cc.i
 
-CMakeFiles/webserver.dir/webserver/bytearray.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/bytearray.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/bytearray.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/bytearray.cc -o CMakeFiles/webserver.dir/webserver/bytearray.cc.s
+CMakeFiles/webserver.dir/webserver/iobytearray.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/iobytearray.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/iobytearray.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/iobytearray.cc -o CMakeFiles/webserver.dir/webserver/iobytearray.cc.s
 
-CMakeFiles/webserver.dir/webserver/bytearray.cc.o.requires:
+CMakeFiles/webserver.dir/webserver/iobytearray.cc.o.requires:
 
-.PHONY : CMakeFiles/webserver.dir/webserver/bytearray.cc.o.requires
+.PHONY : CMakeFiles/webserver.dir/webserver/iobytearray.cc.o.requires
 
-CMakeFiles/webserver.dir/webserver/bytearray.cc.o.provides: CMakeFiles/webserver.dir/webserver/bytearray.cc.o.requires
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/bytearray.cc.o.provides.build
-.PHONY : CMakeFiles/webserver.dir/webserver/bytearray.cc.o.provides
+CMakeFiles/webserver.dir/webserver/iobytearray.cc.o.provides: CMakeFiles/webserver.dir/webserver/iobytearray.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/iobytearray.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/iobytearray.cc.o.provides
 
-CMakeFiles/webserver.dir/webserver/bytearray.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/bytearray.cc.o
+CMakeFiles/webserver.dir/webserver/iobytearray.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/iobytearray.cc.o
 
 
 CMakeFiles/webserver.dir/webserver/http/http.cc.o: CMakeFiles/webserver.dir/flags.make
@@ -468,49 +468,231 @@ CMakeFiles/webserver.dir/webserver/http/http_parser.cc.o.provides: CMakeFiles/we
 CMakeFiles/webserver.dir/webserver/http/http_parser.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/http/http_parser.cc.o
 
 
+CMakeFiles/webserver.dir/webserver/tcp_server.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/tcp_server.cc.o: webserver/tcp_server.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/webserver.dir/webserver/tcp_server.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/tcp_server.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/tcp_server.cc.o -c /home/marulong/webserver/webserver/tcp_server.cc
+
+CMakeFiles/webserver.dir/webserver/tcp_server.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/tcp_server.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/tcp_server.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/tcp_server.cc > CMakeFiles/webserver.dir/webserver/tcp_server.cc.i
+
+CMakeFiles/webserver.dir/webserver/tcp_server.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/tcp_server.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/tcp_server.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/tcp_server.cc -o CMakeFiles/webserver.dir/webserver/tcp_server.cc.s
+
+CMakeFiles/webserver.dir/webserver/tcp_server.cc.o.requires:
+
+.PHONY : CMakeFiles/webserver.dir/webserver/tcp_server.cc.o.requires
+
+CMakeFiles/webserver.dir/webserver/tcp_server.cc.o.provides: CMakeFiles/webserver.dir/webserver/tcp_server.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/tcp_server.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/tcp_server.cc.o.provides
+
+CMakeFiles/webserver.dir/webserver/tcp_server.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/tcp_server.cc.o
+
+
+CMakeFiles/webserver.dir/webserver/filestream.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/filestream.cc.o: webserver/filestream.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/webserver.dir/webserver/filestream.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/filestream.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/filestream.cc.o -c /home/marulong/webserver/webserver/filestream.cc
+
+CMakeFiles/webserver.dir/webserver/filestream.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/filestream.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/filestream.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/filestream.cc > CMakeFiles/webserver.dir/webserver/filestream.cc.i
+
+CMakeFiles/webserver.dir/webserver/filestream.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/filestream.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/filestream.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/filestream.cc -o CMakeFiles/webserver.dir/webserver/filestream.cc.s
+
+CMakeFiles/webserver.dir/webserver/filestream.cc.o.requires:
+
+.PHONY : CMakeFiles/webserver.dir/webserver/filestream.cc.o.requires
+
+CMakeFiles/webserver.dir/webserver/filestream.cc.o.provides: CMakeFiles/webserver.dir/webserver/filestream.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/filestream.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/filestream.cc.o.provides
+
+CMakeFiles/webserver.dir/webserver/filestream.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/filestream.cc.o
+
+
+CMakeFiles/webserver.dir/webserver/socket_stream.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/socket_stream.cc.o: webserver/socket_stream.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/webserver.dir/webserver/socket_stream.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/socket_stream.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/socket_stream.cc.o -c /home/marulong/webserver/webserver/socket_stream.cc
+
+CMakeFiles/webserver.dir/webserver/socket_stream.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/socket_stream.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/socket_stream.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/socket_stream.cc > CMakeFiles/webserver.dir/webserver/socket_stream.cc.i
+
+CMakeFiles/webserver.dir/webserver/socket_stream.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/socket_stream.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/socket_stream.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/socket_stream.cc -o CMakeFiles/webserver.dir/webserver/socket_stream.cc.s
+
+CMakeFiles/webserver.dir/webserver/socket_stream.cc.o.requires:
+
+.PHONY : CMakeFiles/webserver.dir/webserver/socket_stream.cc.o.requires
+
+CMakeFiles/webserver.dir/webserver/socket_stream.cc.o.provides: CMakeFiles/webserver.dir/webserver/socket_stream.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/socket_stream.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/socket_stream.cc.o.provides
+
+CMakeFiles/webserver.dir/webserver/socket_stream.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/socket_stream.cc.o
+
+
+CMakeFiles/webserver.dir/webserver/http/http_session.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/http/http_session.cc.o: webserver/http/http_session.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/webserver.dir/webserver/http/http_session.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_session.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/http/http_session.cc.o -c /home/marulong/webserver/webserver/http/http_session.cc
+
+CMakeFiles/webserver.dir/webserver/http/http_session.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/http/http_session.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_session.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/http/http_session.cc > CMakeFiles/webserver.dir/webserver/http/http_session.cc.i
+
+CMakeFiles/webserver.dir/webserver/http/http_session.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/http/http_session.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_session.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/http/http_session.cc -o CMakeFiles/webserver.dir/webserver/http/http_session.cc.s
+
+CMakeFiles/webserver.dir/webserver/http/http_session.cc.o.requires:
+
+.PHONY : CMakeFiles/webserver.dir/webserver/http/http_session.cc.o.requires
+
+CMakeFiles/webserver.dir/webserver/http/http_session.cc.o.provides: CMakeFiles/webserver.dir/webserver/http/http_session.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_session.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/http/http_session.cc.o.provides
+
+CMakeFiles/webserver.dir/webserver/http/http_session.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/http/http_session.cc.o
+
+
+CMakeFiles/webserver.dir/webserver/http/http_server.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/http/http_server.cc.o: webserver/http/http_server.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/webserver.dir/webserver/http/http_server.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_server.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/http/http_server.cc.o -c /home/marulong/webserver/webserver/http/http_server.cc
+
+CMakeFiles/webserver.dir/webserver/http/http_server.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/http/http_server.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_server.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/http/http_server.cc > CMakeFiles/webserver.dir/webserver/http/http_server.cc.i
+
+CMakeFiles/webserver.dir/webserver/http/http_server.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/http/http_server.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_server.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/http/http_server.cc -o CMakeFiles/webserver.dir/webserver/http/http_server.cc.s
+
+CMakeFiles/webserver.dir/webserver/http/http_server.cc.o.requires:
+
+.PHONY : CMakeFiles/webserver.dir/webserver/http/http_server.cc.o.requires
+
+CMakeFiles/webserver.dir/webserver/http/http_server.cc.o.provides: CMakeFiles/webserver.dir/webserver/http/http_server.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_server.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/http/http_server.cc.o.provides
+
+CMakeFiles/webserver.dir/webserver/http/http_server.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/http/http_server.cc.o
+
+
+CMakeFiles/webserver.dir/webserver/http/servlet.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/http/servlet.cc.o: webserver/http/servlet.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/webserver.dir/webserver/http/servlet.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/http/servlet.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/http/servlet.cc.o -c /home/marulong/webserver/webserver/http/servlet.cc
+
+CMakeFiles/webserver.dir/webserver/http/servlet.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/http/servlet.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/http/servlet.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/http/servlet.cc > CMakeFiles/webserver.dir/webserver/http/servlet.cc.i
+
+CMakeFiles/webserver.dir/webserver/http/servlet.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/http/servlet.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/http/servlet.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/http/servlet.cc -o CMakeFiles/webserver.dir/webserver/http/servlet.cc.s
+
+CMakeFiles/webserver.dir/webserver/http/servlet.cc.o.requires:
+
+.PHONY : CMakeFiles/webserver.dir/webserver/http/servlet.cc.o.requires
+
+CMakeFiles/webserver.dir/webserver/http/servlet.cc.o.provides: CMakeFiles/webserver.dir/webserver/http/servlet.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/servlet.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/http/servlet.cc.o.provides
+
+CMakeFiles/webserver.dir/webserver/http/servlet.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/http/servlet.cc.o
+
+
+CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o: CMakeFiles/webserver.dir/flags.make
+CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o: webserver/http/http_connection.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o"
+	/usr/bin/c++  $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_connection.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o -c /home/marulong/webserver/webserver/http/http_connection.cc
+
+CMakeFiles/webserver.dir/webserver/http/http_connection.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/webserver.dir/webserver/http/http_connection.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_connection.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/marulong/webserver/webserver/http/http_connection.cc > CMakeFiles/webserver.dir/webserver/http/http_connection.cc.i
+
+CMakeFiles/webserver.dir/webserver/http/http_connection.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/webserver.dir/webserver/http/http_connection.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) -D__FILE__=\"webserver/http/http_connection.cc\" $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/marulong/webserver/webserver/http/http_connection.cc -o CMakeFiles/webserver.dir/webserver/http/http_connection.cc.s
+
+CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o.requires:
+
+.PHONY : CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o.requires
+
+CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o.provides: CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o.requires
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o.provides.build
+.PHONY : CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o.provides
+
+CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o.provides.build: CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o
+
+
 # Object files for target webserver
 webserver_OBJECTS = \
-"CMakeFiles/webserver.dir/webserver/address.cc.o" \
+"CMakeFiles/webserver.dir/webserver/sockaddr.cc.o" \
 "CMakeFiles/webserver.dir/webserver/log.cc.o" \
 "CMakeFiles/webserver.dir/webserver/util.cc.o" \
-"CMakeFiles/webserver.dir/webserver/config.cc.o" \
+"CMakeFiles/webserver.dir/webserver/fileconfig.cc.o" \
 "CMakeFiles/webserver.dir/webserver/thread.cc.o" \
-"CMakeFiles/webserver.dir/webserver/fiber.cc.o" \
-"CMakeFiles/webserver.dir/webserver/scheduler.cc.o" \
+"CMakeFiles/webserver.dir/webserver/coroutine.cc.o" \
+"CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o" \
 "CMakeFiles/webserver.dir/webserver/iomanager.cc.o" \
 "CMakeFiles/webserver.dir/webserver/timer.cc.o" \
 "CMakeFiles/webserver.dir/webserver/hook.cc.o" \
 "CMakeFiles/webserver.dir/webserver/fd_manager.cc.o" \
 "CMakeFiles/webserver.dir/webserver/socket.cc.o" \
-"CMakeFiles/webserver.dir/webserver/bytearray.cc.o" \
+"CMakeFiles/webserver.dir/webserver/iobytearray.cc.o" \
 "CMakeFiles/webserver.dir/webserver/http/http.cc.o" \
 "CMakeFiles/webserver.dir/webserver/http/http11_parser.cc.o" \
 "CMakeFiles/webserver.dir/webserver/http/httpclient_parser.cc.o" \
-"CMakeFiles/webserver.dir/webserver/http/http_parser.cc.o"
+"CMakeFiles/webserver.dir/webserver/http/http_parser.cc.o" \
+"CMakeFiles/webserver.dir/webserver/tcp_server.cc.o" \
+"CMakeFiles/webserver.dir/webserver/filestream.cc.o" \
+"CMakeFiles/webserver.dir/webserver/socket_stream.cc.o" \
+"CMakeFiles/webserver.dir/webserver/http/http_session.cc.o" \
+"CMakeFiles/webserver.dir/webserver/http/http_server.cc.o" \
+"CMakeFiles/webserver.dir/webserver/http/servlet.cc.o" \
+"CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o"
 
 # External object files for target webserver
 webserver_EXTERNAL_OBJECTS =
 
-lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/address.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/sockaddr.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/log.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/util.cc.o
-lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/config.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/fileconfig.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/thread.cc.o
-lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/fiber.cc.o
-lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/scheduler.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/coroutine.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/iomanager.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/timer.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/hook.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/fd_manager.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/socket.cc.o
-lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/bytearray.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/iobytearray.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/http/http.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/http/http11_parser.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/http/httpclient_parser.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/http/http_parser.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/tcp_server.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/filestream.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/socket_stream.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/http/http_session.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/http/http_server.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/http/servlet.cc.o
+lib/libwebserver.so: CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o
 lib/libwebserver.so: CMakeFiles/webserver.dir/build.make
 lib/libwebserver.so: CMakeFiles/webserver.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX shared library lib/libwebserver.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/marulong/webserver/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Linking CXX shared library lib/libwebserver.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/webserver.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -518,23 +700,30 @@ CMakeFiles/webserver.dir/build: lib/libwebserver.so
 
 .PHONY : CMakeFiles/webserver.dir/build
 
-CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/address.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/sockaddr.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/log.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/util.cc.o.requires
-CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/config.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/fileconfig.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/thread.cc.o.requires
-CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/fiber.cc.o.requires
-CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/scheduler.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/coroutine.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/iomanager.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/timer.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/hook.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/fd_manager.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/socket.cc.o.requires
-CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/bytearray.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/iobytearray.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/http/http.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/http/http11_parser.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/http/httpclient_parser.cc.o.requires
 CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/http/http_parser.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/tcp_server.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/filestream.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/socket_stream.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/http/http_session.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/http/http_server.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/http/servlet.cc.o.requires
+CMakeFiles/webserver.dir/requires: CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o.requires
 
 .PHONY : CMakeFiles/webserver.dir/requires
 

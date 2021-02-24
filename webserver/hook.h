@@ -1,5 +1,5 @@
-#ifndef __SYLAR_HOOK_R_H__
-#define __SYLAR_HOOK_R_H__
+#ifndef __WEBSERVER_HOOK_R_H__
+#define __WEBSERVER_HOOK_R_H__
 #include <sys/types.h>          /* See NOTES */
 #include <sys/socket.h>
 #include <stdint.h>

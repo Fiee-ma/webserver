@@ -1,5 +1,5 @@
 #include "iomanager.h"
-#include "macro.h"
+#include "assert.h"
 #include "log.h"
 #include <unistd.h>
 #include <sys/epoll.h>
@@ -9,7 +9,7 @@
 
 namespace server_name {
 
-static Logger::ptr g_logger = SYLAR_LOG_NAME("system");
+static Logger::ptr g_logger = WEBSERVER_LOG_NAME("system");
 
 IOManager::FdContext::EventContext & IOManager::FdContext::getContext(IOManager::Event event) {
     switch(event) {
@@ -18,25 +18,25 @@ IOManager::FdContext::EventContext & IOManager::FdContext::getContext(IOManager:
         case IOManager::WRITE:
             return write;
         default:
-            SYLAR_ASSERT2(false, "getContext");
+            WEBSERVER_ASSERT2(false, "getContext");
     }
     throw std::invalid_argument("getContext invalid event");
 }
 
 void IOManager::FdContext::resetContext(EventContext & ctx) {
-    ctx.fiber.reset();
+    ctx.coroutine.reset();
     ctx.scheduler = nullptr;
     ctx.cb = nullptr;
 }
 
 void IOManager::FdContext::triggerEvent(IOManager::Event event) {
-    SYLAR_ASSERT(events & event);
+    WEBSERVER_ASSERT(events & event);
     events = (Event)(events & ~event);
     EventContext &ctx = getContext(event);
     if(ctx.cb) {
         ctx.scheduler->schedule(&ctx.cb);
     } else {
-        ctx.scheduler->schedule(&ctx.fiber);
+        ctx.scheduler->schedule(&ctx.coroutine);
     }
     ctx.scheduler = nullptr;
 }
@@ -44,10 +44,10 @@ void IOManager::FdContext::triggerEvent(IOManager::Event event) {
 IOManager::IOManager(size_t threads, bool use_caller, const std::string &name)
     :Scheduler(threads, use_caller, name) {
         m_epfd = epoll_create(50000);
-        SYLAR_ASSERT(m_epfd > 0);
+        WEBSERVER_ASSERT(m_epfd > 0);
 
         int rt = pipe(m_tickleFds);
-        SYLAR_ASSERT(!rt);
+        WEBSERVER_ASSERT(!rt);
 
         epoll_event event;
         memset(&event, 0, sizeof(epoll_event));
@@ -56,10 +56,10 @@ IOManager::IOManager(size_t threads, bool use_caller, const std::string &name)
 
         /// 获得／设置文件状态标记(cmd=F_GETFL或F_SETFL).
         rt = fcntl(m_tickleFds[0], F_SETFL, O_NONBLOCK);
-        SYLAR_ASSERT(!rt);
+        WEBSERVER_ASSERT(!rt);
 
         rt = epoll_ctl(m_epfd, EPOLL_CTL_ADD, m_tickleFds[0], &event);
-        SYLAR_ASSERT(!rt);
+        WEBSERVER_ASSERT(!rt);
         contextResize(32);
         start();
     }
@@ -104,10 +104,10 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb) {
 
     FdContext::MutexType::Lock lock2(fd_ctx->mutex);
     if(fd_ctx->events & event) {
-        SYLAR_LOG_ERROR(g_logger) << "addEvent assert fd=" << fd
+        WEBSERVER_LOG_ERROR(g_logger) << "addEvent assert fd=" << fd
                 << " event=" << event
                 << " fd_ctx.event=" << fd_ctx->events;
-        SYLAR_ASSERT(!(fd_ctx->events & event));
+        WEBSERVER_ASSERT(!(fd_ctx->events & event));
     }
 
     int op = fd_ctx->events ? EPOLL_CTL_MOD : EPOLL_CTL_ADD;
@@ -117,7 +117,7 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb) {
 
     int rt = epoll_ctl(m_epfd, op, fd, &epevent);
     if(rt) {
-        SYLAR_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
+        WEBSERVER_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
             << op << "," << fd << "," << epevent.events << "):"
             << rt << " (" << errno << ") (" << strerror(errno) << ")";
         return -1;
@@ -126,17 +126,17 @@ int IOManager::addEvent(int fd, Event event, std::function<void()> cb) {
     ++m_pendingEventCount;
     fd_ctx->events = (Event)(fd_ctx->events | event);
     FdContext::EventContext &event_ctx = fd_ctx->getContext(event);
-    SYLAR_ASSERT(!event_ctx.scheduler
-                && !event_ctx.fiber
+    WEBSERVER_ASSERT(!event_ctx.scheduler
+                && !event_ctx.coroutine
                 && !event_ctx.cb);
 
     event_ctx.scheduler = Scheduler::GetThis();
     if(cb) {
         event_ctx.cb.swap(cb);
     } else {
-        event_ctx.fiber = Fiber::GetThis();
-        SYLAR_ASSERT2(event_ctx.fiber->getState() == Fiber::EXEC,
-                "state=" << event_ctx.fiber->getState());
+        event_ctx.coroutine = Coroutine::GetThis();
+        WEBSERVER_ASSERT2(event_ctx.coroutine->getState() == Coroutine::EXEC,
+                "state=" << event_ctx.coroutine->getState());
     }
 
     return 0;
@@ -163,7 +163,7 @@ bool IOManager::delEvent(int fd, Event event) {
 
     int rt = epoll_ctl(m_epfd, op, fd, &epevent);
     if(rt) {
-        SYLAR_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
+        WEBSERVER_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
             << op << "," << fd << "," << epevent.events << "):"
             << rt << " (" << errno << ") (" << strerror(errno) << ")";
         return false;
@@ -198,7 +198,7 @@ bool IOManager::cancelEvent(int fd, Event event) {
 
     int rt = epoll_ctl(m_epfd, op, fd, &epevent);
     if(rt) {
-        SYLAR_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
+        WEBSERVER_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
             << op << "," << fd << "," << epevent.events << "):"
             << rt << " (" << errno << ") (" << strerror(errno) << ")";
         return false;
@@ -230,7 +230,7 @@ bool IOManager::cancelAll(int fd) {
 
     int rt = epoll_ctl(m_epfd, op, fd, &epevent);
     if(rt) {
-        SYLAR_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
+        WEBSERVER_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
             << op << "," << fd << "," << epevent.events << "):"
             << rt << " (" << errno << ") (" << strerror(errno) << ")";
         return false;
@@ -245,7 +245,7 @@ bool IOManager::cancelAll(int fd) {
         fd_ctx->triggerEvent(WRITE);
         --m_pendingEventCount;
     }
-    SYLAR_ASSERT(fd_ctx->events == 0);
+    WEBSERVER_ASSERT(fd_ctx->events == 0);
     return true;
 }
 
@@ -258,7 +258,7 @@ void IOManager::tickle() {
         return;
     }
     int rt = write(m_tickleFds[1], "T", 1);
-    SYLAR_ASSERT(rt == 1);
+    WEBSERVER_ASSERT(rt == 1);
 }
 
 void IOManager::idle() {
@@ -271,7 +271,7 @@ void IOManager::idle() {
         uint64_t next_timeout = 0;
         if(stopping(next_timeout)) {
             if(next_timeout == ~0ull){
-                SYLAR_LOG_INFO(g_logger) << "name=" << getName()
+                WEBSERVER_LOG_INFO(g_logger) << "name=" << getName()
                                          << " idle stopping exit";
                 break;
             }
@@ -329,7 +329,7 @@ void IOManager::idle() {
             int op = left_events ? EPOLL_CTL_MOD : EPOLL_CTL_DEL;
             int rt2 = epoll_ctl(m_epfd, op, fd_ctx->fd, &event);
             if(rt2) {
-                SYLAR_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
+                WEBSERVER_LOG_ERROR(g_logger) << "epoll_ctl(" << m_epfd << ","
                     << op << "," << fd_ctx->fd << "," << event.events << "):"
                     << rt2 << " (" << errno << ") (" << strerror(errno) << ")";
                 continue;
@@ -344,7 +344,7 @@ void IOManager::idle() {
                 --m_pendingEventCount;
             }
         }
-        Fiber::ptr cur = Fiber::GetThis();
+        Coroutine::ptr cur = Coroutine::GetThis();
         auto raw_ptr = cur.get();
         cur.reset();
 

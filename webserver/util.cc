@@ -5,19 +5,19 @@
 #include <sstream>
 #include <string.h>
 #include <unistd.h>
-#include "fiber.h"
+#include "coroutine.h"
 #include <sys/time.h>
 
 namespace server_name {
 
-static server_name::Logger::ptr g_logger = SYLAR_LOG_NAME("system");
+static server_name::Logger::ptr g_logger = WEBSERVER_LOG_NAME("system");
 
 pid_t GetThreadId(){
    return syscall(SYS_gettid);
 }
 
-uint64_t GetFiberId(){
-    return Fiber::GetFiberId();
+uint64_t GetCoroutineId(){
+    return Coroutine::GetCoroutineId();
 }
 
 void Backtrace(std::vector<std::string> &bt, int size, int skip) {
@@ -26,7 +26,7 @@ void Backtrace(std::vector<std::string> &bt, int size, int skip) {
 
     char **strings = backtrace_symbols(array, s);
     if(strings == NULL) {
-        SYLAR_LOG_ERROR(g_logger) << "backtrace_symbols error";
+        WEBSERVER_LOG_ERROR(g_logger) << "backtrace_symbols error";
         return;
     }
 

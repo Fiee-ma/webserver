@@ -1,7 +1,7 @@
-#ifndef __SYLAR_IOMANAGER_H__
-#define __SYLAR_IOMANAGER_H__
+#ifndef __WEBSERVER_IOMANAGER_H__
+#define __WEBSERVER_IOMANAGER_H__
 
-#include "scheduler.h"
+#include "coroutinescheduler.h"
 #include "timer.h"
 
 namespace server_name {
@@ -22,7 +22,7 @@ private:
         typedef Mutex MutexType;
         struct EventContext {
             Scheduler *scheduler = nullptr;  // 事件执行的scheduler
-            Fiber::ptr fiber;                // 事件协程
+            Coroutine::ptr coroutine;                // 事件协程
             std::function<void()> cb;        // 事件回调函数
         };
 

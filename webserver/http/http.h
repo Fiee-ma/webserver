@@ -1,5 +1,5 @@
-#ifndef __SYLAR_HTTP_HTTP_H__
-#define __SYLAR_HTTP_HTTP_H__
+#ifndef __WEBSERVER_HTTP_HTTP_H__
+#define __WEBSERVER_HTTP_HTTP_H__
 
 #include <memory>
 #include <string>
@@ -298,6 +298,8 @@ public:
 
     std::ostream &dump(std::ostream &os) const;
     std::string toString() const;
+    bool isClose() const { return m_close;}
+    void init();
 private:
     HttpMethod m_method;
     uint8_t m_version;
@@ -362,6 +364,7 @@ public:
 
     std::ostream &dump(std::ostream &os) const;
     std::string toString() const;
+
 private:
     HttpStatus m_status;
     uint8_t m_version;
@@ -373,6 +376,8 @@ private:
     MapType m_headers;
 };
 
+std::ostream &operator<<(std::ostream &os, const HttpRequest &hreq);
+std::ostream &operator<<(std::ostream &os, const HttpResponse &hreq);
 
 }
 }

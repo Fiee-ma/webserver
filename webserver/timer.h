@@ -1,5 +1,5 @@
-#ifndef __SYLAR_TIMER_R_H__
-#define __SYLAR_TIMER_R_H__
+#ifndef __WEBSERVER_TIMER_R_H__
+#define __WEBSERVER_TIMER_R_H__
 
 #include <memory>
 #include "thread.h"

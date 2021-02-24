@@ -1,7 +1,7 @@
 #include "../webserver/http/http.h"
 #include "../webserver/log.h"
 
-static server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+static server_name::Logger::ptr g_logger = WEBSERVER_LOG_ROOT();
 
 void test_request() {
     server_name::http::HttpRequest::ptr req(new server_name::http::HttpRequest);

@@ -33,7 +33,7 @@ CMakeFiles/test_config.dir/tests/test_config.cc.o: ../yaml-cpp/include/yaml-cpp/
 CMakeFiles/test_config.dir/tests/test_config.cc.o: ../yaml-cpp/include/yaml-cpp/traits.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: ../yaml-cpp/include/yaml-cpp/yaml.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: tests/test_config.cc
-CMakeFiles/test_config.dir/tests/test_config.cc.o: webserver/config.h
+CMakeFiles/test_config.dir/tests/test_config.cc.o: webserver/fileconfig.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: webserver/log.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: webserver/noncopyable.h
 CMakeFiles/test_config.dir/tests/test_config.cc.o: webserver/singleton.h

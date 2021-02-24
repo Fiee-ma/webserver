@@ -114,108 +114,69 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_http_parser
+# Target rules for targets named test_http_connection
 
 # Build rule for target.
-test_http_parser: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_http_parser
-.PHONY : test_http_parser
+test_http_connection: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_http_connection
+.PHONY : test_http_connection
 
 # fast build rule for target.
-test_http_parser/fast:
-	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/build
-.PHONY : test_http_parser/fast
+test_http_connection/fast:
+	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/build
+.PHONY : test_http_connection/fast
 
 #=============================================================================
-# Target rules for targets named test_http
+# Target rules for targets named test_fiber
 
 # Build rule for target.
-test_http: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_http
-.PHONY : test_http
+test_fiber: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_fiber
+.PHONY : test_fiber
 
 # fast build rule for target.
-test_http/fast:
-	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/build
-.PHONY : test_http/fast
+test_fiber/fast:
+	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
+.PHONY : test_fiber/fast
 
 #=============================================================================
-# Target rules for targets named test_tcp_server
+# Target rules for targets named test_socket
 
 # Build rule for target.
-test_tcp_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_tcp_server
-.PHONY : test_tcp_server
+test_socket: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_socket
+.PHONY : test_socket
 
 # fast build rule for target.
-test_tcp_server/fast:
-	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/build
-.PHONY : test_tcp_server/fast
+test_socket/fast:
+	$(MAKE) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
+.PHONY : test_socket/fast
 
 #=============================================================================
-# Target rules for targets named test_address
+# Target rules for targets named test_util
 
 # Build rule for target.
-test_address: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_address
-.PHONY : test_address
+test_util: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_util
+.PHONY : test_util
 
 # fast build rule for target.
-test_address/fast:
-	$(MAKE) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/build
-.PHONY : test_address/fast
+test_util/fast:
+	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/build
+.PHONY : test_util/fast
 
 #=============================================================================
-# Target rules for targets named test_hook
+# Target rules for targets named test_thread
 
 # Build rule for target.
-test_hook: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_hook
-.PHONY : test_hook
+test_thread: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_thread
+.PHONY : test_thread
 
 # fast build rule for target.
-test_hook/fast:
-	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
-.PHONY : test_hook/fast
-
-#=============================================================================
-# Target rules for targets named test_iomanager
-
-# Build rule for target.
-test_iomanager: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_iomanager
-.PHONY : test_iomanager
-
-# fast build rule for target.
-test_iomanager/fast:
-	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
-.PHONY : test_iomanager/fast
-
-#=============================================================================
-# Target rules for targets named test_config
-
-# Build rule for target.
-test_config: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_config
-.PHONY : test_config
-
-# fast build rule for target.
-test_config/fast:
-	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-.PHONY : test_config/fast
-
-#=============================================================================
-# Target rules for targets named webserver
-
-# Build rule for target.
-webserver: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 webserver
-.PHONY : webserver
-
-# fast build rule for target.
-webserver/fast:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/build
-.PHONY : webserver/fast
+test_thread/fast:
+	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
+.PHONY : test_thread/fast
 
 #=============================================================================
 # Target rules for targets named test_scheduler
@@ -244,56 +205,161 @@ test_bytearray/fast:
 .PHONY : test_bytearray/fast
 
 #=============================================================================
-# Target rules for targets named test_thread
+# Target rules for targets named webserver
 
 # Build rule for target.
-test_thread: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_thread
-.PHONY : test_thread
+webserver: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 webserver
+.PHONY : webserver
 
 # fast build rule for target.
-test_thread/fast:
-	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-.PHONY : test_thread/fast
+webserver/fast:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/build
+.PHONY : webserver/fast
 
 #=============================================================================
-# Target rules for targets named test_util
+# Target rules for targets named test_config
 
 # Build rule for target.
-test_util: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_util
-.PHONY : test_util
+test_config: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_config
+.PHONY : test_config
 
 # fast build rule for target.
-test_util/fast:
-	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/build
-.PHONY : test_util/fast
+test_config/fast:
+	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
+.PHONY : test_config/fast
 
 #=============================================================================
-# Target rules for targets named test_socket
+# Target rules for targets named test_iomanager
 
 # Build rule for target.
-test_socket: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_socket
-.PHONY : test_socket
+test_iomanager: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_iomanager
+.PHONY : test_iomanager
 
 # fast build rule for target.
-test_socket/fast:
-	$(MAKE) -f CMakeFiles/test_socket.dir/build.make CMakeFiles/test_socket.dir/build
-.PHONY : test_socket/fast
+test_iomanager/fast:
+	$(MAKE) -f CMakeFiles/test_iomanager.dir/build.make CMakeFiles/test_iomanager.dir/build
+.PHONY : test_iomanager/fast
 
 #=============================================================================
-# Target rules for targets named test_fiber
+# Target rules for targets named test_hook
 
 # Build rule for target.
-test_fiber: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_fiber
-.PHONY : test_fiber
+test_hook: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_hook
+.PHONY : test_hook
 
 # fast build rule for target.
-test_fiber/fast:
-	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
-.PHONY : test_fiber/fast
+test_hook/fast:
+	$(MAKE) -f CMakeFiles/test_hook.dir/build.make CMakeFiles/test_hook.dir/build
+.PHONY : test_hook/fast
+
+#=============================================================================
+# Target rules for targets named test_address
+
+# Build rule for target.
+test_address: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_address
+.PHONY : test_address
+
+# fast build rule for target.
+test_address/fast:
+	$(MAKE) -f CMakeFiles/test_address.dir/build.make CMakeFiles/test_address.dir/build
+.PHONY : test_address/fast
+
+#=============================================================================
+# Target rules for targets named test_tcp_server
+
+# Build rule for target.
+test_tcp_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_tcp_server
+.PHONY : test_tcp_server
+
+# fast build rule for target.
+test_tcp_server/fast:
+	$(MAKE) -f CMakeFiles/test_tcp_server.dir/build.make CMakeFiles/test_tcp_server.dir/build
+.PHONY : test_tcp_server/fast
+
+#=============================================================================
+# Target rules for targets named test_http
+
+# Build rule for target.
+test_http: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_http
+.PHONY : test_http
+
+# fast build rule for target.
+test_http/fast:
+	$(MAKE) -f CMakeFiles/test_http.dir/build.make CMakeFiles/test_http.dir/build
+.PHONY : test_http/fast
+
+#=============================================================================
+# Target rules for targets named test_http_parser
+
+# Build rule for target.
+test_http_parser: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_http_parser
+.PHONY : test_http_parser
+
+# fast build rule for target.
+test_http_parser/fast:
+	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/build
+.PHONY : test_http_parser/fast
+
+#=============================================================================
+# Target rules for targets named echo_server
+
+# Build rule for target.
+echo_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 echo_server
+.PHONY : echo_server
+
+# fast build rule for target.
+echo_server/fast:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/build
+.PHONY : echo_server/fast
+
+#=============================================================================
+# Target rules for targets named test_http_server
+
+# Build rule for target.
+test_http_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_http_server
+.PHONY : test_http_server
+
+# fast build rule for target.
+test_http_server/fast:
+	$(MAKE) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/build
+.PHONY : test_http_server/fast
+
+examples/echo_server.o: examples/echo_server.cc.o
+
+.PHONY : examples/echo_server.o
+
+# target to build an object file
+examples/echo_server.cc.o:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cc.o
+.PHONY : examples/echo_server.cc.o
+
+examples/echo_server.i: examples/echo_server.cc.i
+
+.PHONY : examples/echo_server.i
+
+# target to preprocess a source file
+examples/echo_server.cc.i:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cc.i
+.PHONY : examples/echo_server.cc.i
+
+examples/echo_server.s: examples/echo_server.cc.s
+
+.PHONY : examples/echo_server.s
+
+# target to generate assembly for a file
+examples/echo_server.cc.s:
+	$(MAKE) -f CMakeFiles/echo_server.dir/build.make CMakeFiles/echo_server.dir/examples/echo_server.cc.s
+.PHONY : examples/echo_server.cc.s
 
 tests/test_address.o: tests/test_address.cc.o
 
@@ -375,6 +441,33 @@ tests/test_config.s: tests/test_config.cc.s
 tests/test_config.cc.s:
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
 .PHONY : tests/test_config.cc.s
+
+tests/test_connection.o: tests/test_connection.cc.o
+
+.PHONY : tests/test_connection.o
+
+# target to build an object file
+tests/test_connection.cc.o:
+	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_connection.cc.o
+.PHONY : tests/test_connection.cc.o
+
+tests/test_connection.i: tests/test_connection.cc.i
+
+.PHONY : tests/test_connection.i
+
+# target to preprocess a source file
+tests/test_connection.cc.i:
+	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_connection.cc.i
+.PHONY : tests/test_connection.cc.i
+
+tests/test_connection.s: tests/test_connection.cc.s
+
+.PHONY : tests/test_connection.s
+
+# target to generate assembly for a file
+tests/test_connection.cc.s:
+	$(MAKE) -f CMakeFiles/test_http_connection.dir/build.make CMakeFiles/test_http_connection.dir/tests/test_connection.cc.s
+.PHONY : tests/test_connection.cc.s
 
 tests/test_fiber.o: tests/test_fiber.cc.o
 
@@ -483,6 +576,33 @@ tests/test_http_parser.s: tests/test_http_parser.cc.s
 tests/test_http_parser.cc.s:
 	$(MAKE) -f CMakeFiles/test_http_parser.dir/build.make CMakeFiles/test_http_parser.dir/tests/test_http_parser.cc.s
 .PHONY : tests/test_http_parser.cc.s
+
+tests/test_http_server.o: tests/test_http_server.cc.o
+
+.PHONY : tests/test_http_server.o
+
+# target to build an object file
+tests/test_http_server.cc.o:
+	$(MAKE) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/tests/test_http_server.cc.o
+.PHONY : tests/test_http_server.cc.o
+
+tests/test_http_server.i: tests/test_http_server.cc.i
+
+.PHONY : tests/test_http_server.i
+
+# target to preprocess a source file
+tests/test_http_server.cc.i:
+	$(MAKE) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/tests/test_http_server.cc.i
+.PHONY : tests/test_http_server.cc.i
+
+tests/test_http_server.s: tests/test_http_server.cc.s
+
+.PHONY : tests/test_http_server.s
+
+# target to generate assembly for a file
+tests/test_http_server.cc.s:
+	$(MAKE) -f CMakeFiles/test_http_server.dir/build.make CMakeFiles/test_http_server.dir/tests/test_http_server.cc.s
+.PHONY : tests/test_http_server.cc.s
 
 tests/test_iomanager.o: tests/test_iomanager.cc.o
 
@@ -646,86 +766,59 @@ tests/test_util.cc.s:
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/tests/test_util.cc.s
 .PHONY : tests/test_util.cc.s
 
-webserver/address.o: webserver/address.cc.o
+webserver/coroutine.o: webserver/coroutine.cc.o
 
-.PHONY : webserver/address.o
-
-# target to build an object file
-webserver/address.cc.o:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/address.cc.o
-.PHONY : webserver/address.cc.o
-
-webserver/address.i: webserver/address.cc.i
-
-.PHONY : webserver/address.i
-
-# target to preprocess a source file
-webserver/address.cc.i:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/address.cc.i
-.PHONY : webserver/address.cc.i
-
-webserver/address.s: webserver/address.cc.s
-
-.PHONY : webserver/address.s
-
-# target to generate assembly for a file
-webserver/address.cc.s:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/address.cc.s
-.PHONY : webserver/address.cc.s
-
-webserver/bytearray.o: webserver/bytearray.cc.o
-
-.PHONY : webserver/bytearray.o
+.PHONY : webserver/coroutine.o
 
 # target to build an object file
-webserver/bytearray.cc.o:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/bytearray.cc.o
-.PHONY : webserver/bytearray.cc.o
+webserver/coroutine.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/coroutine.cc.o
+.PHONY : webserver/coroutine.cc.o
 
-webserver/bytearray.i: webserver/bytearray.cc.i
+webserver/coroutine.i: webserver/coroutine.cc.i
 
-.PHONY : webserver/bytearray.i
+.PHONY : webserver/coroutine.i
 
 # target to preprocess a source file
-webserver/bytearray.cc.i:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/bytearray.cc.i
-.PHONY : webserver/bytearray.cc.i
+webserver/coroutine.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/coroutine.cc.i
+.PHONY : webserver/coroutine.cc.i
 
-webserver/bytearray.s: webserver/bytearray.cc.s
+webserver/coroutine.s: webserver/coroutine.cc.s
 
-.PHONY : webserver/bytearray.s
+.PHONY : webserver/coroutine.s
 
 # target to generate assembly for a file
-webserver/bytearray.cc.s:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/bytearray.cc.s
-.PHONY : webserver/bytearray.cc.s
+webserver/coroutine.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/coroutine.cc.s
+.PHONY : webserver/coroutine.cc.s
 
-webserver/config.o: webserver/config.cc.o
+webserver/coroutinescheduler.o: webserver/coroutinescheduler.cc.o
 
-.PHONY : webserver/config.o
+.PHONY : webserver/coroutinescheduler.o
 
 # target to build an object file
-webserver/config.cc.o:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/config.cc.o
-.PHONY : webserver/config.cc.o
+webserver/coroutinescheduler.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.o
+.PHONY : webserver/coroutinescheduler.cc.o
 
-webserver/config.i: webserver/config.cc.i
+webserver/coroutinescheduler.i: webserver/coroutinescheduler.cc.i
 
-.PHONY : webserver/config.i
+.PHONY : webserver/coroutinescheduler.i
 
 # target to preprocess a source file
-webserver/config.cc.i:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/config.cc.i
-.PHONY : webserver/config.cc.i
+webserver/coroutinescheduler.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.i
+.PHONY : webserver/coroutinescheduler.cc.i
 
-webserver/config.s: webserver/config.cc.s
+webserver/coroutinescheduler.s: webserver/coroutinescheduler.cc.s
 
-.PHONY : webserver/config.s
+.PHONY : webserver/coroutinescheduler.s
 
 # target to generate assembly for a file
-webserver/config.cc.s:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/config.cc.s
-.PHONY : webserver/config.cc.s
+webserver/coroutinescheduler.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/coroutinescheduler.cc.s
+.PHONY : webserver/coroutinescheduler.cc.s
 
 webserver/fd_manager.o: webserver/fd_manager.cc.o
 
@@ -754,32 +847,59 @@ webserver/fd_manager.cc.s:
 	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fd_manager.cc.s
 .PHONY : webserver/fd_manager.cc.s
 
-webserver/fiber.o: webserver/fiber.cc.o
+webserver/fileconfig.o: webserver/fileconfig.cc.o
 
-.PHONY : webserver/fiber.o
+.PHONY : webserver/fileconfig.o
 
 # target to build an object file
-webserver/fiber.cc.o:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fiber.cc.o
-.PHONY : webserver/fiber.cc.o
+webserver/fileconfig.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fileconfig.cc.o
+.PHONY : webserver/fileconfig.cc.o
 
-webserver/fiber.i: webserver/fiber.cc.i
+webserver/fileconfig.i: webserver/fileconfig.cc.i
 
-.PHONY : webserver/fiber.i
+.PHONY : webserver/fileconfig.i
 
 # target to preprocess a source file
-webserver/fiber.cc.i:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fiber.cc.i
-.PHONY : webserver/fiber.cc.i
+webserver/fileconfig.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fileconfig.cc.i
+.PHONY : webserver/fileconfig.cc.i
 
-webserver/fiber.s: webserver/fiber.cc.s
+webserver/fileconfig.s: webserver/fileconfig.cc.s
 
-.PHONY : webserver/fiber.s
+.PHONY : webserver/fileconfig.s
 
 # target to generate assembly for a file
-webserver/fiber.cc.s:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fiber.cc.s
-.PHONY : webserver/fiber.cc.s
+webserver/fileconfig.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/fileconfig.cc.s
+.PHONY : webserver/fileconfig.cc.s
+
+webserver/filestream.o: webserver/filestream.cc.o
+
+.PHONY : webserver/filestream.o
+
+# target to build an object file
+webserver/filestream.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/filestream.cc.o
+.PHONY : webserver/filestream.cc.o
+
+webserver/filestream.i: webserver/filestream.cc.i
+
+.PHONY : webserver/filestream.i
+
+# target to preprocess a source file
+webserver/filestream.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/filestream.cc.i
+.PHONY : webserver/filestream.cc.i
+
+webserver/filestream.s: webserver/filestream.cc.s
+
+.PHONY : webserver/filestream.s
+
+# target to generate assembly for a file
+webserver/filestream.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/filestream.cc.s
+.PHONY : webserver/filestream.cc.s
 
 webserver/hook.o: webserver/hook.cc.o
 
@@ -862,6 +982,33 @@ webserver/http/http11_parser.cc.s:
 	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http11_parser.cc.s
 .PHONY : webserver/http/http11_parser.cc.s
 
+webserver/http/http_connection.o: webserver/http/http_connection.cc.o
+
+.PHONY : webserver/http/http_connection.o
+
+# target to build an object file
+webserver/http/http_connection.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_connection.cc.o
+.PHONY : webserver/http/http_connection.cc.o
+
+webserver/http/http_connection.i: webserver/http/http_connection.cc.i
+
+.PHONY : webserver/http/http_connection.i
+
+# target to preprocess a source file
+webserver/http/http_connection.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_connection.cc.i
+.PHONY : webserver/http/http_connection.cc.i
+
+webserver/http/http_connection.s: webserver/http/http_connection.cc.s
+
+.PHONY : webserver/http/http_connection.s
+
+# target to generate assembly for a file
+webserver/http/http_connection.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_connection.cc.s
+.PHONY : webserver/http/http_connection.cc.s
+
 webserver/http/http_parser.o: webserver/http/http_parser.cc.o
 
 .PHONY : webserver/http/http_parser.o
@@ -889,6 +1036,60 @@ webserver/http/http_parser.cc.s:
 	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_parser.cc.s
 .PHONY : webserver/http/http_parser.cc.s
 
+webserver/http/http_server.o: webserver/http/http_server.cc.o
+
+.PHONY : webserver/http/http_server.o
+
+# target to build an object file
+webserver/http/http_server.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_server.cc.o
+.PHONY : webserver/http/http_server.cc.o
+
+webserver/http/http_server.i: webserver/http/http_server.cc.i
+
+.PHONY : webserver/http/http_server.i
+
+# target to preprocess a source file
+webserver/http/http_server.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_server.cc.i
+.PHONY : webserver/http/http_server.cc.i
+
+webserver/http/http_server.s: webserver/http/http_server.cc.s
+
+.PHONY : webserver/http/http_server.s
+
+# target to generate assembly for a file
+webserver/http/http_server.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_server.cc.s
+.PHONY : webserver/http/http_server.cc.s
+
+webserver/http/http_session.o: webserver/http/http_session.cc.o
+
+.PHONY : webserver/http/http_session.o
+
+# target to build an object file
+webserver/http/http_session.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_session.cc.o
+.PHONY : webserver/http/http_session.cc.o
+
+webserver/http/http_session.i: webserver/http/http_session.cc.i
+
+.PHONY : webserver/http/http_session.i
+
+# target to preprocess a source file
+webserver/http/http_session.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_session.cc.i
+.PHONY : webserver/http/http_session.cc.i
+
+webserver/http/http_session.s: webserver/http/http_session.cc.s
+
+.PHONY : webserver/http/http_session.s
+
+# target to generate assembly for a file
+webserver/http/http_session.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/http_session.cc.s
+.PHONY : webserver/http/http_session.cc.s
+
 webserver/http/httpclient_parser.o: webserver/http/httpclient_parser.cc.o
 
 .PHONY : webserver/http/httpclient_parser.o
@@ -915,6 +1116,60 @@ webserver/http/httpclient_parser.s: webserver/http/httpclient_parser.cc.s
 webserver/http/httpclient_parser.cc.s:
 	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/httpclient_parser.cc.s
 .PHONY : webserver/http/httpclient_parser.cc.s
+
+webserver/http/servlet.o: webserver/http/servlet.cc.o
+
+.PHONY : webserver/http/servlet.o
+
+# target to build an object file
+webserver/http/servlet.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/servlet.cc.o
+.PHONY : webserver/http/servlet.cc.o
+
+webserver/http/servlet.i: webserver/http/servlet.cc.i
+
+.PHONY : webserver/http/servlet.i
+
+# target to preprocess a source file
+webserver/http/servlet.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/servlet.cc.i
+.PHONY : webserver/http/servlet.cc.i
+
+webserver/http/servlet.s: webserver/http/servlet.cc.s
+
+.PHONY : webserver/http/servlet.s
+
+# target to generate assembly for a file
+webserver/http/servlet.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/http/servlet.cc.s
+.PHONY : webserver/http/servlet.cc.s
+
+webserver/iobytearray.o: webserver/iobytearray.cc.o
+
+.PHONY : webserver/iobytearray.o
+
+# target to build an object file
+webserver/iobytearray.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/iobytearray.cc.o
+.PHONY : webserver/iobytearray.cc.o
+
+webserver/iobytearray.i: webserver/iobytearray.cc.i
+
+.PHONY : webserver/iobytearray.i
+
+# target to preprocess a source file
+webserver/iobytearray.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/iobytearray.cc.i
+.PHONY : webserver/iobytearray.cc.i
+
+webserver/iobytearray.s: webserver/iobytearray.cc.s
+
+.PHONY : webserver/iobytearray.s
+
+# target to generate assembly for a file
+webserver/iobytearray.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/iobytearray.cc.s
+.PHONY : webserver/iobytearray.cc.s
 
 webserver/iomanager.o: webserver/iomanager.cc.o
 
@@ -970,32 +1225,32 @@ webserver/log.cc.s:
 	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/log.cc.s
 .PHONY : webserver/log.cc.s
 
-webserver/scheduler.o: webserver/scheduler.cc.o
+webserver/sockaddr.o: webserver/sockaddr.cc.o
 
-.PHONY : webserver/scheduler.o
+.PHONY : webserver/sockaddr.o
 
 # target to build an object file
-webserver/scheduler.cc.o:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/scheduler.cc.o
-.PHONY : webserver/scheduler.cc.o
+webserver/sockaddr.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/sockaddr.cc.o
+.PHONY : webserver/sockaddr.cc.o
 
-webserver/scheduler.i: webserver/scheduler.cc.i
+webserver/sockaddr.i: webserver/sockaddr.cc.i
 
-.PHONY : webserver/scheduler.i
+.PHONY : webserver/sockaddr.i
 
 # target to preprocess a source file
-webserver/scheduler.cc.i:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/scheduler.cc.i
-.PHONY : webserver/scheduler.cc.i
+webserver/sockaddr.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/sockaddr.cc.i
+.PHONY : webserver/sockaddr.cc.i
 
-webserver/scheduler.s: webserver/scheduler.cc.s
+webserver/sockaddr.s: webserver/sockaddr.cc.s
 
-.PHONY : webserver/scheduler.s
+.PHONY : webserver/sockaddr.s
 
 # target to generate assembly for a file
-webserver/scheduler.cc.s:
-	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/scheduler.cc.s
-.PHONY : webserver/scheduler.cc.s
+webserver/sockaddr.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/sockaddr.cc.s
+.PHONY : webserver/sockaddr.cc.s
 
 webserver/socket.o: webserver/socket.cc.o
 
@@ -1023,6 +1278,60 @@ webserver/socket.s: webserver/socket.cc.s
 webserver/socket.cc.s:
 	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/socket.cc.s
 .PHONY : webserver/socket.cc.s
+
+webserver/socket_stream.o: webserver/socket_stream.cc.o
+
+.PHONY : webserver/socket_stream.o
+
+# target to build an object file
+webserver/socket_stream.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/socket_stream.cc.o
+.PHONY : webserver/socket_stream.cc.o
+
+webserver/socket_stream.i: webserver/socket_stream.cc.i
+
+.PHONY : webserver/socket_stream.i
+
+# target to preprocess a source file
+webserver/socket_stream.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/socket_stream.cc.i
+.PHONY : webserver/socket_stream.cc.i
+
+webserver/socket_stream.s: webserver/socket_stream.cc.s
+
+.PHONY : webserver/socket_stream.s
+
+# target to generate assembly for a file
+webserver/socket_stream.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/socket_stream.cc.s
+.PHONY : webserver/socket_stream.cc.s
+
+webserver/tcp_server.o: webserver/tcp_server.cc.o
+
+.PHONY : webserver/tcp_server.o
+
+# target to build an object file
+webserver/tcp_server.cc.o:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/tcp_server.cc.o
+.PHONY : webserver/tcp_server.cc.o
+
+webserver/tcp_server.i: webserver/tcp_server.cc.i
+
+.PHONY : webserver/tcp_server.i
+
+# target to preprocess a source file
+webserver/tcp_server.cc.i:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/tcp_server.cc.i
+.PHONY : webserver/tcp_server.cc.i
+
+webserver/tcp_server.s: webserver/tcp_server.cc.s
+
+.PHONY : webserver/tcp_server.s
+
+# target to generate assembly for a file
+webserver/tcp_server.cc.s:
+	$(MAKE) -f CMakeFiles/webserver.dir/build.make CMakeFiles/webserver.dir/webserver/tcp_server.cc.s
+.PHONY : webserver/tcp_server.cc.s
 
 webserver/thread.o: webserver/thread.cc.o
 
@@ -1112,21 +1421,27 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... test_http_parser"
-	@echo "... test_http"
+	@echo "... test_http_connection"
+	@echo "... test_fiber"
+	@echo "... test_socket"
 	@echo "... edit_cache"
-	@echo "... test_tcp_server"
-	@echo "... test_address"
-	@echo "... test_hook"
-	@echo "... test_iomanager"
-	@echo "... test_config"
-	@echo "... webserver"
+	@echo "... test_util"
+	@echo "... test_thread"
 	@echo "... test_scheduler"
 	@echo "... test_bytearray"
-	@echo "... test_thread"
-	@echo "... test_util"
-	@echo "... test_socket"
-	@echo "... test_fiber"
+	@echo "... webserver"
+	@echo "... test_config"
+	@echo "... test_iomanager"
+	@echo "... test_hook"
+	@echo "... test_address"
+	@echo "... test_tcp_server"
+	@echo "... test_http"
+	@echo "... test_http_parser"
+	@echo "... echo_server"
+	@echo "... test_http_server"
+	@echo "... examples/echo_server.o"
+	@echo "... examples/echo_server.i"
+	@echo "... examples/echo_server.s"
 	@echo "... tests/test_address.o"
 	@echo "... tests/test_address.i"
 	@echo "... tests/test_address.s"
@@ -1136,6 +1451,9 @@ help:
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"
+	@echo "... tests/test_connection.o"
+	@echo "... tests/test_connection.i"
+	@echo "... tests/test_connection.s"
 	@echo "... tests/test_fiber.o"
 	@echo "... tests/test_fiber.i"
 	@echo "... tests/test_fiber.s"
@@ -1148,6 +1466,9 @@ help:
 	@echo "... tests/test_http_parser.o"
 	@echo "... tests/test_http_parser.i"
 	@echo "... tests/test_http_parser.s"
+	@echo "... tests/test_http_server.o"
+	@echo "... tests/test_http_server.i"
+	@echo "... tests/test_http_server.s"
 	@echo "... tests/test_iomanager.o"
 	@echo "... tests/test_iomanager.i"
 	@echo "... tests/test_iomanager.s"
@@ -1166,21 +1487,21 @@ help:
 	@echo "... tests/test_util.o"
 	@echo "... tests/test_util.i"
 	@echo "... tests/test_util.s"
-	@echo "... webserver/address.o"
-	@echo "... webserver/address.i"
-	@echo "... webserver/address.s"
-	@echo "... webserver/bytearray.o"
-	@echo "... webserver/bytearray.i"
-	@echo "... webserver/bytearray.s"
-	@echo "... webserver/config.o"
-	@echo "... webserver/config.i"
-	@echo "... webserver/config.s"
+	@echo "... webserver/coroutine.o"
+	@echo "... webserver/coroutine.i"
+	@echo "... webserver/coroutine.s"
+	@echo "... webserver/coroutinescheduler.o"
+	@echo "... webserver/coroutinescheduler.i"
+	@echo "... webserver/coroutinescheduler.s"
 	@echo "... webserver/fd_manager.o"
 	@echo "... webserver/fd_manager.i"
 	@echo "... webserver/fd_manager.s"
-	@echo "... webserver/fiber.o"
-	@echo "... webserver/fiber.i"
-	@echo "... webserver/fiber.s"
+	@echo "... webserver/fileconfig.o"
+	@echo "... webserver/fileconfig.i"
+	@echo "... webserver/fileconfig.s"
+	@echo "... webserver/filestream.o"
+	@echo "... webserver/filestream.i"
+	@echo "... webserver/filestream.s"
 	@echo "... webserver/hook.o"
 	@echo "... webserver/hook.i"
 	@echo "... webserver/hook.s"
@@ -1190,24 +1511,45 @@ help:
 	@echo "... webserver/http/http11_parser.o"
 	@echo "... webserver/http/http11_parser.i"
 	@echo "... webserver/http/http11_parser.s"
+	@echo "... webserver/http/http_connection.o"
+	@echo "... webserver/http/http_connection.i"
+	@echo "... webserver/http/http_connection.s"
 	@echo "... webserver/http/http_parser.o"
 	@echo "... webserver/http/http_parser.i"
 	@echo "... webserver/http/http_parser.s"
+	@echo "... webserver/http/http_server.o"
+	@echo "... webserver/http/http_server.i"
+	@echo "... webserver/http/http_server.s"
+	@echo "... webserver/http/http_session.o"
+	@echo "... webserver/http/http_session.i"
+	@echo "... webserver/http/http_session.s"
 	@echo "... webserver/http/httpclient_parser.o"
 	@echo "... webserver/http/httpclient_parser.i"
 	@echo "... webserver/http/httpclient_parser.s"
+	@echo "... webserver/http/servlet.o"
+	@echo "... webserver/http/servlet.i"
+	@echo "... webserver/http/servlet.s"
+	@echo "... webserver/iobytearray.o"
+	@echo "... webserver/iobytearray.i"
+	@echo "... webserver/iobytearray.s"
 	@echo "... webserver/iomanager.o"
 	@echo "... webserver/iomanager.i"
 	@echo "... webserver/iomanager.s"
 	@echo "... webserver/log.o"
 	@echo "... webserver/log.i"
 	@echo "... webserver/log.s"
-	@echo "... webserver/scheduler.o"
-	@echo "... webserver/scheduler.i"
-	@echo "... webserver/scheduler.s"
+	@echo "... webserver/sockaddr.o"
+	@echo "... webserver/sockaddr.i"
+	@echo "... webserver/sockaddr.s"
 	@echo "... webserver/socket.o"
 	@echo "... webserver/socket.i"
 	@echo "... webserver/socket.s"
+	@echo "... webserver/socket_stream.o"
+	@echo "... webserver/socket_stream.i"
+	@echo "... webserver/socket_stream.s"
+	@echo "... webserver/tcp_server.o"
+	@echo "... webserver/tcp_server.i"
+	@echo "... webserver/tcp_server.s"
 	@echo "... webserver/thread.o"
 	@echo "... webserver/thread.i"
 	@echo "... webserver/thread.s"

@@ -1,5 +1,5 @@
-#ifndef __SYLAR_THREAD_H__
-#define __SYLAR_THREAD_H__
+#ifndef __WEBSERVER_THREAD_H__
+#define __WEBSERVER_THREAD_H__
 
 #include <thread>
 #include <functional>

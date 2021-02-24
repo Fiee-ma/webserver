@@ -1,5 +1,5 @@
-#ifndef __SYLAR_NONCOPYABLE_H__
-#define __SYLAR_NONCOPYABLE_H__
+#ifndef __WEBSERVER_NONCOPYABLE_H__
+#define __WEBSERVER_NONCOPYABLE_H__
 
 namespace server_name {
 

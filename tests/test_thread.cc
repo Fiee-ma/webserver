@@ -1,12 +1,12 @@
-#include "../webserver/sylar.h"
+#include "../webserver/webserver.h"
 #include <unistd.h>
 
-server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+server_name::Logger::ptr g_logger = WEBSERVER_LOG_ROOT();
 int count = 0;
 server_name::RWMutex s_mutex;
 
 void fun1() {
-    SYLAR_LOG_INFO(g_logger) << "name: " << server_name::Thread::GetName()
+    WEBSERVER_LOG_INFO(g_logger) << "name: " << server_name::Thread::GetName()
                              << " this.name: " << server_name::Thread::GetThis()->getName()
                              << " id: " << server_name::GetThreadId()
                              << " this.id: " << server_name::Thread::GetThis()->getId();
@@ -18,19 +18,19 @@ void fun1() {
 
 void fun2() {
     while(true) {
-        SYLAR_LOG_INFO(g_logger) << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+        WEBSERVER_LOG_INFO(g_logger) << "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     }
 }
 
 void fun3() {
     while(true) {
-        SYLAR_LOG_INFO(g_logger) << "1111111111111111111111111111";
+        WEBSERVER_LOG_INFO(g_logger) << "1111111111111111111111111111";
     }
 }
 
 int main(int argc, char **argv) {
-    SYLAR_LOG_INFO(g_logger) << "thread test begin";
-//    YAML::Node root = YAML::LoadFile("/home/marulong/sylar/bin/conf/log2.yml");
+    WEBSERVER_LOG_INFO(g_logger) << "thread test begin";
+//    YAML::Node root = YAML::LoadFile("/home/marulong/webserver/bin/conf/log2.yml");
 //    server_name::Config::LoadFromYaml(root);
     std::vector<server_name::Thread::ptr> thrs;
     for(int i = 0; i < 2; ++i) {
@@ -40,12 +40,12 @@ int main(int argc, char **argv) {
         thrs.push_back(thr1);
     }
 
-    SYLAR_LOG_DEBUG(g_logger) << "thrs[i]->join before";
+    WEBSERVER_LOG_DEBUG(g_logger) << "thrs[i]->join before";
     for(size_t i = 0; i < thrs.size(); ++i) {
         thrs[i]->join();
-    SYLAR_LOG_DEBUG(g_logger) << "thrs[i]->join after";
+    WEBSERVER_LOG_DEBUG(g_logger) << "thrs[i]->join after";
     }
-    SYLAR_LOG_INFO(g_logger) << "thread test begin";
-    SYLAR_LOG_INFO(g_logger) << "count = "<< count;
+    WEBSERVER_LOG_INFO(g_logger) << "thread test begin";
+    WEBSERVER_LOG_INFO(g_logger) << "count = "<< count;
     return 0;
 }

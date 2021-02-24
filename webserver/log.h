@@ -1,5 +1,5 @@
-#ifndef __SYLAR_LOG_H__
-#define __SYLAR_LOG_H__
+#ifndef __WEBSERVER_LOG_H__
+#define __WEBSERVER_LOG_H__
 
 #include<iostream>
 #include<string>
@@ -17,34 +17,34 @@
 #include<algorithm>
 #include "thread.h"
 
-#define SYLAR_LOG_LEVEL(logger, level) \
+#define WEBSERVER_LOG_LEVEL(logger, level) \
     if(logger->getLevel() <= level) \
         server_name::LogEventWrap(server_name::LogEvent::ptr(new server_name::LogEvent(logger, level, \
                         __FILE__, __LINE__, 0, server_name::GetThreadId(), \
-                    server_name::GetFiberId(), time(0),server_name::Thread::GetName()))).getSS()
+                    server_name::GetCoroutineId(), time(0),server_name::Thread::GetName()))).getSS()
 
-#define SYLAR_LOG_DEBUG(logger) SYLAR_LOG_LEVEL(logger, server_name::LogLevel::DEBUG)
-#define SYLAR_LOG_INFO(logger) SYLAR_LOG_LEVEL(logger, server_name::LogLevel::INFO)
-#define SYLAR_LOG_WARN(logger) SYLAR_LOG_LEVEL(logger, server_name::LogLevel::WARN)
-#define SYLAR_LOG_ERROR(logger) SYLAR_LOG_LEVEL(logger, server_name::LogLevel::ERROR)
-#define SYLAR_LOG_FATAL(logger) SYLAR_LOG_LEVEL(logger, server_name::LogLevel::FATAL)
+#define WEBSERVER_LOG_DEBUG(logger) WEBSERVER_LOG_LEVEL(logger, server_name::LogLevel::DEBUG)
+#define WEBSERVER_LOG_INFO(logger) WEBSERVER_LOG_LEVEL(logger, server_name::LogLevel::INFO)
+#define WEBSERVER_LOG_WARN(logger) WEBSERVER_LOG_LEVEL(logger, server_name::LogLevel::WARN)
+#define WEBSERVER_LOG_ERROR(logger) WEBSERVER_LOG_LEVEL(logger, server_name::LogLevel::ERROR)
+#define WEBSERVER_LOG_FATAL(logger) WEBSERVER_LOG_LEVEL(logger, server_name::LogLevel::FATAL)
 
-#define SYLAR_LOG_FMT_LEVEL(logger, level, fmt, ...) \
+#define WEBSERVER_LOG_FMT_LEVEL(logger, level, fmt, ...) \
     if(logger->getLevel() <= level) \
         server_name::LogEventWrap(server_name::LogEvent::ptr(new server_name::LogEvent(logger, level, \
                         __FILE__, __LINE__, 0, server_name::GetThreadId(), \
-                        server_name::GetFiberId(), time(0), \
+                        server_name::GetCoroutineId(), time(0), \
                         server_name::Thread::GetName()))).getEvent()->format(fmt, __VA_ARGS__)
 //使用保留名 __VA_ARGS__ 把参数传递给宏
 
-#define SYLAR_LOG_FMT_DEBUG(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, server_name::LogLevel::DEBUG, fmt, __VA_ARGS__)
-#define SYLAR_LOG_FMT_INFO(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, server_name::LogLevel::INFO, fmt, __VA_ARGS__)
-#define SYLAR_LOG_FMT_WARN(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, server_name::LogLevel::WARN, fmt, __VA_ARGS__)
-#define SYLAR_LOG_FMT_ERROR(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, server_name::LogLevel::ERROR, fmt, __VA_ARGS__)
-#define SYLAR_LOG_FMT_FATAL(logger, fmt, ...) SYLAR_LOG_FMT_LEVEL(logger, server_name::LogLevel::FATAL, fmt, __VA_ARGS__)
+#define WEBSERVER_LOG_FMT_DEBUG(logger, fmt, ...) WEBSERVER_LOG_FMT_LEVEL(logger, server_name::LogLevel::DEBUG, fmt, __VA_ARGS__)
+#define WEBSERVER_LOG_FMT_INFO(logger, fmt, ...) WEBSERVER_LOG_FMT_LEVEL(logger, server_name::LogLevel::INFO, fmt, __VA_ARGS__)
+#define WEBSERVER_LOG_FMT_WARN(logger, fmt, ...) WEBSERVER_LOG_FMT_LEVEL(logger, server_name::LogLevel::WARN, fmt, __VA_ARGS__)
+#define WEBSERVER_LOG_FMT_ERROR(logger, fmt, ...) WEBSERVER_LOG_FMT_LEVEL(logger, server_name::LogLevel::ERROR, fmt, __VA_ARGS__)
+#define WEBSERVER_LOG_FMT_FATAL(logger, fmt, ...) WEBSERVER_LOG_FMT_LEVEL(logger, server_name::LogLevel::FATAL, fmt, __VA_ARGS__)
 
-#define SYLAR_LOG_ROOT() server_name::LoggerMgr::GetInstance()->getRoot()
-#define SYLAR_LOG_NAME(name) server_name::LoggerMgr::GetInstance()->getLogger(name)
+#define WEBSERVER_LOG_ROOT() server_name::LoggerMgr::GetInstance()->getRoot()
+#define WEBSERVER_LOG_NAME(name) server_name::LoggerMgr::GetInstance()->getLogger(name)
 
 namespace server_name {
 
@@ -77,14 +77,14 @@ public:
     typedef std::shared_ptr<LogEvent> ptr;
     LogEvent();
     LogEvent(std::shared_ptr<Logger> logger, LogLevel::Level level, const char *file, int32_t line, uint32_t elapse
-            , uint32_t thread_id, uint32_t fiber_id, uint64_t time, const std::string &thread_name);
+            , uint32_t thread_id, uint32_t coroutine_id, uint64_t time, const std::string &thread_name);
     ~LogEvent(){};
 
     const char *getFile() const { return m_file;}
     int32_t getLine() const {return m_line;}
     uint32_t getElapse() const {return m_elapse;}
     uint32_t getThreadId() const {return m_threadId;}
-    uint32_t getFiberId() const { return m_fiberId;}
+    uint32_t getCoroutineId() const { return m_coroutineId;}
     uint64_t getTime() const {return m_time;}
     const std::string &getThreadName() const {return m_threadName;}
     std::string getContent() const {return m_ss.str();}
@@ -100,7 +100,7 @@ private:
     int32_t m_line = 0;            //行号
     uint32_t m_elapse = 0;         //程序启动开始到现在的毫秒数
     uint32_t m_threadId = 0;       //线程id
-    uint32_t m_fiberId = 0;        //协程id
+    uint32_t m_coroutineId = 0;        //协程id
     uint64_t m_time = 0;           //时间戳
     std::string m_threadName;      //线程名称
     std::stringstream m_ss;         //文件内容

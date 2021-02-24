@@ -33,18 +33,18 @@ CMakeFiles/test_socket.dir/tests/test_socket.cc.o: ../yaml-cpp/include/yaml-cpp/
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: ../yaml-cpp/include/yaml-cpp/traits.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: ../yaml-cpp/include/yaml-cpp/yaml.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: tests/test_socket.cc
-CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/address.h
-CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/config.h
-CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/fiber.h
+CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/assert.h
+CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/coroutine.h
+CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/coroutinescheduler.h
+CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/fileconfig.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/iomanager.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/log.h
-CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/macro.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/noncopyable.h
-CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/scheduler.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/singleton.h
+CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/sockaddr.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/socket.h
-CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/sylar.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/thread.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/timer.h
 CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/util.h
+CMakeFiles/test_socket.dir/tests/test_socket.cc.o: webserver/webserver.h
 

@@ -1,5 +1,5 @@
-#ifndef __SYLAR_HTTP_PARSER_H__
-#define __SYLAR_HTTP_PARSER_H__
+#ifndef __WEBSERVER_HTTP_PARSER_H__
+#define __WEBSERVER_HTTP_PARSER_H__
 
 #include "http.h"
 #include "http11_parser.h"
@@ -22,6 +22,13 @@ public:
     HttpRequest::ptr getData() const { return m_data;}
 
     uint64_t getContentLength();
+    const http_parser &getParser() const { return m_parser;}
+
+public:
+    /// 返回HttpRequest协议解析的缓存大小
+    static uint64_t GetHttpRequestBufferSize();
+    /// 返回HttpRequest协议最大消息体的大小
+    static uint64_t GetHttpRequestMaxBodySize();
 private:
     http_parser m_parser;
     HttpRequest::ptr m_data;
@@ -44,6 +51,12 @@ public:
 
     HttpResponse::ptr getData() const { return m_data;}
     uint64_t getContentLength();
+    /// 返回HttpResponse协议解析的缓存大小
+    static uint64_t GetHttpResponseBufferSize();
+    /// 返回HttpResponse协议最大消息体的大小
+    static uint64_t GetHttpResponseMaxBodySize();
+
+    const httpclient_parser &getParser() const { return m_parser;}
 private:
     httpclient_parser m_parser;
     HttpResponse::ptr m_data;

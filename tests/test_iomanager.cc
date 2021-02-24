@@ -1,4 +1,4 @@
-#include "../webserver/sylar.h"
+#include "../webserver/webserver.h"
 #include "../webserver/iomanager.h"
 #include <sys/types.h>
 #include <sys/socket.h>
@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+server_name::Logger::ptr g_logger = WEBSERVER_LOG_ROOT();
 
 int sock = 0;
 void test_fiber() {
@@ -22,17 +22,17 @@ void test_fiber() {
 
     if(!connect(sock, (const sockaddr *)&addr, sizeof(addr))) {
     } else if(errno == EINPROGRESS) {
-        SYLAR_LOG_INFO(g_logger) << "add event errno " << errno << " " <<
+        WEBSERVER_LOG_INFO(g_logger) << "add event errno " << errno << " " <<
             strerror(errno);
         server_name::IOManager::GetThis()->addEvent(sock, server_name::IOManager::READ, [](){
-            SYLAR_LOG_INFO(g_logger) << "read callback";
+            WEBSERVER_LOG_INFO(g_logger) << "read callback";
         });
         server_name::IOManager::GetThis()->addEvent(sock, server_name::IOManager::WRITE, [](){
-            SYLAR_LOG_INFO(g_logger) << "write callback";
+            WEBSERVER_LOG_INFO(g_logger) << "write callback";
         });
         server_name::IOManager::GetThis()->cancelEvent(sock, server_name::IOManager::READ);
     } else {
-        SYLAR_LOG_INFO(g_logger) << "else" << errno << " " << strerror(errno);
+        WEBSERVER_LOG_INFO(g_logger) << "else" << errno << " " << strerror(errno);
     }
 }
 
@@ -45,7 +45,7 @@ server_name::Timer::ptr m_timer;
 void test_timer() {
     server_name::IOManager io(2, true, "test");
     m_timer = io.addTimer(500, [](){
-        SYLAR_LOG_INFO(g_logger) << "hello timer";
+        WEBSERVER_LOG_INFO(g_logger) << "hello timer";
         static int i = 0;
         if(++i == 5) {
             //m_timer->reset(2000, true);

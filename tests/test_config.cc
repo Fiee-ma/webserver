@@ -1,4 +1,4 @@
-#include "../webserver/config.h"
+#include "../webserver/fileconfig.h"
 #include "../webserver/log.h"
 #include <yaml-cpp/yaml.h>
 
@@ -32,21 +32,21 @@
 #if 0
 void print_yaml(const YAML::Node node, int level) {
     if(node.IsScalar()) {
-        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << std::string(level * 4, ' ')
+        WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << std::string(level * 4, ' ')
             << node.Scalar() << " - " << node.Type() << " - " << level;
     } else if(node.IsNull()) {
-        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << std::string(level * 4, ' ')
+        WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << std::string(level * 4, ' ')
             << "NULL - " << node.Type() << " - " << level;
     } else if(node.IsMap()) {
         for(auto it = node.begin();
                 it != node.end(); ++it){
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << std::string(level * 4, ' ')
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << std::string(level * 4, ' ')
                 << it->first << " - " << it->second.Type() << " - " << level;
             print_yaml(it->second, level + 1);
         }
     } else if(node.IsSequence()) {
         for(size_t i = 0; i < node.size(); ++i) {
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << std::string(level * 4, ' ')
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << std::string(level * 4, ' ')
                 << i << " - " << node[i].Type() << " - " << level;
             print_yaml(node[i], level + 1);
         }
@@ -54,23 +54,23 @@ void print_yaml(const YAML::Node node, int level) {
 }
 
 void test_yaml() {
-    YAML::Node root = YAML::LoadFile("/home/marulong/sylar/bin/conf/log.yml");
+    YAML::Node root = YAML::LoadFile("/home/marulong/WEBSERVER/bin/conf/log.yml");
 
     print_yaml(root, 0);
-    //SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << root;
+    //WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << root;
 }
 
 void test_config() {
-    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "before: " << g_int_value_config->getValue();
-    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "before: " << g_float_value_config->toString();
-//    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "before: " << g_float_test_value_config->toString();
+    WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << "before: " << g_int_value_config->getValue();
+    WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << "before: " << g_float_value_config->toString();
+//    WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << "before: " << g_float_test_value_config->toString();
 
 
 #define XX(g_var, name, prefix) \
     { \
         auto v = g_var->getValue(); \
         for(auto &i : v){ \
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix " " #name": " << i; \
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << #prefix " " #name": " << i; \
         } \
     }
 
@@ -78,7 +78,7 @@ void test_config() {
     { \
         auto v = g_var->getValue(); \
         for(auto &i : v){ \
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix " " #name": " << "{" \
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << #prefix " " #name": " << "{" \
             << i.first << " - " << i.second << "}"; \
         } \
     }
@@ -90,7 +90,7 @@ void test_config() {
     XX_Map(g_str_int_map_config, before, g_str_int_map)
     XX_Map(g_str_int_unordered_map_config, before, g_str_int_unordered_map)
 
-    YAML::Node root = YAML::LoadFile("/home/marulong/sylar/bin/conf/log.yml");
+    YAML::Node root = YAML::LoadFile("/home/marulong/WEBSERVER/bin/conf/log.yml");
     server_name::Config::LoadFromYaml(root);
 
     XX(g_int_vector_config, after, int_vec);
@@ -101,8 +101,8 @@ void test_config() {
     XX_Map(g_str_int_unordered_map_config, after, g_str_int_unordered_map);
 
 
-    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "after: " << g_int_value_config->getValue();
-    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "after: " << g_float_value_config->toString();
+    WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << "after: " << g_int_value_config->getValue();
+    WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << "after: " << g_float_value_config->toString();
 
 }
 
@@ -128,7 +128,7 @@ public:
     }
 };
 
-namespace sylar {
+namespace server_name {
 
 template<>
 class LexicalCast<std::string, Person> {
@@ -176,43 +176,43 @@ void test_class() {
     { \
         auto m = g_person_map->getValue(); \
         for(auto &i : m){ \
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix << \
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << #prefix << \
                 i.first << " - " << i.second.toString(); \
         } \
-        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix << ": size=" << m.size(); \
+        WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << #prefix << ": size=" << m.size(); \
     }
 
 #define XX_VEC_MP(g_var, prefix) \
     { \
         auto m = g_person_map->getValue(); \
         for(auto &i : m){ \
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix << \
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << #prefix << \
                 i.first << " - " << i.second.toString(); \
         } \
-        SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << #prefix << ": size=" << m.size(); \
+        WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << #prefix << ": size=" << m.size(); \
     }
 
     g_person->addListener([](const Person &old_value, const Person &new_value){
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << " old_value=" << old_value.toString()
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << " old_value=" << old_value.toString()
              << " new_value=" << new_value.toString();
     });
 
-    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << " before " <<
+    WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << " before " <<
         g_person->getValue().toString() << " - " << g_person->toString();
     XX_PM(g_person_map, "class.mp before");
-    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << " before " <<
+    WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << " before " <<
         g_person_vec_map->toString();
 
-    YAML::Node root = YAML::LoadFile("/home/marulong/sylar/bin/conf/test.yml");
+    YAML::Node root = YAML::LoadFile("/home/marulong/webserver/bin/conf/test.yml");
     server_name::Config::LoadFromYaml(root);
-    SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << "after" <<
+    WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << "after" <<
         g_person->getValue().toString() << " - " << g_person->toString();
     XX_PM(g_person_map, "class.mp after");
 
     auto mp_vec = g_person_vec_map->getValue();
     for(auto &i : mp_vec){
         for(auto &s : i.second){
-            SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << " after map_vec" <<
+            WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << " after map_vec" <<
                 i.first << " - " << s.toString();
         }
     }
@@ -220,22 +220,22 @@ void test_class() {
 
 #endif
 void test_log() {
-    static server_name::Logger::ptr system_log = SYLAR_LOG_NAME("root");
-    SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
+    static server_name::Logger::ptr system_log = WEBSERVER_LOG_NAME("root");
+    WEBSERVER_LOG_INFO(system_log) << "hello system" << std::endl;
     std::cout << server_name::LoggerMgr::GetInstance()->toYamlString() << std::endl;
-    YAML::Node root = YAML::LoadFile("/home/marulong/sylar/bin/conf/log.yml");
+    YAML::Node root = YAML::LoadFile("/home/marulong/webserver/bin/conf/log.yml");
     server_name::Config::LoadFromYaml(root);
     std::cout << "=======================" << std::endl;
     std::cout << server_name::LoggerMgr::GetInstance()->toYamlString() << std::endl;
     std::cout << "=======================" << std::endl;
     std::cout << root << std::endl;
-    SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
+    WEBSERVER_LOG_INFO(system_log) << "hello system" << std::endl;
 
     system_log->setFormatter("%d - %m%n");
-    SYLAR_LOG_INFO(system_log) << "hello system" << std::endl;
+    WEBSERVER_LOG_INFO(system_log) << "hello system" << std::endl;
 
     server_name::Config::Visit([](const server_name::ConfigVarBase::ptr var) {
-            SYLAR_LOG_INFO(system_log) << " name= " << var->getName()
+            WEBSERVER_LOG_INFO(system_log) << " name= " << var->getName()
                                      << " description= " << var->getDescription()
                                      << " typename= " << var->getTypeName()
                                      << " value= " << var->toString();
@@ -243,8 +243,8 @@ void test_log() {
 }
 
 int main(int argc, char **argv) {
-    //SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << g_int_value_config->toString();
-    //SYLAR_LOG_INFO(SYLAR_LOG_ROOT()) << g_float_value_config->toString();
+    //WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << g_int_value_config->toString();
+    //WEBSERVER_LOG_INFO(WEBSERVER_LOG_ROOT()) << g_float_value_config->toString();
 
     //test_yaml();
 //    test_config();

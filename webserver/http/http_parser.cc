@@ -1,13 +1,13 @@
 #include "http_parser.h"
 #include "../log.h"
-#include "../config.h"
+#include "../fileconfig.h"
 #include <stdint.h>
 #include <string.h>
 
 namespace server_name {
 namespace http {
 
-static server_name::Logger::ptr g_logger = SYLAR_LOG_NAME("system");
+static server_name::Logger::ptr g_logger = WEBSERVER_LOG_NAME("system");
 
 static server_name::ConfigVar<uint64_t>::ptr g_http_request_buffer_size =
     server_name::Config::Lookup("http.reuest.buffer_size", (uint64_t)4 * 1024, "http request buffer size");
@@ -15,13 +15,40 @@ static server_name::ConfigVar<uint64_t>::ptr g_http_request_buffer_size =
 static server_name::ConfigVar<uint64_t>::ptr g_http_request_max_body_size =
     server_name::Config::Lookup("http.reuest.max_body_size", (uint64_t)4 * 1024, "http request max body size");
 
+static server_name::ConfigVar<uint64_t>::ptr g_http_response_buffer_size =
+    server_name::Config::Lookup("http.response.buffer_size", (uint64_t)4 * 1024, "http buffer size");
+
+static server_name::ConfigVar<uint64_t>::ptr g_http_response_max_body_size =
+    server_name::Config::Lookup("http.response.buffer_size", (uint64_t)4 * 1024, "http buffer size");
+
 uint64_t s_http_request_buffer_size = 0;
 uint64_t s_http_request_max_body_size = 0;
+uint64_t s_http_response_buffer_size = 0;
+uint64_t s_http_response_max_body_size = 0;
 
+uint64_t HttpRequestParser::GetHttpRequestBufferSize() {
+    return s_http_request_buffer_size;
+}
+
+uint64_t HttpRequestParser::GetHttpRequestMaxBodySize() {
+    return s_http_request_max_body_size;
+}
+
+uint64_t HttpResponseParser::GetHttpResponseBufferSize() {
+    return s_http_response_buffer_size;
+}
+
+uint64_t HttpResponseParser::GetHttpResponseMaxBodySize() {
+    return s_http_response_max_body_size;
+}
+
+namespace {
 struct _RequestSizeIniter {
     _RequestSizeIniter() {
         s_http_request_buffer_size = g_http_request_buffer_size->getValue();
         s_http_request_max_body_size = g_http_request_max_body_size->getValue();
+        s_http_response_buffer_size = g_http_response_buffer_size->getValue();
+        s_http_response_max_body_size = g_http_response_max_body_size->getValue();
         g_http_request_buffer_size->addListener(
                 [](const uint64_t &ov, const uint64_t &nv){
                     s_http_request_buffer_size = nv;
@@ -30,14 +57,25 @@ struct _RequestSizeIniter {
                 [](const uint64_t &ov, const uint64_t &nv){
                     s_http_request_max_body_size = nv;
         });
+        g_http_response_buffer_size->addListener(
+                [](const uint64_t &ov, const uint64_t &nv){
+                    s_http_response_buffer_size = nv;
+        });
+        g_http_response_max_body_size->addListener(
+                [](const uint64_t &ov, const uint64_t &nv){
+                    s_http_response_max_body_size = nv;
+        });
     }
 };
+static _RequestSizeIniter requestInit;
+}
+
 void on_request_method(void *data, const char *at, size_t length) {
     HttpRequestParser *parser = static_cast<HttpRequestParser*>(data);
     HttpMethod m = CharsToHttpMethod(at);
 
     if(m == HttpMethod::INVALID_METHOD) {
-        SYLAR_LOG_WARN(g_logger) << "invalid http request method: "
+        WEBSERVER_LOG_WARN(g_logger) << "invalid http request method: "
             << std::string(at, length);
             parser->setError(1000);
             return;
@@ -72,7 +110,7 @@ void on_request_version(void *data, const char *at, size_t length) {
     } else if(strncmp(at, "HTTP/1.0", length) == 0) {
         v = 0x10;
     } else {
-        SYLAR_LOG_WARN(g_logger) << "invalid http request version: "
+        WEBSERVER_LOG_WARN(g_logger) << "invalid http request version: "
             << std::string(at, length);
         parser->setError(1001);
         return;
@@ -83,8 +121,9 @@ void on_request_version(void *data, const char *at, size_t length) {
 void on_request_http_field(void *data, const char *field, size_t flen
                             , const char *value, size_t vlen) {
     HttpRequestParser *parser = static_cast<HttpRequestParser*>(data);
+//    WEBSERVER_LOG_WARN(g_logger) << "on_request_filed";
     if(flen == 0) {
-        SYLAR_LOG_WARN(g_logger) << "invalid http request field length == 0";
+        WEBSERVER_LOG_WARN(g_logger) << "invalid http request field length == 0";
         parser->setError(1002);
         return;
     }
@@ -154,7 +193,7 @@ void on_response_version(void *data, const char *at, size_t length) {
     } else if(strncmp(at, "HTTP/1.0x10", length) == 0) {
         v = 0x10;
     } else {
-        SYLAR_LOG_WARN(g_logger) << "invalid http response version: "
+        WEBSERVER_LOG_WARN(g_logger) << "invalid http response version: "
             << std::string(at, length);
         parser->setError(1001);
         return;
@@ -173,8 +212,8 @@ void on_response_http_field(void *data, const char *field, size_t flen
                                 , const char *value, size_t vlen) {
     HttpResponseParser *parser = static_cast<HttpResponseParser*>(data);
     if(flen == 0) {
-        SYLAR_LOG_WARN(g_logger) << "invalid http response field length == 0";
-        parser->setError(1002);
+        WEBSERVER_LOG_WARN(g_logger) << "invalid http response field length == 0";
+    //    parser->setError(1002);
         return;
     }
     parser->getData()->setHeader(std::string(field, flen)

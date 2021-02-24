@@ -1,7 +1,7 @@
 #include "../webserver/http/http_parser.h"
 #include "../webserver/log.h"
 
-static server_name::Logger::ptr g_logger = SYLAR_LOG_ROOT();
+static server_name::Logger::ptr g_logger = WEBSERVER_LOG_ROOT();
 
 const char test_request_data[] = "GET / HTTP/1.1\r\n"
                             "Host: www.baidu.com\r\n"
@@ -12,12 +12,12 @@ void test_request() {
     server_name::http::HttpRequestParser parser;
     std::string tmp = test_request_data;
     size_t s = parser.execute(&tmp[0], tmp.size());
-    SYLAR_LOG_INFO(g_logger) << "execute rt = " << s
+    WEBSERVER_LOG_INFO(g_logger) << "execute rt = " << s
         << "has_error=" << parser.hasError()
         << " is_finished=" << parser.isFinished()
         << " Context-length=" << parser.getContentLength();
 
-    SYLAR_LOG_INFO(g_logger) << parser.getData()->toString();
+    WEBSERVER_LOG_INFO(g_logger) << parser.getData()->toString();
 }
 
 const char test_response_data[] = "HTTP/1.1 200 OK\r\n"
@@ -39,19 +39,19 @@ void test_response() {
     server_name::http::HttpResponseParser parser;
     std::string tmp = test_response_data;
     size_t s = parser.execute(&tmp[0], tmp.size(), true);
-    SYLAR_LOG_ERROR(g_logger) << "execute rt=" << s
+    WEBSERVER_LOG_ERROR(g_logger) << "execute rt=" << s
         << " has_error=" << parser.hasError()
         << " is_finished=" << parser.isFinished()
         << " total=" << tmp.size()
         << " content_length=" << parser.getContentLength()
         << " tmp[s]=" << tmp[s];
 
-    SYLAR_LOG_DEBUG(g_logger) << "tmp.size()=" << tmp.size()
+    WEBSERVER_LOG_DEBUG(g_logger) << "tmp.size()=" << tmp.size()
         << " s=" << s;
     tmp.resize(tmp.size() - s);
 
-    SYLAR_LOG_INFO(g_logger) << parser.getData()->toString();
-    SYLAR_LOG_INFO(g_logger) << tmp;
+    WEBSERVER_LOG_INFO(g_logger) << parser.getData()->toString();
+    WEBSERVER_LOG_INFO(g_logger) << tmp;
 }
 
 int main() {
